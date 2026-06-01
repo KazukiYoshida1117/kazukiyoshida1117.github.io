@@ -832,12 +832,12 @@ footer strong { color: var(--sky2); }
     </div>
     <span class="s-label" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
     <p class="contact-close" data-ja="あなたの「いい場所・いいお店」を、ちゃんと届く形にしませんか？" data-en="Ready to turn your wonderful place into something that truly reaches people?">あなたの「いい場所・いいお店」を、ちゃんと届く形にしませんか？</p>
-    <form class="form-wrap" action="https://formsubmit.co/kazuki.webdesign24@gmail.com" method="POST">
-      <!-- FormSubmit設定 -->
-      <input type="hidden" name="_subject" value="【ポートフォリオサイト】お問い合わせが届きました">
-      <input type="hidden" name="_next" value="https://kazukiyoshida1117.github.io/thanks.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+    <form class="form-wrap" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="66d42d66-65fe-41be-8381-3a1c61265632">
+      <input type="hidden" name="subject" value="【ポートフォリオサイト】お問い合わせが届きました">
+      <input type="hidden" name="redirect" value="https://kazukiyoshida1117.github.io/thanks.html">
+      <input type="hidden" name="from_name" value="Portfolio Contact">
+      <input type="checkbox" name="botcheck" style="display:none;">
 
       <div class="form-row2">
         <div class="fg"><label data-ja="お名前 *" data-en="Name *">お名前 *</label><input type="text" name="name" placeholder="山田 太郎" required></div>
