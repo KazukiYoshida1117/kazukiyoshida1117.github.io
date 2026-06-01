@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>送信完了 | 観光・サービス集客支援Webデザイナー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky:   #4a9ab8;
+  --sky2:  #7bbfd6;
+  --pale:  #dff0f7;
+  --sand:  #f5ede0;
+  --sandl: #faf7f2;
+  --white: #ffffff;
+  --text:  #334155;
+  --muted: #7a8fa6;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  background: var(--sandl);
+  line-height: 1.8;
+  font-size: 15px;
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 64px 56px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 40px rgba(74, 154, 184, .1);
+}
+.icon {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+.label {
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 16px;
+  display: block;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 40px;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: var(--sky);
+  color: var(--white);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: .1em;
+  transition: background .2s, transform .2s;
+}
+.btn:hover {
+  background: var(--sky2);
+  transform: translateY(-2px);
+}
+@media (max-width: 480px) {
+  .card { padding: 48px 24px; }
+}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">✉️</div>
+    <span class="label">Thank you</span>
+    <h1>送信が完了しました</h1>
+    <p>
+      お問い合わせいただきありがとうございます。<br>
+      内容を確認の上、3営業日以内にご連絡いたします。<br>
+      しばらくお待ちください。
+    </p>
+    <a href="/" class="btn">トップページへ戻る</a>
+  </div>
+</body>
+</html>
