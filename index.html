@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>観光・サービス集客支援Webデザイナー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky:   #4a9ab8;
+  --sky2:  #7bbfd6;
+  --pale:  #dff0f7;
+  --sand:  #f5ede0;
+  --sandl: #faf7f2;
+  --sandm: #ede4d4;
+  --white: #ffffff;
+  --text:  #334155;
+  --muted: #7a8fa6;
+  --light: #a8c8d8;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); line-height: 1.8; font-size: 15px; font-weight: 300; }
+
+/* ── HEADER ── */
+/* ── LOGO (fixed top-left) ── */
+header {
+  position: fixed; top: 32px; left: 100px; z-index: 100;
+  background: none; border: none; padding: 0;
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600; color: #fff;
+  letter-spacing: .08em; white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+
+/* ── RIGHT SIDEBAR ── */
+.side-right {
+  position: fixed; top: 0; bottom: 0; right: 0; z-index: 99;
+  width: auto;
+  display: flex; flex-direction: column; align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  padding: 48px 100px 48px 32px;
+  background: rgba(0,0,0,.5);
+}
+nav { display: contents; }
+nav a {
+  color: #fff; text-decoration: none;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .15em; text-transform: uppercase;
+  transition: color .2s;
+  display: block; white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+}
+nav a:hover { color: var(--sky); }
+.lang-toggle {
+  display: flex; gap: 6px; align-items: center;
+}
+.lang-toggle button {
+  background: none; border: none; color: #fff;
+  font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  cursor: pointer; transition: color .2s; font-family: inherit; padding: 0;
+  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+}
+.lang-toggle button.active { color: var(--sky); }
+.lang-toggle .sep { color: rgba(255,255,255,.5); font-size: 11px; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.btn-cta {
+  background: none; color: #fff; border: none;
+  font-size: 11px; font-weight: 500; cursor: pointer;
+  letter-spacing: .15em; text-transform: uppercase;
+  transition: color .2s; font-family: inherit; padding: 0;
+  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+}
+.btn-cta:hover { color: var(--sky); }
+.header-right { display: contents; }
+
+/* ── FV ── */
+#fv {
+  min-height: 100vh;
+  background: url('img/fv_hero.png') center center / cover no-repeat;
+  display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
+  text-align: left; padding: 120px 200px 80px 0;
+  position: relative; overflow: hidden;
+}
+.fv-content {
+  max-width: 480px;
+  padding-right: 0;
+  margin-right: 40px;
+}
+#fv::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to top, var(--white), transparent);
+  pointer-events: none;
+}
+.fv-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(11px, 1.2vw, 13px); font-style: italic;
+  color: rgba(255,255,255,.85); letter-spacing: .2em; margin-bottom: 28px;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.fv-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 3.5vw, 34px); font-weight: 600; color: #fff;
+  line-height: 1.45; margin-bottom: 20px; letter-spacing: .03em;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+.fv-h1 em { color: #b8e4f4; font-style: italic; }
+.fv-sub {
+  font-size: clamp(13px, 1.5vw, 15px); color: rgba(255,255,255,.9);
+  max-width: 520px; margin: 0 0 52px; font-weight: 400; line-height: 1.9;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.btn-fv {
+  background: var(--sky); color: var(--white);
+  border: none; padding: 18px 48px; border-radius: 40px;
+  font-size: 15px; font-weight: 500; cursor: pointer;
+  letter-spacing: .1em; transition: .25s; font-family: inherit;
+  box-shadow: 0 4px 16px rgba(74,154,184,.35);
+}
+.btn-fv:hover { background: var(--sky2); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74,154,184,.4); }
+.fv-scroll { margin-top: 56px; color: var(--muted); font-size: 11px; letter-spacing: .2em; }
+
+/* ── PHOTO FULL ── */
+.photo-full {
+  width: 100%; height: 60vh; min-height: 320px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.photo-full-ocean {
+  background: linear-gradient(180deg, #8fd0e8 0%, #5aaecc 35%, #3d90aa 65%, #a8c8bc 100%);
+}
+.photo-full-shore {
+  background: linear-gradient(160deg, #f5ede0 0%, #e0d4c0 40%, #c8bfae 70%, #e8f0f4 100%);
+}
+.photo-full-sky {
+  background: linear-gradient(175deg, #dff0f7 0%, #b8e0f0 40%, #88c8e4 100%);
+}
+.photo-label {
+  color: rgba(255,255,255,.6); font-size: 12px; letter-spacing: .2em;
+  text-transform: uppercase; border: 1px solid rgba(255,255,255,.3);
+  padding: 6px 16px; border-radius: 20px; background: rgba(255,255,255,.1);
+  backdrop-filter: blur(4px);
+}
+
+/* ── SECTION BASE ── */
+section { padding: 100px 48px; }
+.inner { max-width: 960px; margin: 0 auto; }
+.s-label { color: var(--sky); font-size: 11px; letter-spacing: .25em; text-transform: uppercase; margin-bottom: 14px; display: block; }
+.s-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 600;
+  color: var(--text); line-height: 1.35; margin-bottom: 48px; letter-spacing: .02em;
+}
+.s-title small { display: block; font-size: .5em; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; margin-top: 8px; font-weight: 300; letter-spacing: .1em; }
+
+/* ── EMPATHY ── */
+#empathy { background: var(--white); text-align: center; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 600px; margin: 0 auto 36px; text-align: left; }
+.check-list li {
+  padding: 16px 22px; background: var(--sandl);
+  border-left: 3px solid var(--sky2); border-radius: 0 6px 6px 0;
+  font-size: 14px; font-weight: 400; color: var(--text);
+}
+.e-close { font-size: 15px; color: var(--sky); font-weight: 500; letter-spacing: .05em; }
+
+/* ── REASONS ── */
+#reasons { background: var(--sandl); }
+.reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.reason-card {
+  background: var(--white); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 20px rgba(74,154,184,.08);
+}
+.reason-vis {
+  height: 140px; display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+}
+.reason-vis-1 { background: linear-gradient(135deg, #dff0f7, #b8e0f0); }
+.reason-vis-2 { background: linear-gradient(135deg, #f5ede0, #ede4d4); }
+.reason-vis-3 { background: linear-gradient(135deg, #d8eef7, #c8e4f4); }
+.reason-body { padding: 24px 22px; }
+.reason-num { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--sky); margin-bottom: 6px; font-weight: 600; line-height: 1; }
+.reason-body h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+.reason-body p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── TARGET ── */
+#target { padding: 100px 48px; background: var(--white); }
+.target-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.target-card {
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 20px rgba(74,154,184,.1);
+}
+.target-vis {
+  height: 200px; display: flex; align-items: flex-end;
+  padding: 24px; position: relative;
+}
+.target-vis-a { background: linear-gradient(160deg, #8fd0e8 0%, #4a9ab8 100%); }
+.target-vis-b { background: linear-gradient(160deg, #c8dfe8 0%, #7aacbf 100%); }
+.target-tag {
+  display: inline-block; background: rgba(74,154,184,.6);
+  color: #fff; font-size: 12px; font-weight: 700;
+  padding: 6px 16px; border-radius: 4px; letter-spacing: .1em;
+  border: 1px solid var(--sky2);
+  backdrop-filter: blur(6px);
+  text-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+.target-body { background: var(--white); padding: 28px 28px; }
+.target-body h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.5; }
+.target-body p { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+.target-services { font-size: 12px; color: var(--sky); font-weight: 500; letter-spacing: .05em; }
+
+/* ── SERVICES ── */
+#services { background: var(--sandl); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card {
+  background: var(--white); border-radius: 10px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(74,154,184,.06);
+}
+.service-top { height: 8px; }
+.service-top-blue { background: var(--sky); }
+.service-top-sand { background: var(--sandm); }
+.service-top-pale { background: var(--pale); }
+.service-body { padding: 22px 20px; }
+.service-icon { font-size: 22px; margin-bottom: 10px; }
+.service-body h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.service-body p { font-size: 12px; color: var(--muted); line-height: 1.65; }
+.service-copy { font-weight: 500; color: var(--sky) !important; margin-bottom: 8px !important; }
+.service-desc { font-size: 12px; color: var(--muted); line-height: 1.7; margin-top: 6px; }
+
+/* ── WORKS ── */
+#works { background: var(--white); }
+.works-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+.wf-btn { background: none; border: 1px solid var(--pale); color: var(--muted); padding: 6px 18px; border-radius: 20px; font-size: 12px; cursor: pointer; transition: .2s; font-family: inherit; }
+.wf-btn.active, .wf-btn:hover { background: var(--sky); border-color: var(--sky); color: var(--white); }
+.works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.work-card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(74,154,184,.08); }
+.work-vis {
+  height: 200px; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: rgba(255,255,255,.6); letter-spacing: .1em;
+}
+.work-vis-1 { background: linear-gradient(135deg, #b8dce8, #7bbfd6); }
+.work-vis-2 { background: linear-gradient(135deg, #c8e4d0, #90c4a8); }
+.work-vis-3 { background: linear-gradient(135deg, #f0e4d4, #d4c4a8); }
+.work-body { padding: 18px 20px; background: var(--white); }
+.work-tag { font-size: 11px; color: var(--sky); font-weight: 700; letter-spacing: .1em; margin-bottom: 4px; }
+.work-body h3 { font-size: 14px; font-weight: 700; color: var(--text); }
+.work-note {
+  margin-top: 24px; padding: 16px 20px;
+  background: var(--sandl); border-radius: 6px;
+  font-size: 13px; color: var(--muted); text-align: center;
+  border-left: 3px solid var(--sky2);
+}
+
+/* ── ABOUT ── */
+#about { background: var(--sandl); }
+.about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: start; }
+.about-photo-wrap { position: static; }
+.about-photo {
+  width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(160deg, #c8e4f0 0%, #90c4d8 50%, #f5ede0 100%);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 12px; letter-spacing: .1em;
+}
+.about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--text); margin-bottom: 28px; }
+.about-text p { font-size: 14px; color: var(--text); line-height: 1.95; margin-bottom: 20px; font-weight: 300; }
+.skills-block { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--sandm); }
+.skills-label { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--sky); margin-bottom: 8px; }
+.skills-text { font-size: 13px; color: var(--muted); }
+
+/* ── FLOW ── */
+#flow { background: var(--sky); color: var(--white); text-align: center; }
+#flow .s-label { color: rgba(255,255,255,.6); }
+#flow .s-title { color: var(--white); margin-bottom: 56px; }
+.flow-steps { display: flex; align-items: stretch; gap: 0; max-width: 960px; margin: 0 auto; }
+.flow-step {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  text-align: center; position: relative;
+}
+.flow-step:not(:last-child)::after {
+  content: '›'; position: absolute; right: -10px; top: 32px;
+  font-size: 24px; color: rgba(255,255,255,.4); z-index: 1;
+}
+.flow-step-inner {
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px; padding: 28px 16px 24px;
+  width: calc(100% - 20px); height: 100%;
+  display: flex; flex-direction: column; align-items: center;
+  backdrop-filter: blur(4px);
+}
+.flow-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600;
+  color: rgba(255,255,255,.5); line-height: 1; margin-bottom: 12px;
+  font-style: italic;
+}
+.flow-icon { font-size: 26px; margin-bottom: 10px; }
+.flow-step h3 { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
+.flow-step p { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.65; }
+.flow-divider { border-top: 1px dashed rgba(255,255,255,.2); margin-bottom: 48px; }
+
+/* ── PRICING ── */
+#pricing { background: var(--white); }
+.monitor-strip {
+  background: linear-gradient(135deg, var(--sky), var(--sky2));
+  color: var(--white); border-radius: 10px; padding: 24px 32px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 36px;
+  box-shadow: 0 4px 24px rgba(74,154,184,.25);
+}
+.monitor-badge { background: rgba(255,255,255,.25); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 2px; white-space: nowrap; letter-spacing: .1em; border: 1px solid rgba(255,255,255,.4); }
+.monitor-strip strong { font-size: 16px; display: block; margin-bottom: 2px; }
+.monitor-strip p { font-size: 12px; color: rgba(255,255,255,.8); flex: 1; }
+.monitor-spots { font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: 600; white-space: nowrap; }
+.price-table { width: 100%; border-collapse: collapse; }
+.price-table th { text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--pale); letter-spacing: .08em; }
+.price-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--sandl); }
+.price-table tr:last-child td { border-bottom: none; }
+.p-normal { color: var(--text); font-weight: 500; }
+.p-monitor { color: var(--sky); font-weight: 700; }
+.price-note { text-align: center; margin-top: 14px; font-size: 12px; color: var(--muted); }
+
+/* ── FAQ ── */
+#faq { background: var(--sandl); }
+.faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 740px; margin: 0 auto; }
+.faq-item { background: var(--white); border-radius: 8px; overflow: hidden; }
+.faq-q {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 22px; cursor: pointer; font-size: 14px; font-weight: 500;
+  transition: background .2s;
+}
+.faq-q:hover { background: var(--sandl); }
+.faq-q-mark { color: var(--sky); font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; flex-shrink: 0; }
+.faq-q-text { flex: 1; }
+.faq-arrow { color: var(--sky2); font-size: 14px; transition: transform .3s; flex-shrink: 0; }
+.faq-a { display: none; padding: 4px 22px 18px 50px; font-size: 13px; color: var(--muted); line-height: 1.75; }
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-arrow { transform: rotate(90deg); }
+
+/* ── CONTACT ── */
+#contact { background: var(--white); text-align: center; }
+.contact-vis {
+  height: 260px; margin: 0 -48px 72px;
+  background: linear-gradient(175deg, #dff0f7 0%, #b8e0f0 40%, #88c8e4 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-close { font-size: clamp(16px, 2vw, 22px); color: var(--text); font-weight: 300; margin-bottom: 48px; letter-spacing: .03em; line-height: 1.6; max-width: 560px; margin-left: auto; margin-right: auto; }
+.form-wrap { max-width: 580px; margin: 0 auto; text-align: left; }
+.form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.fg label { font-size: 12px; color: var(--muted); letter-spacing: .08em; }
+.fg input, .fg select, .fg textarea {
+  border: 1px solid var(--pale); background: var(--sandl);
+  color: var(--text); padding: 12px 16px; border-radius: 6px;
+  font-size: 14px; font-family: inherit; transition: .2s;
+  font-weight: 300;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--sky2); background: var(--white); }
+.fg textarea { resize: vertical; min-height: 120px; }
+.btn-submit {
+  width: 100%; background: var(--sky); color: var(--white);
+  border: none; padding: 16px; border-radius: 30px;
+  font-size: 15px; font-weight: 500; cursor: pointer;
+  letter-spacing: .1em; transition: .25s; margin-top: 8px; font-family: inherit;
+}
+.btn-submit:hover { background: var(--sky2); box-shadow: 0 8px 28px rgba(74,154,184,.3); transform: translateY(-2px); }
+.ig-link { margin-top: 24px; font-size: 13px; color: var(--muted); }
+.ig-link a { color: var(--sky); text-decoration: none; }
+
+/* ── FOOTER ── */
+footer { background: var(--text); color: rgba(255,255,255,.5); text-align: center; padding: 32px 24px; font-size: 12px; letter-spacing: .08em; }
+footer strong { color: var(--sky2); }
+
+/* ── WORKS (ported from React) ── */
+.works-heading { text-align: center; margin-bottom: 48px; }
+.works-heading h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3.5vw,40px); font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.works-heading .sub { font-size: 11px; color: var(--muted); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 16px; }
+.works-heading .bar { width: 64px; height: 4px; background: var(--sky); margin: 0 auto; border-radius: 2px; }
+.works-cat-label { font-size: 11px; font-weight: 700; color: var(--sky); letter-spacing: .18em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.works-cat-label::after { content:''; flex: 1; height: 1px; background: #e2e8f0; }
+.banner-grid-top { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 12px; }
+.banner-grid-bot { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.banner-card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); cursor: pointer; background: #fff; transition: box-shadow .2s; }
+.banner-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.15); }
+.banner-thumb { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.banner-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.banner-card:hover .banner-thumb img { transform: scale(1.05); }
+.banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; transition: background .3s; }
+.banner-card:hover .banner-overlay { background: rgba(0,0,0,.5); }
+.banner-overlay span { color: #fff; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity .3s; }
+.banner-card:hover .banner-overlay span { opacity: 1; }
+.banner-label { padding: 8px 10px; font-size: 11px; font-weight: 700; color: var(--text); line-height: 1.4; }
+.web-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.web-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,.08); overflow: hidden; transition: box-shadow .2s; }
+.web-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,.14); }
+.web-thumb { height: 176px; overflow: hidden; background: #f1f5f9; }
+.web-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.web-body { padding: 16px; }
+.web-body h3 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+.web-body p { font-size: 12px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
+.web-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.web-tags span { font-size: 11px; background: #f1f5f9; border: 1px solid #e2e8f0; color: #64748b; padding: 2px 10px; border-radius: 20px; }
+.web-actions { display: flex; gap: 8px; }
+.btn-doc { font-size: 11px; font-weight: 700; color: var(--text); border: 1px solid var(--text); padding: 5px 14px; border-radius: 20px; background: none; cursor: pointer; font-family: inherit; transition: .2s; }
+.btn-doc:hover { background: var(--text); color: #fff; }
+.btn-link { font-size: 11px; font-weight: 700; color: var(--sky); border: 1px solid var(--sky); padding: 5px 14px; border-radius: 20px; text-decoration: none; transition: .2s; }
+.btn-link:hover { background: var(--sky); color: #fff; }
+/* ── MODALS ── */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 200; display: flex; align-items: center; justify-content: center; padding: 32px 16px; overflow-y: auto; }
+.modal-close { position: absolute; top: -36px; right: 0; color: #fff; font-size: 22px; background: none; border: none; cursor: pointer; line-height: 1; }
+.modal-close:hover { opacity: .7; }
+.works-modal-inner { position: relative; max-width: 960px; width: 100%; }
+.works-modal-inner img { width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 4px; }
+.slide-modal-inner { position: relative; max-width: 960px; width: 100%; }
+.slide-modal-inner .slide-img-wrap { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,.3); }
+.slide-modal-inner .slide-img-wrap img { width: 100%; height: auto; max-height: 85vh; object-fit: contain; display: block; }
+.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; background: rgba(0,0,0,.5); border: none; border-radius: 50%; color: #fff; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; z-index: 10; }
+.slide-btn:hover { background: rgba(0,0,0,.75); }
+.slide-btn-prev { left: 12px; }
+.slide-btn-next { right: 12px; }
+.slide-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.slide-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.35); border: none; cursor: pointer; transition: background .2s; padding: 0; }
+.slide-dot.active { background: #fff; }
+.slide-counter { text-align: center; color: rgba(255,255,255,.6); font-size: 12px; margin-top: 6px; }
+
+/* ── MISC ── */
+.top-btn {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--sky); color: #fff; border: none;
+  font-size: 18px; cursor: pointer; box-shadow: 0 4px 16px rgba(74,154,184,.4);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .3s, transform .3s, background .2s;
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+}
+.top-btn.visible { opacity: 1; transform: none; pointer-events: auto; }
+.top-btn:hover { background: var(--sky2); }
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  position: fixed; top: 20px; right: 20px; z-index: 300;
+  background: none; border: none; cursor: pointer; padding: 8px;
+  flex-direction: column; gap: 5px;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px; background: #fff;
+  border-radius: 2px; transition: all .3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE MENU PANEL ── */
+.sp-menu {
+  display: none;
+  position: fixed; top: 0; right: -100%; bottom: 0; width: 70%;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  flex-direction: column; justify-content: center;
+  padding: 48px 40px;
+  gap: 32px;
+  transition: right .35s ease;
+}
+.sp-menu.open { right: 0; }
+.sp-menu a {
+  color: #fff; text-decoration: none;
+  font-size: 15px; font-weight: 500;
+  letter-spacing: .15em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.sp-menu .sp-lang {
+  display: flex; gap: 10px; align-items: center;
+  color: #fff; font-size: 13px; letter-spacing: .1em;
+}
+.sp-menu .sp-lang button {
+  background: none; border: none; color: rgba(255,255,255,.7);
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  font-family: inherit; padding: 0; letter-spacing: .1em;
+}
+.sp-menu .sp-lang button.active { color: #fff; font-weight: 700; }
+.sp-menu .sp-lang .sep { color: rgba(255,255,255,.3); }
+.sp-menu .sp-cta {
+  background: none; border: 1px solid rgba(255,255,255,.5);
+  color: #fff; font-size: 13px; font-weight: 500;
+  letter-spacing: .1em; padding: 10px 20px; border-radius: 24px;
+  cursor: pointer; font-family: inherit; white-space: nowrap;
+  align-self: flex-start; transition: background .2s;
+}
+.sp-menu .sp-cta:hover { background: rgba(255,255,255,.15); }
+
+@media (max-width: 768px) {
+  .side-right { display: none; }
+  .hamburger { display: flex; }
+  .sp-menu { display: flex; }
+  header { padding: 0 20px; top: 16px; left: 16px; }
+  #fv {
+    background-position: -200px center;
+    align-items: center;
+    padding: 120px 24px 80px;
+    text-align: center;
+  }
+  #fv::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(0,0,0,.35);
+    pointer-events: none; z-index: 1;
+  }
+  .fv-content { z-index: 2; }
+  .fv-content { max-width: 100%; padding: 0; margin-right: 0; text-align: center; }
+  .fv-sub { margin: 0 auto 40px; }
+  section { padding: 72px 24px; }
+  .reasons-grid, .services-grid { grid-template-columns: 1fr; }
+  .banner-grid-top { grid-template-columns: 1fr 1fr; }
+  .banner-grid-bot { grid-template-columns: 1fr 1fr; }
+  .web-grid { grid-template-columns: 1fr; }
+  .target-wrap, .about-grid { grid-template-columns: 1fr; }
+  .target-vis { height: 200px; }
+  .target-vis-business { background-position: center top !important; }
+  #target { padding: 72px 24px; }
+  .flow-steps { flex-direction: column; gap: 16px; }
+  .flow-step:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; }
+  .flow-step-inner { width: 100%; }
+  .form-row2 { grid-template-columns: 1fr; }
+  .contact-vis { margin: 0 -24px 48px; }
+  .photo-ocean-sp { background-position: left center !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Kazuki Yoshida<span style="display:block;font-size:11px;font-weight:400;letter-spacing:.08em;color:rgba(255,255,255,.8);font-family:'Noto Sans JP',sans-serif;margin-top:1px;text-shadow:0 1px 6px rgba(0,0,0,.5);">観光・サービス集客支援Webデザイナー</span></div>
+</header>
+
+<!-- HAMBURGER -->
+<button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="メニューを開く">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- SP MENU PANEL -->
+<div class="sp-menu" id="sp-menu">
+  <a href="#reasons" onclick="closeMenu()" data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
+  <a href="#services" onclick="closeMenu()" data-ja="サービス" data-en="Services">サービス</a>
+  <a href="#works" onclick="closeMenu()" data-ja="制作実績" data-en="Work">制作実績</a>
+  <a href="#about" onclick="closeMenu()" data-ja="プロフィール" data-en="About">プロフィール</a>
+  <a href="#faq" onclick="closeMenu()" data-ja="FAQ" data-en="FAQ">FAQ</a>
+  <div class="sp-lang">
+    <button onclick="setLang('ja');closeMenu()" id="sp-btn-ja" class="active">JP</button>
+    <span class="sep">/</span>
+    <button onclick="setLang('en');closeMenu()" id="sp-btn-en">EN</button>
+  </div>
+  <button class="sp-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMenu()"
+    data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button>
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<div class="side-right">
+  <nav>
+    <a href="#reasons"  data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
+    <a href="#services" data-ja="サービス"     data-en="Services">サービス</a>
+    <a href="#works"    data-ja="制作実績"     data-en="Work">制作実績</a>
+    <a href="#about"    data-ja="プロフィール" data-en="About">プロフィール</a>
+    <a href="#faq"      data-ja="FAQ"         data-en="FAQ">FAQ</a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button id="btn-ja" class="active" onclick="setLang('ja')">JP</button>
+      <span class="sep">/</span>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+      data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button>
+  </div>
+</div>
+
+<!-- FV -->
+<section id="fv">
+  <div class="fv-content">
+    <h1 class="fv-h1">
+      <span data-ja="知られていない魅力を、<br>デザインで<em>選ばれる理由</em>へ。" data-en="Turn hidden appeal into<br>a reason to be <em>chosen</em>.">知られていない魅力を、<br>デザインで<em>選ばれる理由</em>へ。</span>
+    </h1>
+    <p class="fv-sub"
+      data-ja="ホテル業界10年以上 × 留学経験5年を活かして<br>店舗の魅力をWebデザインでサポートします。"
+      data-en="10+ years in hotel &amp; tourism × 5 years abroad.<br>I support your business with web design that showcases your appeal.">ホテル業界10年以上 × 留学経験5年を活かして<br>店舗の魅力をWebデザインでサポートします。</p>
+    <button class="btn-fv" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+      data-ja="まずはご相談を" data-en="Let's Talk">まずはご相談を</button>
+  </div>
+  <p class="fv-scroll" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);">scroll ↓</p>
+</section>
+
+<!-- EMPATHY -->
+<section id="empathy" style="background:var(--white)">
+  <div class="inner" style="text-align:center">
+    <h2 class="s-title" data-ja="こんなお悩みありませんか？" data-en="Does any of this sound familiar?">こんなお悩みありませんか？</h2>
+    <ul class="check-list" id="check-list"></ul>
+    <p class="e-close" id="empathy-close" data-ja="ひとつでも当てはまったら、お気軽にご相談ください。" data-en="If even one resonates, please feel free to reach out.">ひとつでも当てはまったら、お気軽にご相談ください。</p>
+  </div>
+</section>
+
+<!-- PHOTO 1 : OCEAN -->
+<div class="photo-full photo-ocean-sp" style="background: url('img/fv_hero2.png') center center / cover no-repeat;">
+</div>
+
+<!-- REASONS -->
+<section id="reasons">
+  <div class="inner">
+    <h2 class="s-title" data-ja="選ばれる<span style='font-family:Cormorant Garamond,serif;font-size:1.4em;font-style:italic;color:var(--sky);vertical-align:baseline;'>3</span>つの理由" data-en="<span style='font-family:Cormorant Garamond,serif;font-size:1.4em;font-style:italic;color:var(--sky);'>3</span> Reasons to Choose Me">選ばれる<span style="font-family:'Cormorant Garamond',serif;font-size:1.4em;font-style:italic;color:var(--sky);vertical-align:-0.15em;line-height:1;">3</span>つの理由</h2>
+    <div class="reasons-grid" id="reasons-grid"></div>
+  </div>
+</section>
+
+<!-- TARGET -->
+<section id="target">
+  <div class="inner">
+    <h2 class="s-title" data-ja="どんな方のお役に立てるか" data-en="Who I Can Help">どんな方のお役に立てるか</h2>
+    <div class="target-wrap">
+      <div class="target-card" id="business">
+        <div class="target-vis target-vis-a target-vis-business" style="background: url('img/target_business.png') center -30px / cover no-repeat;">
+          <span class="target-tag" data-ja="事業者の方へ" data-en="For Businesses">事業者の方へ</span>
+        </div>
+        <div class="target-body">
+          <h3 data-ja="地域でお店やサービスを営む方へ" data-en="For local business owners">地域でお店やサービスを営む方へ</h3>
+          <p data-ja="ホテル・旅館、カフェ、飲食店、観光体験サービスなど、地域で事業を営む方に向けて、魅力が伝わり、予約・来店につながるWebデザインをご提案します。" data-en="For hotels, ryokan, cafés, restaurants, and tourism experience services — I propose web designs that communicate your appeal and drive bookings and visits.">ホテル・旅館、カフェ、飲食店、観光体験サービスなど、地域で事業を営む方に向けて、魅力が伝わり、予約・来店につながるWebデザインをご提案します。</p>
+          <p data-ja="「良さはあるのに伝わっていない」「SNSやWebからの集客を整えたい」といったお悩みに対し、Webサイト・LP・バナー・SNS投稿などを通じて、お客様が行動しやすい見せ方を一緒に整えます。" data-en="Whether you feel your appeal isn't coming through, or you want to strengthen your web and social presence, I work with you to create designs that make it easy for customers to take action.">「良さはあるのに伝わっていない」「SNSやWebからの集客を整えたい」といったお悩みに対し、Webサイト・LP・バナー・SNS投稿などを通じて、お客様が行動しやすい見せ方を一緒に整えます。</p>
+          <p class="target-services" data-ja="バナー / チラシ / 名刺 / LP / ホームページ / SNS投稿デザイン" data-en="Banners / Flyers / Business cards / LPs / Websites / SNS post design">バナー / チラシ / 名刺 / LP / ホームページ / SNS投稿デザイン</p>
+        </div>
+      </div>
+      <div class="target-card" id="government">
+        <div class="target-vis target-vis-b" style="background: url('img/target_government.png') center center / cover no-repeat;">
+          <span class="target-tag" data-ja="自治体・団体の方へ" data-en="For Local Governments">自治体・団体の方へ</span>
+        </div>
+        <div class="target-body">
+          <h3 data-ja="地域の魅力を届けたい方へ" data-en="For those who want to share their region's appeal">地域の魅力を届けたい方へ</h3>
+          <p data-ja="自治体、観光協会、地域団体の方に向けて、観光資源や暮らしの魅力をわかりやすく整理し、地域の認知拡大につながるWebデザインをご提案します。" data-en="For local governments, tourism associations, and regional organizations — I help organize your tourism and lifestyle appeal into clear, accessible web designs that expand local awareness.">自治体、観光協会、地域団体の方に向けて、観光資源や暮らしの魅力をわかりやすく整理し、地域の認知拡大につながるWebデザインをご提案します。</p>
+          <p data-ja="観光・宿泊・グルメ・移住促進などの情報を、見る人が「行ってみたい」「知りたい」と感じられる形に整え、地域の魅力発信をサポートします。" data-en="From tourism and lodging to food and relocation promotion, I shape information so viewers feel 'I want to go' or 'I want to know more' — supporting your region's outreach.">観光・宿泊・グルメ・移住促進などの情報を、見る人が「行ってみたい」「知りたい」と感じられる形に整え、地域の魅力発信をサポートします。</p>
+          <p class="target-services" data-ja="チラシ / LP / ホームページ / バナー / 多言語対応 / コピー整理" data-en="Flyers / LPs / Websites / Banners / Multilingual / Copy design">チラシ / LP / ホームページ / バナー / 多言語対応 / コピー整理</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="inner">
+    <span class="s-label" data-ja="サービス" data-en="Services">サービス</span>
+    <h2 class="s-title" data-ja="できること" data-en="What I Offer">できること</h2>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+
+<!-- WORKS -->
+<section id="works" style="background:var(--sandl)">
+  <div class="inner">
+    <span class="s-label" data-ja="制作実績" data-en="Works">制作実績</span>
+    <h2 class="s-title" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</h2>
+
+    <!-- Banner: 7作品 -->
+    <p class="works-cat-label">Banner · 7作品</p>
+    <div class="banner-grid-top">
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_3_newyear_sale.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_3_newyear_sale_top_img.jpg" alt="新春初売りセール開催" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">新春初売りセール開催</div>
+      </div>
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_2_okinawa.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_2_okinawa_top_img.jpg" alt="夏の沖縄リゾート旅行" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">夏の沖縄リゾート旅行</div>
+      </div>
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_1_programing.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_1_programing_top_img.jpg" alt="子ども向けプログラミング教室" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">子ども向けプログラミング教室</div>
+      </div>
+    </div>
+    <div class="banner-grid-bot">
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_6_cafe.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_6_cafe_top_img.jpg" alt="カフェオープン記念バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">カフェオープン記念バナー</div>
+      </div>
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_5_restaurant.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_5_restaurant_top_img.jpg" alt="シェフ特製の新メニュー登場" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">シェフ特製の新メニュー登場</div>
+      </div>
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_4_englishschool.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_4_englishschool_top_img.jpg" alt="幼児・小学生向け英会話教室" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">幼児・小学生向け英会話教室</div>
+      </div>
+      <div class="banner-card" onclick="openWorksModal('works/banners/banner_7_spring.png')">
+        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_7_spring_top_img.jpg" alt="お花見スポット・イベント情報" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+        <div class="banner-label">お花見スポット・イベント情報</div>
+      </div>
+    </div>
+
+    <!-- Web / LP -->
+    <p class="works-cat-label" style="margin-top:40px;">Web / LP</p>
+    <div class="web-grid">
+      <div class="web-card">
+        <div class="web-thumb"><img src="works/dogrun/images/main.jpg" alt="ドッグランカフェ" loading="lazy"></div>
+        <div class="web-body">
+          <h3>ドッグラン＆カフェ Zero Wan（ホームページ）</h3>
+          <p>ドッグランとカフェを組み合わせた複合施設のコーポレートサイト。ナビゲーション設計とビジュアルの統一感を意識して制作。</p>
+          <div class="web-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="web-actions">
+            <button class="btn-doc" onclick="openSlideModal(['works/dogrun/dogrun_doc.png'])">資料を見る</button>
+            <a class="btn-link" href="works/dogrun/index.html" target="_blank" rel="noopener">別タブで開く →</a>
+          </div>
+        </div>
+      </div>
+      <div class="web-card">
+        <div class="web-thumb"><img src="works/lp/lmc_lp.jpg" alt="LINEマーケティングLP" loading="lazy"></div>
+        <div class="web-body">
+          <h3>LINEマーケティングコンサルタント養成講座（ランディングページ）</h3>
+          <p>マーケティング講座の受講意欲を高めるランディングページ。情報量が多い中でも読みやすいレイアウトを追求。</p>
+          <div class="web-tags"><span>HTML</span><span>CSS</span></div>
+          <div class="web-actions">
+            <button class="btn-doc" onclick="openSlideModal(['works/lp/lmc_doc/lmc_doc_01.png','works/lp/lmc_doc/lmc_doc_02.png'])">資料を見る</button>
+            <a class="btn-link" href="works/lp/index.html" target="_blank" rel="noopener">別タブで開く →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Works Modal (banner full image) -->
+<div id="works-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)closeWorksModal()">
+  <div class="works-modal-inner">
+    <button class="modal-close" onclick="closeWorksModal()">✕</button>
+    <img id="works-modal-img" src="" alt="">
+  </div>
+</div>
+
+<!-- Slide Modal (docs) -->
+<div id="slide-modal" class="modal-backdrop" style="display:none;background:rgba(0,0,0,.78);" onclick="if(event.target===this)closeSlideModal()">
+  <div class="slide-modal-inner">
+    <button class="modal-close" onclick="closeSlideModal()">✕</button>
+    <div class="slide-img-wrap"><img id="slide-modal-img" src="" alt=""></div>
+    <button class="slide-btn slide-btn-prev" id="slide-prev" onclick="slideMove(-1)">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="slide-btn slide-btn-next" id="slide-next" onclick="slideMove(1)">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="slide-dots" id="slide-dots"></div>
+    <p class="slide-counter" id="slide-counter"></p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo" style="position:relative;overflow:hidden;">
+          <img src="img/profile_img.png" alt="かずき（Kazuki）" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;" onerror="this.style.display='none'">
+        </div>
+        <button
+          onclick="openSlideModal(['slides/slide_1.png','slides/slide_2.png','slides/slide_3.png','slides/slide_4.png'])"
+          style="display:flex;align-items:center;gap:8px;margin:16px auto 0;padding:10px 28px;border:2px solid var(--text);background:none;color:var(--text);font-size:13px;font-weight:700;border-radius:8px;cursor:pointer;font-family:inherit;transition:.2s;letter-spacing:.05em;"
+          onmouseover="this.style.background='var(--text)';this.style.color='#fff'"
+          onmouseout="this.style.background='none';this.style.color='var(--text)'"
+          data-ja="詳細を見る" data-en="Learn More">詳細を見る →</button>
+      </div>
+      <div class="about-text">
+        <span class="s-label" data-ja="プロフィール" data-en="About">プロフィール</span>
+        <h2>かずき（Kazuki）</h2>
+        <p style="color:var(--sky);font-size:13px;font-weight:500;margin-bottom:20px;letter-spacing:.05em;">フリーランス Webデザイナー</p>
+        <div id="about-story">
+          <p data-ja="ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。" data-en="After years in hotel hospitality and event planning, I became an independent web designer. I work alongside clients who aren't sure how to communicate their message, crafting designs that resonate and drive action. Information structure, user flow design, and working backward from goals are where I shine.">ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。</p>
+        </div>
+        <div class="skills-block">
+          <p class="skills-label" data-ja="スキル・使用ツール" data-en="Skills & Tools">スキル・使用ツール</p>
+          <p class="skills-text">Photoshop / Illustrator / HTML / CSS / Figma / STUDIO / WordPress / Canva</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO 3 : SKY -->
+<div class="photo-full" style="height:45vh; background: url('img/photo_sky.png') center center / cover no-repeat;">
+</div>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="inner">
+    <h2 class="s-title" data-ja="制作の流れ" data-en="How It Works">制作の流れ</h2>
+    <div class="flow-divider"></div>
+    <div class="flow-steps" id="flow-steps"></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--sandl)">
+  <div class="inner">
+    <span class="s-label" data-ja="料金の目安" data-en="Pricing">料金の目安</span>
+    <h2 class="s-title" data-ja="Pricing<small>まずは相談・お見積り無料</small>" data-en="Pricing<small>Free initial consultation</small>">Pricing<small>まずは相談・お見積り無料</small></h2>
+    <div class="monitor-strip">
+      <span class="monitor-badge" data-ja="ローンチ記念" data-en="Launch Special">ローンチ記念</span>
+      <div>
+        <strong data-ja="モニター価格 ─ 通常より30%OFF" data-en="Monitor Pricing — 30% Off">モニター価格 ─ 通常より30%OFF</strong>
+        <p data-ja="実績掲載＋お客様の声のご提供が条件。事業者向けのみ。" data-en="Requires portfolio feature + client review. For businesses only.">実績掲載＋お客様の声のご提供が条件。事業者向けのみ。</p>
+      </div>
+      <div class="monitor-spots" data-ja="先着 3 名" data-en="First 3">先着 3 名</div>
+    </div>
+    <table class="price-table" id="price-table">
+      <thead><tr>
+        <th data-ja="サービス" data-en="Service">サービス</th>
+        <th data-ja="通常料金" data-en="Regular">通常料金</th>
+        <th data-ja="モニター価格" data-en="Monitor">モニター価格</th>
+      </tr></thead>
+      <tbody id="price-body"></tbody>
+    </table>
+    <p class="price-note" data-ja="※ 税別・目安。制作規模により変動します。" data-en="※ Before tax. Approximate. May vary.">※ 税別・目安。制作規模により変動します。</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--sandl)">
+  <div class="inner">
+    <span class="s-label" data-ja="よくある質問" data-en="FAQ">よくある質問</span>
+    <h2 class="s-title" data-ja="FAQ" data-en="FAQ">FAQ</h2>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-vis" style="background: url('img/photo_calm.png') center center / cover no-repeat;">
+    </div>
+    <span class="s-label" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</span>
+    <p class="contact-close" data-ja="あなたの「いい場所・いいお店」を、ちゃんと届く形にしませんか？" data-en="Ready to turn your wonderful place into something that truly reaches people?">あなたの「いい場所・いいお店」を、ちゃんと届く形にしませんか？</p>
+    <form class="form-wrap" action="https://formsubmit.co/kazuki.webdesign24@gmail.com" method="POST">
+      <!-- FormSubmit設定 -->
+      <input type="hidden" name="_subject" value="【ポートフォリオサイト】お問い合わせが届きました">
+      <input type="hidden" name="_next" value="https://kazukiyoshida.github.io/thanks">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="form-row2">
+        <div class="fg"><label data-ja="お名前 *" data-en="Name *">お名前 *</label><input type="text" name="name" placeholder="山田 太郎" required></div>
+        <div class="fg"><label data-ja="事業者名（任意）" data-en="Business (optional)">事業者名（任意）</label><input type="text" name="company"></div>
+      </div>
+      <div class="form-row2">
+        <div class="fg"><label data-ja="種別" data-en="Type">種別</label>
+          <select name="type">
+            <option data-ja="事業者" data-en="Business">事業者</option>
+            <option data-ja="自治体" data-en="Local government">自治体</option>
+            <option data-ja="その他" data-en="Other">その他</option>
+          </select>
+        </div>
+        <div class="fg"><label data-ja="メール *" data-en="Email *">メール *</label><input type="email" name="email" placeholder="example@mail.com" required></div>
+      </div>
+      <div class="fg"><label data-ja="相談内容 *" data-en="Message *">相談内容 *</label><textarea name="message" required></textarea></div>
+      <button type="submit" class="btn-submit" data-ja="送信する" data-en="Send">送信する</button>
+    </form>
+    <p class="ig-link" data-ja="InstagramのDMもお気軽に → <a href='#'>@your_instagram</a>" data-en="DM on Instagram → <a href='#'>@your_instagram</a>">InstagramのDMもお気軽に → <a href="#">@your_instagram</a></p>
+  </div>
+</section>
+
+<footer>
+  <strong data-ja="観光・サービス集客支援Webデザイナー" data-en="Tourism & Hospitality Web Designer">観光・サービス集客支援Webデザイナー</strong><br>
+  <span data-ja="© 2026 [屋号]. All rights reserved." data-en="© 2026 [Brand name]. All rights reserved.">© 2026 [屋号]. All rights reserved.</span>
+</footer>
+
+<button class="top-btn" id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="TOPへ戻る">↑</button>
+
+<script>
+const lang_data = {
+  checklist:{
+    ja:["サイトを作ったのに、予約・問い合わせが増えない","他と同じような見た目になってしまい、選ばれる理由が伝わらない","外国人のお客様が増えているのに、英語対応ができていない","地域やお店の魅力を、うまく言葉にできていない","情報が多すぎる・少なすぎる、どう整理すればいいか分からない"],
+    en:["You built a site, but bookings and inquiries aren't growing.","Your site looks like everyone else's—nothing makes you stand out.","International guests are increasing, but you have no English on your site.","You struggle to put your region's or shop's appeal into words.","You're not sure whether your site has too much information or not enough."]
+  },
+  reasons:[
+    {v:"01",ja:{t:"観光・ホスピタリティの現場を知るデザイン",d:"ホテル業界で10年以上、国内外のお客様対応に携わってきた経験を活かし、宿泊・観光・飲食サービスの魅力をお客様視点に立って「伝わる形」へ整理します。"},en:{t:"Design from real hospitality experience",d:"Drawing on 10+ years in the hotel industry serving guests from Japan and abroad, I translate the appeal of lodging, tourism, and dining into clear, guest-centered communication."}},
+    {v:"02",ja:{t:'"行ってみたい"を予約・来店へつなげる',d:"見た目の美しさだけでなく、情報の伝わりやすさや予約・問い合わせまでの導線を意識して設計します。魅力が伝わり、次の行動につながるWebデザインをご提案します。"},en:{t:"Turn 'I want to go' into bookings & visits",d:"Beyond visual appeal, I design with clarity and user flow in mind—from information to inquiry. I create web designs that communicate your value and guide visitors to take action."}},
+    {v:"03",ja:{t:"国内外に伝わる、やさしい見せ方",d:"異文化理解と訪日観光客対応の経験を活かし、日本人だけでなく海外からの旅行者にも伝わる表現を意識します。地域やお店の魅力を、わかりやすく届けるデザインを制作します。"},en:{t:"Clear design that speaks to everyone",d:"Drawing on cross-cultural experience and working with inbound visitors, I craft designs that resonate with both Japanese and international audiences—making your local or business appeal easy to understand."}}
+  ],
+  services:[
+    {c:"blue",i:"🖼",ja:{t:"バナー制作",d:"SNS・広告で目に止まり、興味につなげるビジュアル。",b:"観光・宿泊・飲食・イベントなどの魅力を、短い時間で伝わる形に整理します。Instagram投稿やMeta広告、キャンペーン告知など、見る人の関心を引き、次の行動につながるバナーを制作します。"},en:{t:"Banner Design",d:"Visuals that stop the scroll and spark interest.",b:"I distill the appeal of tourism, lodging, dining, and events into a format that communicates in seconds — creating banners for Instagram, Meta ads, and campaigns that capture attention and drive action."}},
+    {c:"sand",i:"📄",ja:{t:"チラシ制作",d:"手に取った人が、迷わず動けるデザイン。",b:"イベント告知、店舗案内、観光PR、移住促進など、伝えたい情報をわかりやすく整理します。紙面の中で「何を見て、どこに行動すればいいか」が伝わるよう、情報設計と見やすさを大切に制作します。"},en:{t:"Flyer Design",d:"Design that moves people to act without hesitation.",b:"From event announcements and shop guides to tourism PR and relocation promotion, I organize what you want to communicate clearly. I design with information structure and readability in mind, so viewers know exactly where to look and what to do next."}},
+    {c:"pale",i:"💼",ja:{t:"名刺制作",d:"渡した瞬間に、印象と役割が伝わる一枚。",b:"事業内容や強み、人柄が伝わる名刺を制作します。交流会や商談の場で会話のきっかけになり、あとから見返したときにも「何をしている人か」が思い出されるデザインを目指します。"},en:{t:"Business Card",d:"One card that conveys impression and role at a glance.",b:"I design cards that communicate your work, strengths, and personality. Cards that spark conversation at networking events and leave a lasting impression that makes people remember who you are."}},
+    {c:"blue",i:"📱",ja:{t:"LPデザイン制作",d:"ひとつの目的に絞って、行動へつなげる縦長ページ。",b:"宿泊プラン、観光キャンペーン、イベント告知、サービス紹介などに合わせて、情報の流れを設計します。魅力・理由・安心材料・CTAを整理し、問い合わせや予約、申し込みにつながるLPを制作します。"},en:{t:"Landing Page Design",d:"Single-focus pages designed to drive one clear action.",b:"I design the flow of information to match your lodging plans, tourism campaigns, event announcements, and service introductions — structuring appeal, reasons, reassurances, and CTAs to lead to inquiries, bookings, and sign-ups."}},
+    {c:"sand",i:"🌐",ja:{t:"HPデザイン制作",d:"お店・宿・地域の魅力が伝わる、Web上の顔をつくります。",b:"初めて訪れた人にも、事業内容や魅力が伝わるホームページを制作します。見た目だけでなく、サービス内容、導線、問い合わせまでの流れを整え、信頼感と行動につながるサイト設計を行います。英語版のご相談も可能です。"},en:{t:"Website Design",d:"Creating your web presence that conveys the appeal of your shop, inn, or region.",b:"I build websites that communicate your business and appeal to first-time visitors. Beyond visuals, I design the service content, user flow, and inquiry process to build trust and drive action. English versions available."}},
+    {c:"pale",i:"✍",ja:{t:"コピー・情報整理",d:"伝えたい魅力を、届く言葉と見せ方に整えます。",b:"情報が多すぎても、少なすぎても、魅力は伝わりにくくなります。お客様目線で必要な情報を整理し、コピー・見出し・導線・視線の流れを整えることで、伝わりやすく行動しやすいデザインにつなげます。"},en:{t:"Copy & Info Design",d:"Shaping the appeal you want to convey into words and presentation that land.",b:"Too much or too little information makes it hard to communicate your appeal. I organize what's needed from the customer's perspective — refining copy, headlines, user flow, and visual hierarchy to create designs that communicate clearly and encourage action."}}
+  ],
+  flow:{
+    ja:[{n:"01",t:"相談・ヒアリング",d:"気軽にお話しください。"},
+        {n:"02",t:"構成・お見積り",d:"目的に合わせた提案をします。"},
+        {n:"03",t:"制作",d:"伝わるデザインを制作します。"},
+        {n:"04",t:"納品・修正",d:"確認後、納品します。"}],
+    en:[{n:"01",t:"Consultation",d:"Tell me about your needs."},
+        {n:"02",t:"Proposal",d:"I present a tailored plan and quote."},
+        {n:"03",t:"Design",d:"I create a design that connects."},
+        {n:"04",t:"Delivery",d:"Review, revise, and deliver."}]
+  },
+  pricing:{
+    ja:[["バナー制作","8,000円〜","5,600円〜"],["チラシ制作","15,000円〜","10,500円〜"],["名刺制作","8,000円〜","5,600円〜"],["LP制作","80,000円〜","56,000円〜"],["HP制作","120,000円〜","84,000円〜"]],
+    en:[["Banner","From ¥8,000","From ¥5,600"],["Flyer","From ¥15,000","From ¥10,500"],["Business Card","From ¥8,000","From ¥5,600"],["Landing Page","From ¥80,000","From ¥56,000"],["Website","From ¥120,000","From ¥84,000"]]
+  },
+  faq:{
+    ja:[["遠方でも対応できますか？","はい。オンラインで全国対応しています。"],
+        ["英語サイトも作れますか？","はい。英語・多言語サイトに対応しています。"],
+        ["何から相談すればいいですか？","「伝えたいこと」だけ教えてください。整理からお手伝いします。"],
+        ["写真やロゴがなくても大丈夫？","ご相談ください。対応可否をご案内します。"],
+        ["自治体の発注（見積・請求書）に対応できますか？","ご相談ください。対応可否をご案内します。"]],
+    en:[["Can you work with clients far away?","Yes. I work fully online with clients nationwide."],
+        ["Can you build English-language sites?","Yes. English and multilingual sites available."],
+        ["I don't know where to begin.","Just tell me what you'd like to convey. I'll help from there."],
+        ["No photos or logo yet—is that okay?","Please reach out and I'll let you know what's possible."],
+        ["Can you handle government procurement?","Please reach out and I'll let you know what's possible."]]
+  },
+  about:{
+    ja:["カナダで5年。帰国後はホテル業界で10年以上従事し、98%が海外のお客様と毎日向き合っています。","「伝わっていない、もったいない」——その気持ちでWebデザインを始めました。現場で磨いた相手目線と英語力を武器に、あなたの場所の魅力を届ける形にします。"],
+    en:["Five years in Canada. Since returning to Japan, I've spent 10+ years in the hotel industry, facing international guests—98% of them from overseas—every single day.","\"Such a shame it's not getting through.\" That feeling is why I started web design. With a guest-eye view built in the field and English fluency from my time abroad, I help you reach the people who need to find you."]
+  }
+};
+
+let cur = 'ja';
+
+function render(){
+  const L = cur;
+  // checklist
+  document.getElementById('check-list').innerHTML =
+    lang_data.checklist[L].map(t=>`<li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span>${t}</li>`).join('');
+  // reasons
+  const reasonVis = [
+    `<div class="reason-vis reason-vis-1" style="background:url('img/reason1_hotel.png') center center/cover no-repeat;"></div>`,
+    `<div class="reason-vis reason-vis-2" style="background:url('img/reason2_design.png') center center/cover no-repeat;"></div>`,
+    `<div class="reason-vis reason-vis-3" style="background:url('img/reason3_inbound.png') center center/cover no-repeat;"></div>`
+  ];
+  document.getElementById('reasons-grid').innerHTML =
+    lang_data.reasons.map((r,i)=>`
+      <div class="reason-card">
+        ${reasonVis[i]}
+        <div class="reason-body"><p class="reason-num">${r.v}</p><h3>${r[L].t}</h3><p>${r[L].d}</p></div>
+      </div>`).join('');
+  // services
+  const svc_top = {blue:'service-top-blue',sand:'service-top-sand',pale:'service-top-pale'};
+  document.getElementById('services-grid').innerHTML =
+    lang_data.services.map(s=>`
+      <div class="service-card">
+        <div class="service-top ${svc_top[s.c]}"></div>
+        <div class="service-body"><h3>${s[L].t}</h3><p class="service-copy">${s[L].d}</p>${s[L].b?`<p class="service-desc">${s[L].b}</p>`:''}</div>
+      </div>`).join('');
+  // about
+  document.getElementById('about-story').innerHTML =
+    lang_data.about[L].map(p=>`<p>${p}</p>`).join('');
+  // flow
+  const flowIcons = ['💬','📋','✏️','📦'];
+  document.getElementById('flow-steps').innerHTML =
+    lang_data.flow[L].map((s,i)=>`
+      <div class="flow-step">
+        <div class="flow-step-inner">
+          <div class="flow-num">${s.n}</div>
+          <div class="flow-icon">${flowIcons[i]}</div>
+          <h3>${s.t}</h3>
+          <p>${s.d}</p>
+        </div>
+      </div>`).join('');
+  // pricing
+  document.getElementById('price-body').innerHTML =
+    lang_data.pricing[L].map(r=>`
+      <tr><td>${r[0]}</td><td class="p-normal">${r[1]}</td><td class="p-monitor">${r[2]}</td></tr>`).join('');
+  // faq
+  document.getElementById('faq-list').innerHTML =
+    lang_data.faq[L].map((f,i)=>`
+      <div class="faq-item" id="fi${i}">
+        <div class="faq-q" onclick="tFaq(${i})">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">${f[0]}</span>
+          <span class="faq-arrow">▶</span>
+        </div>
+        <div class="faq-a">${f[1]}</div>
+      </div>`).join('');
+  // data-ja/en swap
+  document.querySelectorAll('[data-ja][data-en]').forEach(el=>{
+    const v = el.getAttribute('data-'+L);
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder=v;
+    else el.innerHTML=v;
+  });
+}
+
+function toggleMenu(){
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('sp-menu');
+  ham.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('sp-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function setLang(l){
+  cur=l;
+  document.getElementById('btn-ja').classList.toggle('active',l==='ja');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  render();
+}
+
+function tFaq(i){
+  document.getElementById('fi'+i).classList.toggle('open');
+}
+
+render();
+
+/* ── TOP button ── */
+window.addEventListener('scroll', function(){
+  const btn = document.getElementById('top-btn');
+  if (window.scrollY > 300) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+}, { passive: true });
+
+/* ── Works Modal ── */
+function openWorksModal(src) {
+  document.getElementById('works-modal-img').src = src;
+  document.getElementById('works-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeWorksModal() {
+  document.getElementById('works-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+/* ── Slide Modal ── */
+let _slides = [], _slideIdx = 0;
+function openSlideModal(slides) {
+  _slides = slides; _slideIdx = 0;
+  document.getElementById('slide-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  renderSlide();
+}
+function closeSlideModal() {
+  document.getElementById('slide-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function slideMove(dir) {
+  _slideIdx = (_slideIdx + dir + _slides.length) % _slides.length;
+  renderSlide();
+}
+function renderSlide() {
+  document.getElementById('slide-modal-img').src = _slides[_slideIdx];
+  const hasMult = _slides.length > 1;
+  document.getElementById('slide-prev').style.display = hasMult ? 'flex' : 'none';
+  document.getElementById('slide-next').style.display = hasMult ? 'flex' : 'none';
+  document.getElementById('slide-dots').innerHTML = hasMult
+    ? _slides.map((_, i) => `<button class="slide-dot${i===_slideIdx?' active':''}" onclick="slideGo(${i})"></button>`).join('')
+    : '';
+  document.getElementById('slide-counter').textContent = hasMult ? `${_slideIdx+1} / ${_slides.length}` : '';
+}
+function slideGo(i) { _slideIdx = i; renderSlide(); }
+document.addEventListener('keydown', (e) => {
+  if (document.getElementById('works-modal').style.display !== 'none') {
+    if (e.key === 'Escape') closeWorksModal();
+  }
+  if (document.getElementById('slide-modal').style.display !== 'none') {
+    if (e.key === 'Escape') closeSlideModal();
+    if (e.key === 'ArrowRight') slideMove(1);
+    if (e.key === 'ArrowLeft') slideMove(-1);
+  }
+});
+</script>
+</body>
+</html>
