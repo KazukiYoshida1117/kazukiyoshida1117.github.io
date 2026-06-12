@@ -601,7 +601,13 @@ footer strong { color: var(--sky2); }
 <section id="empathy" style="background:var(--white)">
   <div class="inner" style="text-align:center">
     <h2 class="s-title" data-ja="こんなお悩みありませんか？" data-en="Does any of this sound familiar?">こんなお悩みありませんか？</h2>
-    <ul class="check-list" id="check-list"></ul>
+    <ul class="check-list" id="check-list">
+      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="サイトを作ったのに、予約・問い合わせが増えない" data-en="You built a site, but bookings and inquiries aren't growing.">サイトを作ったのに、予約・問い合わせが増えない</span></li>
+      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="他と同じような見た目になってしまい、選ばれる理由が伝わらない" data-en="Your site looks like everyone else's—nothing makes you stand out.">他と同じような見た目になってしまい、選ばれる理由が伝わらない</span></li>
+      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="外国人のお客様が増えているのに、英語対応ができていない" data-en="International guests are increasing, but you have no English on your site.">外国人のお客様が増えているのに、英語対応ができていない</span></li>
+      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="地域やお店の魅力を、うまく言葉にできていない" data-en="You struggle to put your region's or shop's appeal into words.">地域やお店の魅力を、うまく言葉にできていない</span></li>
+      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="情報が多すぎる・少なすぎる、どう整理すればいいか分からない" data-en="You're not sure whether your site has too much information or not enough.">情報が多すぎる・少なすぎる、どう整理すればいいか分からない</span></li>
+    </ul>
     <p class="e-close" id="empathy-close" data-ja="ひとつでも当てはまったら、お気軽にご相談ください。" data-en="If even one resonates, please feel free to reach out.">ひとつでも当てはまったら、お気軽にご相談ください。</p>
   </div>
 </section>
@@ -614,7 +620,32 @@ footer strong { color: var(--sky2); }
 <section id="reasons">
   <div class="inner">
     <h2 class="s-title" data-ja="選ばれる<span style='font-family:Cormorant Garamond,serif;font-size:1.4em;font-style:italic;color:var(--sky);vertical-align:baseline;'>3</span>つの理由" data-en="<span style='font-family:Cormorant Garamond,serif;font-size:1.4em;font-style:italic;color:var(--sky);'>3</span> Reasons to Choose Me">選ばれる<span style="font-family:'Cormorant Garamond',serif;font-size:1.4em;font-style:italic;color:var(--sky);vertical-align:-0.15em;line-height:1;">3</span>つの理由</h2>
-    <div class="reasons-grid" id="reasons-grid"></div>
+    <div class="reasons-grid" id="reasons-grid">
+      <div class="reason-card">
+        <div class="reason-vis reason-vis-1" style="background:url('img/reason1_hotel.png') center center/cover no-repeat;"></div>
+        <div class="reason-body">
+          <p class="reason-num">01</p>
+          <h3 data-ja="観光・ホスピタリティの現場を知るデザイン" data-en="Design from real hospitality experience">観光・ホスピタリティの現場を知るデザイン</h3>
+          <p data-ja="ホテル業界で10年以上、国内外のお客様対応に携わってきた経験を活かし、宿泊・観光・飲食サービスの魅力をお客様視点に立って「伝わる形」へ整理します。" data-en="Drawing on 10+ years in the hotel industry serving guests from Japan and abroad, I translate the appeal of lodging, tourism, and dining into clear, guest-centered communication.">ホテル業界で10年以上、国内外のお客様対応に携わってきた経験を活かし、宿泊・観光・飲食サービスの魅力をお客様視点に立って「伝わる形」へ整理します。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-vis reason-vis-2" style="background:url('img/reason2_design.png') center center/cover no-repeat;"></div>
+        <div class="reason-body">
+          <p class="reason-num">02</p>
+          <h3 data-ja='"行ってみたい"を予約・来店へつなげる' data-en="Turn 'I want to go' into bookings &amp; visits">"行ってみたい"を予約・来店へつなげる</h3>
+          <p data-ja="見た目の美しさだけでなく、情報の伝わりやすさや予約・問い合わせまでの導線を意識して設計します。魅力が伝わり、次の行動につながるWebデザインをご提案します。" data-en="Beyond visual appeal, I design with clarity and user flow in mind—from information to inquiry. I create web designs that communicate your value and guide visitors to take action.">見た目の美しさだけでなく、情報の伝わりやすさや予約・問い合わせまでの導線を意識して設計します。魅力が伝わり、次の行動につながるWebデザインをご提案します。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-vis reason-vis-3" style="background:url('img/reason3_inbound.png') center center/cover no-repeat;"></div>
+        <div class="reason-body">
+          <p class="reason-num">03</p>
+          <h3 data-ja="国内外に伝わる、やさしい見せ方" data-en="Clear design that speaks to everyone">国内外に伝わる、やさしい見せ方</h3>
+          <p data-ja="異文化理解と訪日観光客対応の経験を活かし、日本人だけでなく海外からの旅行者にも伝わる表現を意識します。地域やお店の魅力を、わかりやすく届けるデザインを制作します。" data-en="Drawing on cross-cultural experience and working with inbound visitors, I craft designs that resonate with both Japanese and international audiences—making your local or business appeal easy to understand.">異文化理解と訪日観光客対応の経験を活かし、日本人だけでなく海外からの旅行者にも伝わる表現を意識します。地域やお店の魅力を、わかりやすく届けるデザインを制作します。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -904,15 +935,6 @@ footer strong { color: var(--sky2); }
 
 <script>
 const lang_data = {
-  checklist:{
-    ja:["サイトを作ったのに、予約・問い合わせが増えない","他と同じような見た目になってしまい、選ばれる理由が伝わらない","外国人のお客様が増えているのに、英語対応ができていない","地域やお店の魅力を、うまく言葉にできていない","情報が多すぎる・少なすぎる、どう整理すればいいか分からない"],
-    en:["You built a site, but bookings and inquiries aren't growing.","Your site looks like everyone else's—nothing makes you stand out.","International guests are increasing, but you have no English on your site.","You struggle to put your region's or shop's appeal into words.","You're not sure whether your site has too much information or not enough."]
-  },
-  reasons:[
-    {v:"01",ja:{t:"観光・ホスピタリティの現場を知るデザイン",d:"ホテル業界で10年以上、国内外のお客様対応に携わってきた経験を活かし、宿泊・観光・飲食サービスの魅力をお客様視点に立って「伝わる形」へ整理します。"},en:{t:"Design from real hospitality experience",d:"Drawing on 10+ years in the hotel industry serving guests from Japan and abroad, I translate the appeal of lodging, tourism, and dining into clear, guest-centered communication."}},
-    {v:"02",ja:{t:'"行ってみたい"を予約・来店へつなげる',d:"見た目の美しさだけでなく、情報の伝わりやすさや予約・問い合わせまでの導線を意識して設計します。魅力が伝わり、次の行動につながるWebデザインをご提案します。"},en:{t:"Turn 'I want to go' into bookings & visits",d:"Beyond visual appeal, I design with clarity and user flow in mind—from information to inquiry. I create web designs that communicate your value and guide visitors to take action."}},
-    {v:"03",ja:{t:"国内外に伝わる、やさしい見せ方",d:"異文化理解と訪日観光客対応の経験を活かし、日本人だけでなく海外からの旅行者にも伝わる表現を意識します。地域やお店の魅力を、わかりやすく届けるデザインを制作します。"},en:{t:"Clear design that speaks to everyone",d:"Drawing on cross-cultural experience and working with inbound visitors, I craft designs that resonate with both Japanese and international audiences—making your local or business appeal easy to understand."}}
-  ],
   services:[
     {c:"blue",i:"🖼",ja:{t:"バナー制作",d:"SNS・広告で目に止まり、興味につなげるビジュアル。",b:"観光・宿泊・飲食・イベントなどの魅力を、短い時間で伝わる形に整理します。Instagram投稿やMeta広告、キャンペーン告知など、見る人の関心を引き、次の行動につながるバナーを制作します。"},en:{t:"Banner Design",d:"Visuals that stop the scroll and spark interest.",b:"I distill the appeal of tourism, lodging, dining, and events into a format that communicates in seconds — creating banners for Instagram, Meta ads, and campaigns that capture attention and drive action."}},
     {c:"sand",i:"📄",ja:{t:"チラシ制作",d:"手に取った人が、迷わず動けるデザイン。",b:"イベント告知、店舗案内、観光PR、移住促進など、伝えたい情報をわかりやすく整理します。紙面の中で「何を見て、どこに行動すればいいか」が伝わるよう、情報設計と見やすさを大切に制作します。"},en:{t:"Flyer Design",d:"Design that moves people to act without hesitation.",b:"From event announcements and shop guides to tourism PR and relocation promotion, I organize what you want to communicate clearly. I design with information structure and readability in mind, so viewers know exactly where to look and what to do next."}},
@@ -957,21 +979,6 @@ let cur = 'ja';
 
 function render(){
   const L = cur;
-  // checklist
-  document.getElementById('check-list').innerHTML =
-    lang_data.checklist[L].map(t=>`<li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span>${t}</li>`).join('');
-  // reasons
-  const reasonVis = [
-    `<div class="reason-vis reason-vis-1" style="background:url('img/reason1_hotel.png') center center/cover no-repeat;"></div>`,
-    `<div class="reason-vis reason-vis-2" style="background:url('img/reason2_design.png') center center/cover no-repeat;"></div>`,
-    `<div class="reason-vis reason-vis-3" style="background:url('img/reason3_inbound.png') center center/cover no-repeat;"></div>`
-  ];
-  document.getElementById('reasons-grid').innerHTML =
-    lang_data.reasons.map((r,i)=>`
-      <div class="reason-card">
-        ${reasonVis[i]}
-        <div class="reason-body"><p class="reason-num">${r.v}</p><h3>${r[L].t}</h3><p>${r[L].d}</p></div>
-      </div>`).join('');
   // services
   const svc_top = {blue:'service-top-blue',sand:'service-top-sand',pale:'service-top-pale'};
   document.getElementById('services-grid').innerHTML =
