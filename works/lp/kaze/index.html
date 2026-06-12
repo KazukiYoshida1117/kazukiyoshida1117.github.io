@@ -39,6 +39,10 @@
   .view img { max-width: 100%; height: auto; box-shadow: 0 4px 24px rgba(0,0,0,.12); }
   #pc-view img { max-width: 1200px; }
   #sp-view img { max-width: 390px; }
+  @media (max-width: 768px) {
+    #pc-view img { max-width: 100%; }
+    body { overflow-x: hidden; }
+  }
 </style>
 </head>
 <body>
