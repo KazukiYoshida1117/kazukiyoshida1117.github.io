@@ -31,41 +31,31 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); line-height: 1.8; font-size: 15px; font-weight: 300; }
 
 /* ── HEADER ── */
-/* ── LOGO (fixed top-left) ── */
+/* ── HEADER (top bar) ── */
 header {
-  position: fixed; top: 32px; left: 100px; z-index: 100;
-  background: none; border: none; padding: 0;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(0,0,0,.42);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  display: flex; align-items: center; gap: 32px;
+  padding: 0 48px; height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px; font-weight: 600; color: #fff;
+  font-size: 22px; font-weight: 600; color: #fff;
   letter-spacing: .08em; white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+  text-shadow: 0 1px 6px rgba(0,0,0,.5); flex-shrink: 0;
 }
-
-/* ── RIGHT SIDEBAR ── */
-.side-right {
-  position: fixed; top: 0; bottom: 0; right: 0; z-index: 99;
-  width: auto;
-  display: flex; flex-direction: column; align-items: flex-start;
-  justify-content: center;
-  gap: 18px;
-  padding: 48px 100px 48px 32px;
-  background: rgba(0,0,0,.5);
-}
-nav { display: contents; }
+nav { display: flex; gap: 28px; align-items: center; flex: 1; justify-content: center; }
 nav a {
   color: #fff; text-decoration: none;
   font-size: 11px; font-weight: 500;
   letter-spacing: .15em; text-transform: uppercase;
-  transition: color .2s;
-  display: block; white-space: nowrap;
+  transition: color .2s; white-space: nowrap;
   text-shadow: 0 1px 6px rgba(0,0,0,.6);
 }
 nav a:hover { color: var(--sky); }
-.lang-toggle {
-  display: flex; gap: 6px; align-items: center;
-}
+.lang-toggle { display: flex; gap: 6px; align-items: center; }
 .lang-toggle button {
   background: none; border: none; color: #fff;
   font-size: 11px; font-weight: 500; letter-spacing: .1em;
@@ -73,23 +63,24 @@ nav a:hover { color: var(--sky); }
   text-shadow: 0 1px 6px rgba(0,0,0,.6);
 }
 .lang-toggle button.active { color: var(--sky); }
-.lang-toggle .sep { color: rgba(255,255,255,.5); font-size: 11px; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.lang-toggle .sep { color: rgba(255,255,255,.5); font-size: 11px; }
 .btn-cta {
-  background: none; color: #fff; border: none;
+  background: none; color: #fff; border: 1px solid rgba(255,255,255,.5);
   font-size: 11px; font-weight: 500; cursor: pointer;
-  letter-spacing: .15em; text-transform: uppercase;
-  transition: color .2s; font-family: inherit; padding: 0;
-  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+  letter-spacing: .12em; text-transform: uppercase;
+  transition: all .2s; font-family: inherit;
+  padding: 6px 16px; border-radius: 20px; white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
 }
-.btn-cta:hover { color: var(--sky); }
-.header-right { display: contents; }
+.btn-cta:hover { background: rgba(255,255,255,.15); color: #fff; }
+.header-right { display: flex; gap: 20px; align-items: center; flex-shrink: 0; }
 
 /* ── FV ── */
 #fv {
   min-height: 100vh;
   background: url('img/fv_hero.png') center center / cover no-repeat;
   display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
-  text-align: left; padding: 120px 200px 80px 0;
+  text-align: left; padding: 64px 120px 80px 0;
   position: relative; overflow: hidden;
 }
 .fv-content {
@@ -443,9 +434,8 @@ footer strong { color: var(--sky2); }
 /* ── HAMBURGER ── */
 .hamburger {
   display: none;
-  position: fixed; top: 20px; right: 20px; z-index: 300;
   background: none; border: none; cursor: pointer; padding: 8px;
-  flex-direction: column; gap: 5px;
+  flex-direction: column; gap: 5px; margin-left: auto; z-index: 300;
 }
 .hamburger span {
   display: block; width: 24px; height: 2px; background: #fff;
@@ -496,14 +486,15 @@ footer strong { color: var(--sky2); }
 .sp-menu .sp-cta:hover { background: rgba(255,255,255,.15); }
 
 @media (max-width: 768px) {
-  .side-right { display: none; }
+  header { padding: 0 20px; height: 56px; }
+  nav { display: none; }
+  .header-right { display: none; }
   .hamburger { display: flex; }
   .sp-menu { display: flex; }
-  header { padding: 0 20px; top: 16px; left: 16px; }
   #fv {
     background-position: -200px center;
     align-items: center;
-    padding: 120px 24px 80px;
+    padding: 56px 24px 80px;
     text-align: center;
   }
   #fv::before {
@@ -538,13 +529,27 @@ footer strong { color: var(--sky2); }
 
 <!-- HEADER -->
 <header>
-  <div class="logo">Kazuki Yoshida<span style="display:block;font-size:11px;font-weight:400;letter-spacing:.08em;color:rgba(255,255,255,.8);font-family:'Noto Sans JP',sans-serif;margin-top:1px;text-shadow:0 1px 6px rgba(0,0,0,.5);">観光・サービス専門LP / Webデザイナー</span></div>
+  <div class="logo">Kazuki Yoshida<span style="display:block;font-size:10px;font-weight:400;letter-spacing:.06em;color:rgba(255,255,255,.75);font-family:'Noto Sans JP',sans-serif;margin-top:1px;text-shadow:0 1px 6px rgba(0,0,0,.5);">観光・サービス専門LP / Webデザイナー</span></div>
+  <nav>
+    <a href="#reasons"  data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
+    <a href="#services" data-ja="サービス"     data-en="Services">サービス</a>
+    <a href="#works"    data-ja="制作実績"     data-en="Work">制作実績</a>
+    <a href="#about"    data-ja="プロフィール" data-en="About">プロフィール</a>
+    <a href="#faq"      data-ja="FAQ"         data-en="FAQ">FAQ</a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button id="btn-ja" class="active" onclick="setLang('ja')">JP</button>
+      <span class="sep">/</span>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+      data-ja="お気軽にご相談を" data-en="Let's Talk">お気軽にご相談を</button>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
 </header>
-
-<!-- HAMBURGER -->
-<button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="メニューを開く">
-  <span></span><span></span><span></span>
-</button>
 
 <!-- SP MENU PANEL -->
 <div class="sp-menu" id="sp-menu">
@@ -560,26 +565,6 @@ footer strong { color: var(--sky2); }
   </div>
   <button class="sp-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMenu()"
     data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button>
-</div>
-
-<!-- RIGHT SIDEBAR -->
-<div class="side-right">
-  <nav>
-    <a href="#reasons"  data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
-    <a href="#services" data-ja="サービス"     data-en="Services">サービス</a>
-    <a href="#works"    data-ja="制作実績"     data-en="Work">制作実績</a>
-    <a href="#about"    data-ja="プロフィール" data-en="About">プロフィール</a>
-    <a href="#faq"      data-ja="FAQ"         data-en="FAQ">FAQ</a>
-  </nav>
-  <div class="header-right">
-    <div class="lang-toggle">
-      <button id="btn-ja" class="active" onclick="setLang('ja')">JP</button>
-      <span class="sep">/</span>
-      <button id="btn-en" onclick="setLang('en')">EN</button>
-    </div>
-    <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-      data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button>
-  </div>
 </div>
 
 <!-- FV -->
