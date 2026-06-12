@@ -308,24 +308,22 @@ section { padding: 100px 48px; }
 .flow-divider { border-top: 1px dashed rgba(255,255,255,.2); margin-bottom: 48px; }
 
 /* ── PRICING ── */
-#pricing { background: var(--white); }
-.monitor-strip {
-  background: linear-gradient(135deg, var(--sky), var(--sky2));
-  color: var(--white); border-radius: 10px; padding: 24px 32px;
-  display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 36px;
-  box-shadow: 0 4px 24px rgba(74,154,184,.25);
-}
-.monitor-badge { background: rgba(255,255,255,.25); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 2px; white-space: nowrap; letter-spacing: .1em; border: 1px solid rgba(255,255,255,.4); }
-.monitor-strip strong { font-size: 16px; display: block; margin-bottom: 2px; }
-.monitor-strip p { font-size: 12px; color: rgba(255,255,255,.8); flex: 1; }
-.monitor-spots { font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: 600; white-space: nowrap; }
-.price-table { width: 100%; border-collapse: collapse; }
-.price-table th { text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--pale); letter-spacing: .08em; }
-.price-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--sandl); }
-.price-table tr:last-child td { border-bottom: none; }
-.p-normal { color: var(--text); font-weight: 500; }
-.p-monitor { color: var(--sky); font-weight: 700; }
-.price-note { text-align: center; margin-top: 14px; font-size: 12px; color: var(--muted); }
+#pricing { background: var(--sandl); }
+.price-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px; }
+.price-sub-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+.price-card { background: var(--white); border-radius: 12px; padding: 28px 24px; }
+.price-card-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.price-card-price { font-size: 26px; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--sky); margin-bottom: 10px; }
+.price-card-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--sandl); }
+.price-card-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.price-card-features li { font-size: 13px; color: var(--text); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+.price-card-features li::before { content: '✓'; color: var(--sky); flex-shrink: 0; font-size: 12px; margin-top: 2px; }
+.price-option-card { background: linear-gradient(135deg, var(--sky), var(--sky2)); border-radius: 12px; padding: 28px 32px; color: var(--white); display: flex; align-items: flex-start; gap: 32px; margin-bottom: 24px; }
+.price-option-badge { font-size: 10px; font-weight: 700; letter-spacing: .12em; background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.35); padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 10px; }
+.price-option-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.price-option-price { font-size: 26px; font-family: 'Cormorant Garamond', serif; font-weight: 600; white-space: nowrap; }
+.price-option-desc { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.7; flex: 1; }
+.price-note { text-align: center; margin-top: 8px; font-size: 12px; color: var(--muted); line-height: 1.9; }
 
 /* ── FAQ ── */
 #faq { background: var(--sandl); }
@@ -531,6 +529,8 @@ footer strong { color: var(--sky2); }
   .form-row2 { grid-template-columns: 1fr; }
   .contact-vis { margin: 0 -24px 48px; }
   .photo-ocean-sp { background-position: left center !important; }
+  .price-cards, .price-sub-cards { grid-template-columns: 1fr; }
+  .price-option-card { flex-direction: column; gap: 16px; }
 }
 </style>
 </head>
@@ -861,23 +861,78 @@ footer strong { color: var(--sky2); }
   <div class="inner">
     <span class="s-label" data-ja="料金の目安" data-en="Pricing">料金の目安</span>
     <h2 class="s-title" data-ja="Pricing<small>まずは相談・お見積り無料</small>" data-en="Pricing<small>Free initial consultation</small>">Pricing<small>まずは相談・お見積り無料</small></h2>
-    <div class="monitor-strip">
-      <span class="monitor-badge" data-ja="ローンチ記念" data-en="Launch Special">ローンチ記念</span>
-      <div>
-        <strong data-ja="モニター価格 ─ 通常より30%OFF" data-en="Monitor Pricing — 30% Off">モニター価格 ─ 通常より30%OFF</strong>
-        <p data-ja="実績掲載＋お客様の声のご提供が条件。事業者向けのみ。" data-en="Requires portfolio feature + client review. For businesses only.">実績掲載＋お客様の声のご提供が条件。事業者向けのみ。</p>
+
+    <div class="price-cards">
+      <div class="price-card">
+        <p class="price-card-title" data-ja="LPデザイン" data-en="Landing Page Design">LPデザイン</p>
+        <p class="price-card-price" data-ja="¥150,000〜" data-en="¥150,000〜">¥150,000〜</p>
+        <p class="price-card-desc" data-ja="予約・来店・問い合わせにつながる導線設計を重視したLPデザイン" data-en="LP design focused on user flow that leads to bookings, visits, and inquiries.">予約・来店・問い合わせにつながる導線設計を重視したLPデザイン</p>
+        <ul class="price-card-features">
+          <li data-ja="ヒアリング" data-en="Consultation">ヒアリング</li>
+          <li data-ja="構成設計" data-en="Structure planning">構成設計</li>
+          <li data-ja="ワイヤーフレーム作成" data-en="Wireframe">ワイヤーフレーム作成</li>
+          <li data-ja="PCデザイン" data-en="PC design">PCデザイン</li>
+          <li data-ja="スマホデザイン" data-en="Mobile design">スマホデザイン</li>
+          <li data-ja="レスポンシブ設計" data-en="Responsive design">レスポンシブ設計</li>
+        </ul>
       </div>
-      <div class="monitor-spots" data-ja="先着 3 名" data-en="First 3">先着 3 名</div>
+      <div class="price-card">
+        <p class="price-card-title" data-ja="ホームページデザイン" data-en="Website Design">ホームページデザイン</p>
+        <p class="price-card-price" data-ja="¥120,000〜" data-en="¥120,000〜">¥120,000〜</p>
+        <p class="price-card-desc" data-ja="事業やサービスの魅力を分かりやすく伝えるサイト設計" data-en="Site design that clearly communicates your business and services.">事業やサービスの魅力を分かりやすく伝えるサイト設計</p>
+        <ul class="price-card-features">
+          <li data-ja="ヒアリング" data-en="Consultation">ヒアリング</li>
+          <li data-ja="サイト構成設計" data-en="Site structure planning">サイト構成設計</li>
+          <li data-ja="トップページデザイン" data-en="Top page design">トップページデザイン</li>
+          <li data-ja="下層ページデザイン" data-en="Inner page design">下層ページデザイン</li>
+        </ul>
+      </div>
     </div>
-    <table class="price-table" id="price-table">
-      <thead><tr>
-        <th data-ja="サービス" data-en="Service">サービス</th>
-        <th data-ja="通常料金" data-en="Regular">通常料金</th>
-        <th data-ja="モニター価格" data-en="Monitor">モニター価格</th>
-      </tr></thead>
-      <tbody id="price-body"></tbody>
-    </table>
-    <p class="price-note" data-ja="※ 税別・目安。制作規模により変動します。" data-en="※ Before tax. Approximate. May vary.">※ 税別・目安。制作規模により変動します。</p>
+
+    <div class="price-sub-cards">
+      <div class="price-card">
+        <p class="price-card-title" data-ja="広告・SNSバナー制作" data-en="Ad & SNS Banner">広告・SNSバナー制作</p>
+        <p class="price-card-price" data-ja="¥8,000〜 / 1枚" data-en="¥8,000〜 / piece">¥8,000〜 / 1枚</p>
+        <p class="price-card-desc" data-ja="認知拡大・集客を目的とした広告クリエイティブ制作" data-en="Creative production for awareness and customer acquisition.">認知拡大・集客を目的とした広告クリエイティブ制作</p>
+        <ul class="price-card-features">
+          <li data-ja="Instagram広告" data-en="Instagram ads">Instagram広告</li>
+          <li data-ja="Meta広告" data-en="Meta ads">Meta広告</li>
+          <li data-ja="SNS投稿画像" data-en="SNS post images">SNS投稿画像</li>
+          <li data-ja="キャンペーンバナー" data-en="Campaign banners">キャンペーンバナー</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="price-card-title" data-ja="チラシ・フライヤー制作" data-en="Flyer & Leaflet">チラシ・フライヤー制作</p>
+        <p class="price-card-price" data-ja="¥30,000〜" data-en="¥30,000〜">¥30,000〜</p>
+        <p class="price-card-desc" data-ja="地域事業者・観光施設向け販促物制作" data-en="Promotional materials for local businesses and tourism facilities.">地域事業者・観光施設向け販促物制作</p>
+        <ul class="price-card-features">
+          <li data-ja="A4片面" data-en="A4 single-sided">A4片面</li>
+          <li data-ja="情報整理" data-en="Information organization">情報整理</li>
+          <li data-ja="レイアウト設計" data-en="Layout design">レイアウト設計</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="price-card-title" data-ja="名刺・ショップカード制作" data-en="Business Card / Shop Card">名刺・ショップカード制作</p>
+        <p class="price-card-price" data-ja="¥20,000〜" data-en="¥20,000〜">¥20,000〜</p>
+        <p class="price-card-desc" data-ja="第一印象と信頼感を高めるデザイン" data-en="Design that enhances first impressions and trust.">第一印象と信頼感を高めるデザイン</p>
+        <ul class="price-card-features">
+          <li data-ja="両面デザイン" data-en="Double-sided design">両面デザイン</li>
+          <li data-ja="QRコード対応" data-en="QR code support">QRコード対応</li>
+          <li data-ja="印刷データ納品" data-en="Print data delivery">印刷データ納品</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-option-card">
+      <div>
+        <span class="price-option-badge" data-ja="オプション" data-en="Option">オプション</span>
+        <p class="price-option-title" data-ja="英語版デザイン対応" data-en="English Design Support">英語版デザイン対応</p>
+        <p class="price-option-desc" data-ja="カナダ留学5年・ホテル業界での訪日外国人対応経験を活かし、インバウンド向けの情報設計にも対応します。" data-en="Drawing on 5 years in Canada and hotel experience with inbound visitors, I handle information design tailored for international audiences.">カナダ留学5年・ホテル業界での訪日外国人対応経験を活かし、インバウンド向けの情報設計にも対応します。</p>
+      </div>
+      <p class="price-option-price" data-ja="¥30,000〜" data-en="¥30,000〜">¥30,000〜</p>
+    </div>
+
+    <p class="price-note" data-ja="表示価格は目安となります。<br>制作内容・ページ数・ボリュームに応じてお見積りいたします。<br>まずはお気軽にご相談ください。" data-en="All prices are approximate before tax.<br>Final quotes vary based on scope, pages, and volume.<br>Feel free to reach out for a free consultation.">表示価格は目安となります。<br>制作内容・ページ数・ボリュームに応じてお見積りいたします。<br>まずはお気軽にご相談ください。</p>
   </div>
 </section>
 
@@ -952,10 +1007,6 @@ const lang_data = {
         {n:"03",t:"Design",d:"I create a design that connects."},
         {n:"04",t:"Delivery",d:"Review, revise, and deliver."}]
   },
-  pricing:{
-    ja:[["バナー制作","8,000円〜","5,600円〜"],["チラシ制作","15,000円〜","10,500円〜"],["名刺制作","8,000円〜","5,600円〜"],["LP制作","80,000円〜","56,000円〜"],["HP制作","120,000円〜","84,000円〜"]],
-    en:[["Banner","From ¥8,000","From ¥5,600"],["Flyer","From ¥15,000","From ¥10,500"],["Business Card","From ¥8,000","From ¥5,600"],["Landing Page","From ¥80,000","From ¥56,000"],["Website","From ¥120,000","From ¥84,000"]]
-  },
   faq:{
     ja:[["遠方でも対応できますか？","はい。オンラインで全国対応しています。"],
         ["英語サイトも作れますか？","はい。英語・多言語サイトに対応しています。"],
@@ -1001,10 +1052,6 @@ function render(){
           <p>${s.d}</p>
         </div>
       </div>`).join('');
-  // pricing
-  document.getElementById('price-body').innerHTML =
-    lang_data.pricing[L].map(r=>`
-      <tr><td>${r[0]}</td><td class="p-normal">${r[1]}</td><td class="p-monitor">${r[2]}</td></tr>`).join('');
   // faq
   document.getElementById('faq-list').innerHTML =
     lang_data.faq[L].map((f,i)=>`
