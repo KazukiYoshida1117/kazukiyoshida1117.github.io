@@ -462,8 +462,8 @@ footer strong { color: var(--sky2); }
   background: rgba(0,0,0,.5);
   backdrop-filter: blur(4px);
   z-index: 200;
-  flex-direction: column; justify-content: center;
-  padding: 48px 40px;
+  flex-direction: column; justify-content: flex-start;
+  padding: 20px 40px 48px;
   gap: 32px;
   transition: right .35s ease;
 }
@@ -494,14 +494,14 @@ footer strong { color: var(--sky2); }
 }
 .sp-menu .sp-cta:hover { background: rgba(255,255,255,.15); }
 .sp-close {
-  display: none;
-  position: fixed; top: 72px; right: 20px; z-index: 250;
+  display: flex; align-self: flex-end; flex-shrink: 0;
+  align-items: center; justify-content: center;
   background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.4);
   border-radius: 50%; cursor: pointer;
   color: #fff; font-size: 20px; line-height: 1;
   width: 44px; height: 44px;
-  align-items: center; justify-content: center;
   transition: background .2s;
+  margin-bottom: 12px;
 }
 .sp-close:hover { background: rgba(255,255,255,.35); }
 
@@ -573,6 +573,7 @@ footer strong { color: var(--sky2); }
 
 <!-- SP MENU PANEL -->
 <div class="sp-menu" id="sp-menu">
+  <button class="sp-close" onclick="closeMenu()" aria-label="メニューを閉じる">&#x2715;</button>
   <a href="#reasons" onclick="closeMenu()" data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
   <a href="#services" onclick="closeMenu()" data-ja="サービス" data-en="Services">サービス</a>
   <a href="#works" onclick="closeMenu()" data-ja="制作実績" data-en="Work">制作実績</a>
@@ -586,7 +587,6 @@ footer strong { color: var(--sky2); }
   <button class="sp-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMenu()"
     data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button>
 </div>
-<button class="sp-close" onclick="closeMenu()" aria-label="メニューを閉じる">✕</button>
 
 <!-- FV -->
 <section id="fv">
