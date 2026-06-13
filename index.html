@@ -34,45 +34,43 @@ body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: 
 /* ── HEADER (top bar) ── */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(74,154,184,.92);
+  background: rgba(255,255,255,.96);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(74,154,184,.15);
   display: flex; align-items: center; gap: 32px;
   padding: 0 48px; height: 64px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 600; color: #fff;
+  font-size: 22px; font-weight: 600; color: var(--sky);
   letter-spacing: .08em; white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(0,0,0,.5); flex-shrink: 0;
+  flex-shrink: 0;
 }
 nav { display: flex; gap: 28px; align-items: center; flex: 1; justify-content: center; }
 nav a {
-  color: #fff; text-decoration: none;
+  color: var(--text); text-decoration: none;
   font-size: 11px; font-weight: 500;
   letter-spacing: .15em; text-transform: uppercase;
   transition: color .2s; white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(0,0,0,.6);
 }
 nav a:hover { color: var(--sky); }
 .lang-toggle { display: flex; gap: 6px; align-items: center; }
 .lang-toggle button {
-  background: none; border: none; color: #fff;
+  background: none; border: none; color: var(--muted);
   font-size: 11px; font-weight: 500; letter-spacing: .1em;
   cursor: pointer; transition: color .2s; font-family: inherit; padding: 0;
-  text-shadow: 0 1px 6px rgba(0,0,0,.6);
 }
 .lang-toggle button.active { color: var(--sky); }
-.lang-toggle .sep { color: rgba(255,255,255,.5); font-size: 11px; }
+.lang-toggle .sep { color: #ccc; font-size: 11px; }
 .btn-cta {
-  background: none; color: #fff; border: 1px solid rgba(255,255,255,.5);
+  background: var(--sky); color: #fff; border: none;
   font-size: 11px; font-weight: 500; cursor: pointer;
   letter-spacing: .12em; text-transform: uppercase;
   transition: all .2s; font-family: inherit;
   padding: 6px 16px; border-radius: 20px; white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(0,0,0,.4);
 }
-.btn-cta:hover { background: rgba(255,255,255,.15); color: #fff; }
+.btn-cta:hover { background: var(--sky2); }
 .header-right { display: flex; gap: 20px; align-items: center; flex-shrink: 0; }
 
 /* ── FV ── */
@@ -450,9 +448,8 @@ footer strong { color: var(--sky2); }
   flex-direction: column; gap: 5px; margin-left: auto; z-index: 300;
 }
 .hamburger span {
-  display: block; width: 24px; height: 2px; background: #fff;
+  display: block; width: 24px; height: 2px; background: var(--sky);
   border-radius: 2px; transition: all .3s;
-  box-shadow: 0 1px 4px rgba(0,0,0,.5);
 }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -541,7 +538,7 @@ footer strong { color: var(--sky2); }
 
 <!-- HEADER -->
 <header>
-  <div class="logo">Kazuki Yoshida<span style="display:block;font-size:10px;font-weight:400;letter-spacing:.06em;color:rgba(255,255,255,.75);font-family:'Noto Sans JP',sans-serif;margin-top:1px;text-shadow:0 1px 6px rgba(0,0,0,.5);">観光・サービス専門LP / Webデザイナー</span></div>
+  <div class="logo">Kazuki Yoshida<span style="display:block;font-size:10px;font-weight:400;letter-spacing:.06em;color:var(--muted);font-family:'Noto Sans JP',sans-serif;margin-top:1px;">観光・サービス専門LP / Webデザイナー</span></div>
   <nav>
     <a href="#reasons"  data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
     <a href="#services" data-ja="サービス"     data-en="Services">サービス</a>
