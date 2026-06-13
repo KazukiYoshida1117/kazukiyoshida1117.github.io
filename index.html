@@ -493,6 +493,13 @@ footer strong { color: var(--sky2); }
   align-self: flex-start; transition: background .2s;
 }
 .sp-menu .sp-cta:hover { background: rgba(255,255,255,.15); }
+.sp-close {
+  position: absolute; top: 16px; right: 16px;
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,.8); font-size: 26px; line-height: 1;
+  padding: 8px; transition: color .2s;
+}
+.sp-close:hover { color: #fff; }
 
 @media (max-width: 768px) {
   header { padding: 0 20px; height: 56px; }
@@ -562,6 +569,7 @@ footer strong { color: var(--sky2); }
 
 <!-- SP MENU PANEL -->
 <div class="sp-menu" id="sp-menu">
+  <button class="sp-close" onclick="closeMenu()" aria-label="メニューを閉じる">✕</button>
   <a href="#reasons" onclick="closeMenu()" data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
   <a href="#services" onclick="closeMenu()" data-ja="サービス" data-en="Services">サービス</a>
   <a href="#works" onclick="closeMenu()" data-ja="制作実績" data-en="Work">制作実績</a>
