@@ -571,22 +571,7 @@ footer strong { color: var(--sky2); }
   </button>
 </header>
 
-<!-- SP MENU PANEL -->
-<div class="sp-menu" id="sp-menu">
-  <button class="sp-close" onclick="closeMenu()" aria-label="メニューを閉じる">&#x2715;</button>
-  <a href="#reasons" onclick="closeMenu()" data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
-  <a href="#services" onclick="closeMenu()" data-ja="サービス" data-en="Services">サービス</a>
-  <a href="#works" onclick="closeMenu()" data-ja="制作実績" data-en="Work">制作実績</a>
-  <a href="#about" onclick="closeMenu()" data-ja="プロフィール" data-en="About">プロフィール</a>
-  <a href="#faq" onclick="closeMenu()" data-ja="FAQ" data-en="FAQ">FAQ</a>
-  <div class="sp-lang">
-    <button onclick="setLang('ja');closeMenu()" id="sp-btn-ja" class="active">JP</button>
-    <span class="sep">/</span>
-    <button onclick="setLang('en');closeMenu()" id="sp-btn-en">EN</button>
-  </div>
-  <button class="sp-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMenu()"
-    data-ja="お問い合わせ" data-en="Contact">お問い合わせ</button>
-</div>
+<!-- SP MENU PANEL (一時削除中) -->
 
 <!-- FV -->
 <section id="fv">
@@ -1089,19 +1074,14 @@ function render(){
 function toggleMenu(){
   const ham = document.getElementById('hamburger');
   const menu = document.getElementById('sp-menu');
-  const closeBtn = document.querySelector('.sp-close');
   ham.classList.toggle('open');
   menu.classList.toggle('open');
-  const isOpen = menu.classList.contains('open');
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-  if(closeBtn) closeBtn.style.display = isOpen ? 'flex' : 'none';
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
 function closeMenu(){
-  const closeBtn = document.querySelector('.sp-close');
   document.getElementById('hamburger').classList.remove('open');
   document.getElementById('sp-menu').classList.remove('open');
   document.body.style.overflow = '';
-  if(closeBtn) closeBtn.style.display = 'none';
 }
 
 function setLang(l){
