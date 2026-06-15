@@ -510,7 +510,11 @@ footer strong { color: var(--sky2); }
 }
 .sp-close:hover { background: rgba(255,255,255,.35); }
 
+.sp-only { display: none; }
+
 @media (max-width: 768px) {
+  .sp-only { display: inline; }
+  .pc-only { display: none; }
   header { padding: 0 20px; height: 56px; }
   .logo img { height: 28px; }
   nav { display: none; }
@@ -859,7 +863,7 @@ footer strong { color: var(--sky2); }
       </div>
       <div class="about-text">
         <span class="s-label" data-ja="プロフィール" data-en="About">プロフィール</span>
-        <h2>吉田 かずき（Kazuki Yoshida）</h2>
+        <h2><span class="pc-only">吉田 かずき（Kazuki Yoshida）</span><span class="sp-only">吉田 一毅<br>Kazuki Yoshida</span></h2>
         <p style="color:var(--sky);font-size:13px;font-weight:500;margin-bottom:20px;letter-spacing:.05em;">フリーランス Webデザイナー</p>
         <div id="about-story">
           <p data-ja="ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。" data-en="After years in hotel hospitality and event planning, I became an independent web designer. I work alongside clients who aren't sure how to communicate their message, crafting designs that resonate and drive action. Information structure, user flow design, and working backward from goals are where I shine.">ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。</p>
