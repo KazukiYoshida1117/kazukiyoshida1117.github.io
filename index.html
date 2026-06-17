@@ -563,6 +563,8 @@ footer strong { color: var(--sky2); }
   .flow-steps { flex-direction: column; gap: 16px; }
   .flow-step:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; }
   #philosophy .inner { padding-left: 0 !important; }
+  #philosophy { background-position: 50% center !important; }
+  .philosophy-overlay { background: rgba(255,255,255,0.88) !important; }
   .flow-step-inner { width: 100%; }
   .form-row2 { grid-template-columns: 1fr; }
   .contact-vis { margin: 0 -24px 48px; }
@@ -660,7 +662,7 @@ footer strong { color: var(--sky2); }
 
 <!-- PHILOSOPHY -->
 <section id="philosophy" style="background: url('img/fv_hero2.png') 70% center / cover fixed no-repeat; position:relative;">
-  <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(255,255,255,0) 20%, rgba(255,255,255,0.95) 65%);"></div>
+  <div class="philosophy-overlay" style="position:absolute;inset:0;background:linear-gradient(to right, rgba(255,255,255,0) 20%, rgba(255,255,255,0.95) 65%);"></div>
   <div class="inner" style="max-width:100%; margin-left:40px; margin-right:40px; padding-left:55%; position:relative; z-index:1;">
     <p style="font-size:11px;letter-spacing:.2em;color:var(--sky);font-weight:500;margin-bottom:20px;">━━━━━━━━━━━━━</p>
     <h2 style="font-size:22px;font-weight:700;color:var(--text);line-height:1.5;margin-bottom:20px;">私が大切にしていること</h2>
