@@ -737,67 +737,6 @@ footer strong { color: var(--sky2); }
   </div>
 </section>
 
-
-<!-- Slide Modal (docs / about) -->
-<div id="slide-modal" class="modal-backdrop" style="display:none;background:rgba(0,0,0,.78);" onclick="if(event.target===this)closeSlideModal()">
-  <div class="slide-modal-inner">
-    <button class="modal-close" onclick="closeSlideModal()">✕</button>
-    <div class="slide-img-wrap"><img id="slide-modal-img" src="" alt=""></div>
-    <button class="slide-btn slide-btn-prev" id="slide-prev" onclick="slideMove(-1)">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
-    </button>
-    <button class="slide-btn slide-btn-next" id="slide-next" onclick="slideMove(1)">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-    </button>
-    <div class="slide-dots" id="slide-dots"></div>
-    <p class="slide-counter" id="slide-counter"></p>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="inner">
-    <div class="about-grid">
-      <div class="about-photo-wrap">
-        <div class="about-photo" style="position:relative;overflow:hidden;">
-          <img src="img/profile_img.png" alt="吉田 かずき（Kazuki Yoshida）" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;" onerror="this.style.display='none'">
-        </div>
-        <button
-          onclick="openSlideModal(['slides/slide_1.png','slides/slide_2.png','slides/slide_3.png','slides/slide_4.png'])"
-          style="display:flex;align-items:center;gap:8px;margin:16px auto 0;padding:10px 28px;border:2px solid var(--text);background:none;color:var(--text);font-size:13px;font-weight:700;border-radius:8px;cursor:pointer;font-family:inherit;transition:.2s;letter-spacing:.05em;"
-          onmouseover="this.style.background='var(--text)';this.style.color='#fff'"
-          onmouseout="this.style.background='none';this.style.color='var(--text)'"
-          data-ja="詳細を見る" data-en="Learn More">詳細を見る →</button>
-      </div>
-      <div class="about-text">
-        <span class="s-label" data-ja="プロフィール" data-en="About">プロフィール</span>
-        <h2><span class="pc-only">吉田 かずき（Kazuki Yoshida）</span><span class="sp-only">吉田 かずき<br>Kazuki Yoshida</span></h2>
-        <p style="color:var(--sky);font-size:13px;font-weight:500;margin-bottom:20px;letter-spacing:.05em;">フリーランス Webデザイナー</p>
-        <div id="about-story">
-          <p data-ja="ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。" data-en="After years in hotel hospitality and event planning, I became an independent web designer. I work alongside clients who aren't sure how to communicate their message, crafting designs that resonate and drive action. Information structure, user flow design, and working backward from goals are where I shine.">ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。</p>
-        </div>
-        <div class="skills-block">
-          <p class="skills-label" data-ja="スキル・使用ツール" data-en="Skills & Tools">スキル・使用ツール</p>
-          <p class="skills-text">Photoshop / Illustrator / HTML / CSS / Figma / STUDIO / WordPress / Canva</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PHOTO 3 : SKY -->
-<div class="photo-full" style="height:45vh; background: url('img/photo_sky.png') center center / cover no-repeat;">
-</div>
-
-<!-- FLOW -->
-<section id="flow">
-  <div class="inner">
-    <h2 class="s-title" data-ja="制作の流れ" data-en="How It Works">制作の流れ</h2>
-    <div class="flow-divider"></div>
-    <div class="flow-steps" id="flow-steps"></div>
-  </div>
-</section>
-
 <!-- PRICING -->
 <section id="pricing" style="background:var(--sandl)">
   <div class="inner">
@@ -884,6 +823,66 @@ footer strong { color: var(--sky2); }
     </div>
 
     <p class="price-note" data-ja="表示価格は目安となります。<br>制作内容・ページ数・ボリュームに応じてお見積りいたします。<br>まずはお気軽にご相談ください。" data-en="All prices are approximate before tax.<br>Final quotes vary based on scope, pages, and volume.<br>Feel free to reach out for a free consultation.">表示価格は目安となります。<br>制作内容・ページ数・ボリュームに応じてお見積りいたします。<br>まずはお気軽にご相談ください。</p>
+  </div>
+</section>
+
+<!-- Slide Modal (docs / about) -->
+<div id="slide-modal" class="modal-backdrop" style="display:none;background:rgba(0,0,0,.78);" onclick="if(event.target===this)closeSlideModal()">
+  <div class="slide-modal-inner">
+    <button class="modal-close" onclick="closeSlideModal()">✕</button>
+    <div class="slide-img-wrap"><img id="slide-modal-img" src="" alt=""></div>
+    <button class="slide-btn slide-btn-prev" id="slide-prev" onclick="slideMove(-1)">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="slide-btn slide-btn-next" id="slide-next" onclick="slideMove(1)">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="slide-dots" id="slide-dots"></div>
+    <p class="slide-counter" id="slide-counter"></p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo" style="position:relative;overflow:hidden;">
+          <img src="img/profile_img.png" alt="吉田 かずき（Kazuki Yoshida）" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;" onerror="this.style.display='none'">
+        </div>
+        <button
+          onclick="openSlideModal(['slides/slide_1.png','slides/slide_2.png','slides/slide_3.png','slides/slide_4.png'])"
+          style="display:flex;align-items:center;gap:8px;margin:16px auto 0;padding:10px 28px;border:2px solid var(--text);background:none;color:var(--text);font-size:13px;font-weight:700;border-radius:8px;cursor:pointer;font-family:inherit;transition:.2s;letter-spacing:.05em;"
+          onmouseover="this.style.background='var(--text)';this.style.color='#fff'"
+          onmouseout="this.style.background='none';this.style.color='var(--text)'"
+          data-ja="詳細を見る" data-en="Learn More">詳細を見る →</button>
+      </div>
+      <div class="about-text">
+        <span class="s-label" data-ja="プロフィール" data-en="About">プロフィール</span>
+        <h2><span class="pc-only">吉田 かずき（Kazuki Yoshida）</span><span class="sp-only">吉田 かずき<br>Kazuki Yoshida</span></h2>
+        <p style="color:var(--sky);font-size:13px;font-weight:500;margin-bottom:20px;letter-spacing:.05em;">フリーランス Webデザイナー</p>
+        <div id="about-story">
+          <p data-ja="ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。" data-en="After years in hotel hospitality and event planning, I became an independent web designer. I work alongside clients who aren't sure how to communicate their message, crafting designs that resonate and drive action. Information structure, user flow design, and working backward from goals are where I shine.">ホテル業界での接客・企画経験を経て、Webデザイナーとして独立。「どう伝えればいいか分からない」という悩みから一緒に考え、見る人に伝わり行動につながるデザインを追求しています。情報整理・導線設計・目的から逆算するアプローチが得意です。</p>
+        </div>
+        <div class="skills-block">
+          <p class="skills-label" data-ja="スキル・使用ツール" data-en="Skills & Tools">スキル・使用ツール</p>
+          <p class="skills-text">Photoshop / Illustrator / HTML / CSS / Figma / STUDIO / WordPress / Canva</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO 3 : SKY -->
+<div class="photo-full" style="height:45vh; background: url('img/photo_sky.png') center center / cover no-repeat;">
+</div>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="inner">
+    <h2 class="s-title" data-ja="制作の流れ" data-en="How It Works">制作の流れ</h2>
+    <div class="flow-divider"></div>
+    <div class="flow-steps" id="flow-steps"></div>
   </div>
 </section>
 
