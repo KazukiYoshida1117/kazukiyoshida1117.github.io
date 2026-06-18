@@ -175,23 +175,29 @@ section { padding: 100px 48px; }
 .e-close { font-size: 15px; color: var(--sky); font-weight: 500; letter-spacing: .05em; }
 
 /* ── REASONS ── */
-#reasons { background: var(--sandl); }
-.reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+#reasons { background: linear-gradient(145deg, #1a3a4a 0%, #243f52 100%); }
+#reasons .s-title { color: #fff; }
+.reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .reason-card {
-  background: var(--white); border-radius: 12px; overflow: hidden;
-  box-shadow: 0 2px 20px rgba(74,154,184,.08);
+  border-radius: 16px; overflow: hidden; position: relative;
+  min-height: 420px; box-shadow: 0 8px 32px rgba(0,0,0,.35);
 }
 .reason-vis {
-  height: 140px; display: flex; align-items: center; justify-content: center;
-  font-size: 36px;
+  position: absolute; inset: 0;
+  background-size: cover !important; background-position: center !important;
 }
-.reason-vis-1 { background: linear-gradient(135deg, #dff0f7, #b8e0f0); }
-.reason-vis-2 { background: linear-gradient(135deg, #f5ede0, #ede4d4); }
-.reason-vis-3 { background: linear-gradient(135deg, #d8eef7, #c8e4f4); }
-.reason-body { padding: 24px 22px; }
-.reason-num { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--sky); margin-bottom: 6px; font-weight: 600; line-height: 1; }
-.reason-body h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
-.reason-body p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.reason-vis::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,28,42,.96) 28%, rgba(10,28,42,.55) 60%, rgba(10,28,42,.12) 100%);
+}
+.reason-vis-1 { background: linear-gradient(135deg, #2a5a72, #1a3a4a); }
+.reason-vis-2 { background: linear-gradient(135deg, #243f52, #1a3a4a); }
+.reason-vis-3 { background: linear-gradient(135deg, #1e4a5e, #1a3a4a); }
+.reason-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 24px; }
+.reason-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; color: var(--sky); font-weight: 600; line-height: 1; display: block; margin-bottom: 10px; }
+.reason-accent { width: 28px; height: 2px; background: var(--sky); border-radius: 2px; margin-bottom: 14px; }
+.reason-body h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.5; }
+.reason-body p { font-size: 12px; color: rgba(255,255,255,.75); line-height: 1.85; }
 
 /* ── TARGET ── */
 #target { padding: 100px 48px; background: var(--white); }
@@ -556,6 +562,7 @@ footer strong { color: var(--sky2); }
   .fv-sub { margin: 0 auto 40px; }
   section { padding: 72px 24px; }
   .reasons-grid, .services-grid { grid-template-columns: 1fr; }
+  .reason-card { min-height: 300px; }
   .service-card:nth-child(1), .service-card:nth-child(2), .service-card:nth-child(n+3) { grid-column: span 1; }
   .banner-grid-top { grid-template-columns: 1fr 1fr; }
   .banner-grid-bot { grid-template-columns: 1fr 1fr; }
@@ -694,25 +701,28 @@ footer strong { color: var(--sky2); }
       <div class="reason-card">
         <div class="reason-vis reason-vis-1" style="background:url('img/reason1_hotel.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
-          <p class="reason-num" style="font-family:'Noto Sans JP',sans-serif;">01</p>
-          <h3 style="font-family:'Noto Sans JP',sans-serif;">ホテル業界10年以上の現場経験</h3>
-          <p style="font-family:'Noto Sans JP',sans-serif;">宿泊業界の現場で10年以上、多くのお客様と向き合ってきました。<br><br>予約前のお客様が何に不安を感じるのか。<br>どんな情報があれば安心して予約できるのか。<br><br>現場で培った視点を活かし、ただ見た目を整えるだけでなく、予約・来店・問い合わせにつながる導線を考えます。</p>
+          <p class="reason-num">01</p>
+          <div class="reason-accent"></div>
+          <h3>ホテル業界10年以上の現場経験</h3>
+          <p>宿泊業界の現場で10年以上、多くのお客様と向き合ってきました。予約前のお客様が何に不安を感じるのか。どんな情報があれば安心して予約できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。</p>
         </div>
       </div>
       <div class="reason-card">
         <div class="reason-vis reason-vis-2" style="background:url('img/reason2_design.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
-          <p class="reason-num" style="font-family:'Noto Sans JP',sans-serif;">02</p>
-          <h3 style="font-family:'Noto Sans JP',sans-serif;">魅力を伝える情報整理と導線設計</h3>
-          <p style="font-family:'Noto Sans JP',sans-serif;">「何を伝えればいいか分からない」<br>「情報が多くて整理できない」<br><br>そんな状態からでも大丈夫です。<br><br>事業やサービスの魅力を整理し、<br>・誰に<br>・何を<br>・どの順番で<br>伝えるべきかを設計します。<br><br>デザインはもちろん、その前段階となる情報設計も大切にしています。</p>
+          <p class="reason-num">02</p>
+          <div class="reason-accent"></div>
+          <h3>魅力を伝える情報整理と導線設計</h3>
+          <p>「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。誰に・何を・どの順番で伝えるべきかを整理し、行動につながる設計をします。</p>
         </div>
       </div>
       <div class="reason-card">
         <div class="reason-vis reason-vis-3" style="background:url('img/reason3_inbound.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
-          <p class="reason-num" style="font-family:'Noto Sans JP',sans-serif;">03</p>
-          <h3 style="font-family:'Noto Sans JP',sans-serif;">インバウンド視点にも対応</h3>
-          <p style="font-family:'Noto Sans JP',sans-serif;">カナダ留学5年と、ホテル業界での訪日外国人対応経験を活かし、国内だけでなく海外のお客様にも伝わる見せ方を考えます。<br><br>外国人旅行者が求める情報や行動心理を踏まえながら、観光・宿泊・地域事業者さまの魅力を国内外へ届けるお手伝いをします。</p>
+          <p class="reason-num">03</p>
+          <div class="reason-accent"></div>
+          <h3>インバウンド視点にも対応</h3>
+          <p>カナダ留学5年とホテル業界での訪日外国人対応経験を活かし、国内だけでなく海外のお客様にも伝わる見せ方を考えます。観光・宿泊・地域事業者さまの魅力を国内外へ届けます。</p>
         </div>
       </div>
     </div>
