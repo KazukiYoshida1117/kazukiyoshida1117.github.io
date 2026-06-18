@@ -181,6 +181,8 @@ section { padding: 100px 48px; }
 @media (min-width: 769px) {
   .check-list { display: grid; grid-template-columns: repeat(2, 1fr); max-width: 760px; }
   .fv-btns { flex-wrap: nowrap; justify-content: flex-start; }
+  .fv-content .btn-fv,
+  .fv-content .btn-fv-outline { padding: 14px 28px; font-size: 14px; }
 }
 @media (min-width: 1440px) {
   .fv-content { right: calc((100vw - 1440px) / 2 + 120px); }
@@ -561,7 +563,7 @@ footer strong { color: var(--sky2); }
   .sp-menu { display: flex; }
   #fv {
     background-attachment: scroll;
-    background-position: 50% center;
+    background-position: 60% center;
     min-height: 100vh;
   }
   #fv::before {
