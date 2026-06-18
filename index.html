@@ -290,30 +290,26 @@ section { padding: 100px 48px; }
 #flow { background: var(--sky); color: var(--white); text-align: center; }
 #flow .s-label { color: rgba(255,255,255,.6); }
 #flow .s-title { color: var(--white); margin-bottom: 56px; }
-.flow-steps { display: flex; align-items: stretch; gap: 0; max-width: 960px; margin: 0 auto; }
-.flow-step {
-  flex: 1; display: flex; flex-direction: column; align-items: center;
-  text-align: center; position: relative;
-}
-.flow-step:not(:last-child)::after {
-  content: '›'; position: absolute; right: -10px; top: 32px;
+.flow-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
+.flow-step { position: relative; display: flex; flex-direction: column; }
+.flow-step:not(:nth-child(3n))::after {
+  content: '›'; position: absolute; right: -12px; top: 28px;
   font-size: 24px; color: rgba(255,255,255,.4); z-index: 1;
 }
 .flow-step-inner {
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
-  border-radius: 12px; padding: 28px 16px 24px;
-  width: calc(100% - 20px); height: 100%;
-  display: flex; flex-direction: column; align-items: center;
+  border-radius: 12px; padding: 24px 18px;
+  height: 100%;
+  display: flex; flex-direction: column;
   backdrop-filter: blur(4px);
 }
 .flow-num {
-  font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600;
-  color: rgba(255,255,255,.5); line-height: 1; margin-bottom: 12px;
-  font-style: italic;
+  font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,.5); line-height: 1; margin-bottom: 10px;
+  letter-spacing: .05em;
 }
-.flow-icon { font-size: 26px; margin-bottom: 10px; }
 .flow-step h3 { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
-.flow-step p { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.65; }
+.flow-step p { font-size: 12px; color: rgba(255,255,255,.8); line-height: 1.75; }
 .flow-divider { border-top: 1px dashed rgba(255,255,255,.2); margin-bottom: 48px; }
 
 /* ── PRICING ── */
@@ -566,6 +562,9 @@ footer strong { color: var(--sky2); }
   #philosophy .inner { padding-left: 0 !important; }
   #philosophy { background-position: 24% center !important; }
   .philosophy-overlay { background: rgba(255,255,255,0.88) !important; }
+  .flow-steps { grid-template-columns: 1fr; }
+  .flow-step:not(:nth-child(3n))::after { display: none; }
+  .flow-step:not(:last-child)::after { content: '↓'; display: block; text-align: center; font-size: 20px; color: rgba(255,255,255,.4); padding: 4px 0; }
   .flow-step-inner { width: 100%; }
   .form-row2 { grid-template-columns: 1fr; }
   .contact-vis { margin: 0 -24px 48px; }
@@ -1056,14 +1055,18 @@ const lang_data = {
     {c:"sand",i:"💼",ja:{t:"名刺・ショップカード制作",d:"初対面の印象づくりや、Webサイト・SNSへの導線づくりを意識したデザインを制作します。",b:""},en:{t:"Business Card / Shop Card",d:"I design cards that make a strong first impression and guide people toward your website and social media.",b:""}}
   ],
   flow:{
-    ja:[{n:"01",t:"相談・ヒアリング",d:"気軽にお話しください。"},
-        {n:"02",t:"構成・お見積り",d:"目的に合わせた提案をします。"},
-        {n:"03",t:"制作",d:"伝わるデザインを制作します。"},
-        {n:"04",t:"納品・修正",d:"確認後、納品します。"}],
-    en:[{n:"01",t:"Consultation",d:"Tell me about your needs."},
-        {n:"02",t:"Proposal",d:"I present a tailored plan and quote."},
-        {n:"03",t:"Design",d:"I create a design that connects."},
-        {n:"04",t:"Delivery",d:"Review, revise, and deliver."}]
+    ja:[{n:"01",t:"お問い合わせ",d:"まずは現在のお悩みや制作したい内容をお聞かせください。"},
+        {n:"02",t:"ヒアリング",d:"事業内容、ターゲット、目的、現在の課題を整理します。"},
+        {n:"03",t:"ご提案・お見積り",d:"必要な制作内容と料金をご提案します。"},
+        {n:"04",t:"構成設計",d:"伝える内容と順番を整理し、ワイヤーフレームを作成します。"},
+        {n:"05",t:"デザイン制作",d:"PC・スマホで見やすく、行動につながるデザインを制作します。"},
+        {n:"06",t:"納品",d:"確認・修正後、デザインデータを納品します。"}],
+    en:[{n:"01",t:"Inquiry",d:"Tell me about your current challenges and what you'd like to create."},
+        {n:"02",t:"Hearing",d:"I'll clarify your business, target audience, goals, and challenges."},
+        {n:"03",t:"Proposal & Quote",d:"I'll propose the necessary deliverables and pricing."},
+        {n:"04",t:"Structure Design",d:"I organize the content flow and create a wireframe."},
+        {n:"05",t:"Design",d:"I create a design for PC and mobile that drives action."},
+        {n:"06",t:"Delivery",d:"After review and revisions, I deliver the final design files."}]
   },
   faq:{
     ja:[["遠方でも対応できますか？","はい。オンラインで全国対応しています。"],
