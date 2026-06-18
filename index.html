@@ -87,8 +87,7 @@ nav a:hover { color: var(--sky); }
   right: 120px;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 580px;
-  width: 580px;
+  width: fit-content;
   background: linear-gradient(135deg, rgba(10,28,42,.68) 0%, rgba(10,28,42,.52) 100%);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -185,6 +184,7 @@ section { padding: 100px 48px; }
   .fv-content .btn-fv,
   .fv-content .btn-fv-outline { padding: 14px 28px; font-size: 14px; white-space: nowrap; }
   .fv-content .fv-h1 { white-space: nowrap; width: fit-content; }
+  .fv-content .fv-sub { width: 100%; max-width: none; }
 }
 @media (min-width: 1440px) {
   .fv-content { right: calc((100vw - 1440px) / 2 + 120px); }
