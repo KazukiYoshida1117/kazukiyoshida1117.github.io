@@ -39,14 +39,11 @@
 
   /* ── SHARED ── */
   .s-label { display: block; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--sky); margin-bottom: 12px; font-weight: 500; }
-  .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3vw,38px); font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 40px; }
+  .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px,3vw,36px); font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 36px; }
   .inner { max-width: 800px; margin: 0 auto; padding: 0 40px; }
   section { padding: 80px 0; }
-  .check-list { list-style: none; text-align: left; display: inline-flex; flex-direction: column; gap: 14px; }
-  .check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.7; }
-  .check-list li::before { content: '✓'; color: var(--sky); font-size: 15px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
-  /* ── CTA BUTTON ── */
+  /* ── BUTTONS ── */
   .btn-cta {
     display: inline-block; background: var(--sky); color: #fff;
     font-size: 15px; font-weight: 500; padding: 18px 56px;
@@ -79,84 +76,108 @@
     padding: 5px 18px; border-radius: 20px; margin-bottom: 36px;
   }
   #fv h1 {
-    font-family: 'Noto Sans JP', sans-serif; font-size: clamp(22px,3.5vw,32px);
-    font-weight: 500; color: #fff; line-height: 1.9; margin-bottom: 32px;
-    letter-spacing: .02em;
+    font-family: 'Noto Sans JP', sans-serif; font-size: clamp(20px,3vw,28px);
+    font-weight: 500; color: #fff; line-height: 2; margin-bottom: 32px; letter-spacing: .02em;
   }
   #fv h1 em { color: #7bbfd6; font-style: normal; font-weight: 700; }
-  #fv .fv-sub {
-    font-size: 14px; color: rgba(255,255,255,.75); line-height: 2; margin-bottom: 48px;
+  .fv-causes {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin: 32px 0;
   }
-  .fv-divider { width: 40px; height: 2px; background: rgba(255,255,255,.3); margin: 32px auto; }
+  .fv-cause-tag {
+    font-size: 13px; font-weight: 700; color: rgba(255,255,255,.9);
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25);
+    padding: 8px 20px; border-radius: 20px; letter-spacing: .04em;
+  }
+  #fv .fv-lead {
+    font-size: 15px; color: rgba(255,255,255,.8); line-height: 2; margin-bottom: 48px;
+  }
+  #fv .fv-lead em { color: #7bbfd6; font-style: normal; font-weight: 700; }
+  .fv-divider { width: 40px; height: 1px; background: rgba(255,255,255,.3); margin: 0 auto 32px; }
 
-  /* ── WORRIES ── */
-  #worries { background: var(--white); text-align: center; }
-  #worries .if-line {
-    font-size: 15px; font-weight: 500; color: var(--text); line-height: 2;
-    margin-top: 40px; padding: 28px 32px; background: var(--sandl);
-    border-radius: 12px; border-left: 4px solid var(--sky);
-    text-align: left;
+  /* ── WHY NOT HP ── */
+  #why-not { background: var(--sandl); }
+  .body-text { font-size: 15px; line-height: 2.3; color: var(--text); margin-bottom: 24px; }
+  .callout-box {
+    background: #fff; border-radius: 12px; border-left: 4px solid var(--sky);
+    padding: 28px 32px; margin: 28px 0;
   }
+  .callout-box p { font-size: 14px; line-height: 2.2; color: var(--text); }
+  .callout-box strong { color: var(--sky); font-weight: 700; }
+  .example-box {
+    background: #fff; border-radius: 12px; border: 1px solid var(--sandm);
+    padding: 28px 32px; margin: 24px 0;
+  }
+  .example-box .ex-label { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .example-box p { font-size: 14px; line-height: 2; color: var(--text); margin-bottom: 12px; }
+  .example-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .example-tag { font-size: 12px; background: var(--sandl); border: 1px solid var(--sandm); color: var(--muted); padding: 4px 12px; border-radius: 16px; }
+  .example-note { font-size: 13px; color: var(--muted); line-height: 1.9; margin-top: 12px; }
 
   /* ── WHAT IS LP ── */
-  #what { background: var(--sandl); }
-  #what .lp-def {
-    background: #fff; border-radius: 16px; padding: 40px; margin-bottom: 32px;
+  #what { background: var(--white); }
+  .lp-def {
+    background: var(--sandl); border-radius: 16px; padding: 36px 40px; margin-bottom: 40px;
     border: 1px solid var(--sandm);
   }
-  #what .lp-def p { font-size: 15px; line-height: 2.2; color: var(--text); }
-  #what .lp-def strong { color: var(--sky); font-weight: 700; }
-  #what .lp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .lp-def p { font-size: 15px; line-height: 2.3; color: var(--text); }
+  .lp-def strong { color: var(--sky); font-weight: 700; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .compare-card { background: #fff; border-radius: 12px; padding: 28px 24px; border: 1px solid var(--sandm); }
   .compare-card.featured { border-color: var(--sky); border-width: 2px; }
-  .compare-card .c-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .compare-card .c-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
   .compare-card.featured .c-label { color: var(--sky); }
   .compare-card h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
   .compare-card.featured h3 { color: var(--sky); }
-  .compare-row { display: flex; flex-direction: column; gap: 12px; }
-  .compare-item { font-size: 13px; }
-  .compare-item dt { font-weight: 700; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
-  .compare-item dd { color: var(--text); line-height: 1.6; }
+  .compare-item { margin-bottom: 14px; }
+  .compare-item dt { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .compare-item dd { font-size: 13px; color: var(--text); line-height: 1.7; }
   .compare-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-  .compare-tags span { font-size: 11px; background: var(--sandl); border: 1px solid var(--sandm); color: var(--text); padding: 3px 10px; border-radius: 20px; }
-  .compare-tags span.featured { background: var(--pale); border-color: var(--sky); color: var(--sky2); font-weight: 500; }
+  .ctag { font-size: 11px; background: var(--sandl); border: 1px solid var(--sandm); color: var(--text); padding: 3px 10px; border-radius: 16px; }
+  .ctag.hi { background: var(--pale); border-color: var(--sky); color: var(--sky2); font-weight: 500; }
 
-  /* ── WHY LP ── */
-  #why { background: var(--white); }
-  .why-text { font-size: 15px; line-height: 2.2; color: var(--text); margin-bottom: 24px; }
-  .why-callout {
-    background: linear-gradient(135deg, #1a3a4a, #2a5a72); color: #fff;
-    border-radius: 16px; padding: 36px 40px; margin: 32px 0;
-    font-size: 15px; line-height: 2.2;
+  /* ── WHY MATCH ── */
+  #why-match { background: var(--sandl); }
+  .dark-card {
+    background: linear-gradient(135deg, #1a3a4a, #2a5a72);
+    border-radius: 16px; padding: 40px; color: rgba(255,255,255,.85);
+    font-size: 15px; line-height: 2.3; margin: 28px 0;
   }
-  .why-callout strong { color: #7bbfd6; }
-  .why-keywords { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-  .why-kw { font-size: 13px; font-weight: 700; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 6px 18px; border-radius: 20px; }
+  .dark-card strong { color: #7bbfd6; }
+  .kw-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .kw-tag { font-size: 13px; font-weight: 700; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 6px 18px; border-radius: 20px; }
 
   /* ── SOLVE ── */
-  #solve { background: var(--sandl); text-align: center; }
-  #solve .solve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; text-align: left; }
-  .solve-item { background: #fff; border-radius: 10px; padding: 16px 20px; border: 1px solid var(--sandm); display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.7; }
+  #solve { background: var(--white); text-align: center; }
+  .solve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; text-align: left; }
+  .solve-item {
+    background: var(--sandl); border-radius: 10px; padding: 16px 20px;
+    border: 1px solid var(--sandm); display: flex; align-items: flex-start;
+    gap: 10px; font-size: 13px; line-height: 1.7; color: var(--text);
+  }
   .solve-item::before { content: '✓'; color: var(--sky); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
   /* ── HONEST ── */
-  #honest { background: var(--white); }
-  .honest-q { font-size: clamp(18px,2.5vw,24px); font-weight: 700; color: var(--text); margin-bottom: 32px; line-height: 1.6; }
-  .honest-a {
-    background: var(--sandl); border-radius: 16px; padding: 36px 40px;
-    border-left: 4px solid var(--sky); margin-bottom: 28px;
+  #honest { background: var(--sandl); }
+  .honest-q { font-size: clamp(17px,2.5vw,22px); font-weight: 700; color: var(--text); margin-bottom: 28px; line-height: 1.7; }
+  .honest-block {
+    background: #fff; border-radius: 12px; border-left: 4px solid var(--sky);
+    padding: 32px 36px; margin-bottom: 24px;
   }
-  .honest-a .answer { font-size: 20px; font-weight: 700; color: var(--sky); margin-bottom: 16px; }
-  .honest-a p { font-size: 14px; line-height: 2.2; color: var(--text); }
-  .honest-a strong { color: var(--sky2); font-weight: 700; }
+  .honest-block .answer { font-size: 18px; font-weight: 700; color: var(--sky); margin-bottom: 16px; }
+  .honest-block p { font-size: 14px; line-height: 2.2; color: var(--text); }
+  .honest-block strong { color: var(--sky2); font-weight: 700; }
 
   /* ── PHILOSOPHY ── */
-  #philosophy-lp { background: linear-gradient(135deg, #1a3a4a, #2a5a72); padding: 80px 0; }
+  #philosophy-lp {
+    background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 50%, #1e4a5e 100%);
+    padding: 80px 0;
+  }
   #philosophy-lp .s-label { color: rgba(255,255,255,.6); }
   #philosophy-lp .s-title { color: #fff; }
-  .philosophy-body { font-size: 15px; line-height: 2.4; color: rgba(255,255,255,.85); }
-  .philosophy-body em { color: #7bbfd6; font-style: normal; font-weight: 700; font-size: 17px; }
-  .phil-keywords { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+  .phil-body { font-size: 15px; line-height: 2.4; color: rgba(255,255,255,.85); }
+  .phil-body em { color: #7bbfd6; font-style: normal; font-weight: 700; font-size: 16px; }
+  .phil-kws { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
   .phil-kw { font-size: 13px; font-weight: 700; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.9); padding: 8px 20px; border-radius: 20px; letter-spacing: .05em; }
 
   /* ── CASES ── */
@@ -171,22 +192,23 @@
   .case-body p { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
   .case-link { font-size: 12px; font-weight: 700; color: var(--sky); text-decoration: none; border-bottom: 1px solid var(--pale); padding-bottom: 1px; transition: .2s; }
   .case-link:hover { color: var(--sky2); border-color: var(--sky2); }
-  #cases .cta-wrap { text-align: center; }
 
   /* ── PRICING ── */
   #pricing-lp { background: var(--sandl); }
   .lp-price-card {
-    background: #fff; border-radius: 16px; padding: 40px; border: 2px solid var(--sky);
-    margin-bottom: 24px;
+    background: #fff; border-radius: 16px; padding: 40px;
+    border: 2px solid var(--sky); margin-bottom: 24px;
   }
   .lp-price-card h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-  .lp-price-card .price { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(28px,4vw,40px); font-weight: 700; color: var(--sky); margin-bottom: 20px; }
+  .lp-price-card .price {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(28px,4vw,40px); font-weight: 700; color: var(--sky); margin-bottom: 20px;
+  }
   .lp-price-card .price span { font-size: 16px; color: var(--muted); font-weight: 400; }
   .includes-label { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
   .includes-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none; }
   .includes-list li { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 8px; }
   .includes-list li::before { content: ''; width: 6px; height: 6px; background: var(--sky); border-radius: 50%; flex-shrink: 0; }
-  #pricing-lp .cta-wrap { text-align: center; margin-top: 32px; }
 
   /* ── FINAL CTA ── */
   #final-cta {
@@ -198,11 +220,10 @@
     background: radial-gradient(ellipse at 40% 60%, rgba(74,154,184,.15) 0%, transparent 65%);
   }
   #final-cta .inner { position: relative; z-index: 1; }
-  #final-cta h2 { font-size: clamp(22px,3vw,32px); font-weight: 500; color: #fff; line-height: 2.2; margin-bottom: 40px; }
+  #final-cta h2 { font-size: clamp(20px,3vw,30px); font-weight: 500; color: #fff; line-height: 2.4; margin-bottom: 40px; }
   #final-cta h2 em { color: #7bbfd6; font-style: normal; font-weight: 700; }
   #final-cta p { font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 48px; line-height: 2; }
 
-  /* ── FOOTER ── */
   footer { background: #334155; color: rgba(255,255,255,.5); text-align: center; padding: 32px 24px; font-size: 12px; letter-spacing: .08em; }
 
   /* ── RESPONSIVE ── */
@@ -210,12 +231,12 @@
     .inner { padding: 0 20px; }
     section { padding: 60px 0; }
     #fv { padding: 90px 0 80px; }
-    #what .lp-compare { grid-template-columns: 1fr; }
-    #solve .solve-grid { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .solve-grid { grid-template-columns: 1fr; }
     .case-grid { grid-template-columns: 1fr; }
     .includes-list { grid-template-columns: 1fr; }
-    .why-callout { padding: 28px 24px; }
-    .honest-a { padding: 28px 24px; }
+    .dark-card { padding: 28px 24px; }
+    .honest-block { padding: 24px 20px; }
     .lp-price-card { padding: 28px 24px; }
     .page-header { padding: 0 20px; }
   }
@@ -233,32 +254,44 @@
 <section id="fv">
   <div class="inner">
     <span class="fv-label">Landing Page Guide</span>
-    <h1>集客のためにホームページを作ったのに、<br>問い合わせや予約に<em>つながっていない。</em></h1>
+    <h1>集客のためにホームページを作ったのに、<br>問い合わせや予約に<em>つながらない。</em></h1>
     <div class="fv-divider"></div>
-    <p class="fv-sub">
-      そんな課題を解決する方法のひとつが、LP（ランディングページ）です。<br>
-      観光・宿泊・飲食・地域事業者さま向けに、<br>
-      予約・来店・問い合わせにつながるLPについて分かりやすく解説します。
-    </p>
-    <a class="btn-cta" href="index.html#contact">無料相談する</a>
+    <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:2;margin-bottom:24px;">その原因は、サービスの魅力がないからではないかもしれません。<br>実は多くの場合、課題はここにあります。</p>
+    <div class="fv-causes">
+      <span class="fv-cause-tag">「伝える順番」</span>
+      <span class="fv-cause-tag">「見せ方」</span>
+      <span class="fv-cause-tag">「導線」</span>
+    </div>
+    <p class="fv-lead" style="margin-top:32px;margin-bottom:48px;">その解決策の一つが、<em>LP（ランディングページ）</em>です。</p>
+    <a class="btn-cta" href="index.html#contact"
+      style="background:#fff;color:var(--sky);box-shadow:0 4px 20px rgba(0,0,0,.2);"
+      onmouseover="this.style.background='var(--pale)';this.style.transform='translateY(-3px)'"
+      onmouseout="this.style.background='#fff';this.style.transform='translateY(0)'">無料相談する</a>
   </div>
 </section>
 
-<!-- WORRIES -->
-<section id="worries">
-  <div class="inner" style="text-align:center;">
-    <span class="s-label">こんなお悩みありませんか？</span>
-    <h2 class="s-title">思い当たることは<br>ありませんか？</h2>
-    <ul class="check-list">
-      <li>ホームページはあるが問い合わせが少ない</li>
-      <li>SNSから予約につながらない</li>
-      <li>商品やサービスの魅力をうまく伝えられない</li>
-      <li>広告を出しても成果が出ない</li>
-      <li>キャンペーンや宿泊プランをもっと知ってほしい</li>
-    </ul>
-    <div class="if-line">
-      もし一つでも当てはまるなら、<br>
-      <strong>LPが役立つかもしれません。</strong>
+<!-- WHY NOT HP -->
+<section id="why-not">
+  <div class="inner">
+    <span class="s-label">なぜホームページだけでは？</span>
+    <h2 class="s-title">なぜホームページだけでは<br>成果につながらないのか</h2>
+
+    <p class="body-text">ホームページは、会社やお店を紹介するためのものです。そのため、メニュー・アクセス・お知らせ・会社概要など、多くの情報が掲載されます。</p>
+
+    <div class="callout-box">
+      <p><strong>情報が多いほど、ユーザーは迷いやすくなります。</strong></p>
+    </div>
+
+    <div class="example-box">
+      <p class="ex-label">例えば</p>
+      <p>宿泊プランを予約してほしいのに、ページ内に</p>
+      <div class="example-tags">
+        <span class="example-tag">お知らせ</span>
+        <span class="example-tag">採用情報</span>
+        <span class="example-tag">アクセス</span>
+        <span class="example-tag">会社概要</span>
+      </div>
+      <p class="example-note">などが並んでいると、ユーザーが予約前に別のページへ移動してしまい、離脱につながることがあります。</p>
     </div>
   </div>
 </section>
@@ -270,80 +303,75 @@
     <h2 class="s-title">LP（ランディングページ）<br>とは何か</h2>
 
     <div class="lp-def">
-      <p>LP（ランディングページ）とは、<strong>ひとつの商品・サービス・キャンペーンに特化して、予約・来店・問い合わせなどの行動につなげるためのページ</strong>です。</p>
+      <p>LP（ランディングページ）とは、<strong>ひとつの商品やサービスに特化し、予約・来店・問い合わせなどの行動につなげるためのページ</strong>です。</p>
       <br>
-      <p>一般的なホームページが「会社やお店全体を紹介する場所」だとすると、LPは「<strong>ひとつの目的に向かって行動してもらう場所</strong>」です。</p>
+      <p>ユーザーを迷わせず、<strong>ひとつのゴールへ導く</strong>ことを目的としています。</p>
     </div>
 
-    <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:16px;letter-spacing:.05em;">ホームページと LP の違い</h3>
-    <div class="lp-compare">
+    <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;letter-spacing:.04em;">ホームページと LP の違い</h3>
+    <div class="compare-grid">
       <div class="compare-card">
         <p class="c-label">Homepage</p>
         <h3>ホームページ</h3>
-        <div class="compare-row">
-          <div class="compare-item">
-            <dt>目的</dt>
-            <dd>会社やお店を知ってもらう</dd>
-          </div>
-          <div class="compare-item">
-            <dt>特徴</dt>
-            <dd>情報が広く掲載されている</dd>
-          </div>
-          <div class="compare-item">
-            <dt>向いているもの</dt>
-            <dd>
-              <div class="compare-tags">
-                <span>会社案内</span><span>店舗紹介</span><span>採用</span>
-              </div>
-            </dd>
-          </div>
+        <div class="compare-item">
+          <dt>目的</dt>
+          <dd>会社や店舗全体を知ってもらう</dd>
+        </div>
+        <div class="compare-item">
+          <dt>特徴</dt>
+          <dd>情報量が多い</dd>
+        </div>
+        <div class="compare-item">
+          <dt>向いているもの</dt>
+          <dd>
+            <div class="compare-tags">
+              <span class="ctag">会社案内</span><span class="ctag">店舗紹介</span><span class="ctag">採用</span>
+            </div>
+          </dd>
         </div>
       </div>
       <div class="compare-card featured">
         <p class="c-label">Landing Page</p>
         <h3>LP</h3>
-        <div class="compare-row">
-          <div class="compare-item">
-            <dt>目的</dt>
-            <dd>行動してもらう</dd>
-          </div>
-          <div class="compare-item">
-            <dt>特徴</dt>
-            <dd>情報を絞り込む</dd>
-          </div>
-          <div class="compare-item">
-            <dt>向いているもの</dt>
-            <dd>
-              <div class="compare-tags">
-                <span class="featured">宿泊プラン</span><span class="featured">期間限定メニュー</span><span class="featured">イベント</span><span class="featured">体験ツアー</span><span class="featured">問い合わせ</span>
-              </div>
-            </dd>
-          </div>
+        <div class="compare-item">
+          <dt>目的</dt>
+          <dd>行動してもらう</dd>
+        </div>
+        <div class="compare-item">
+          <dt>特徴</dt>
+          <dd>情報を絞り込む</dd>
+        </div>
+        <div class="compare-item">
+          <dt>向いているもの</dt>
+          <dd>
+            <div class="compare-tags">
+              <span class="ctag hi">宿泊プラン</span><span class="ctag hi">期間限定キャンペーン</span><span class="ctag hi">イベント</span><span class="ctag hi">体験ツアー</span><span class="ctag hi">問い合わせ獲得</span>
+            </div>
+          </dd>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY LP FITS -->
-<section id="why">
+<!-- WHY MATCH -->
+<section id="why-match">
   <div class="inner">
-    <span class="s-label">観光・宿泊・飲食業との相性</span>
-    <h2 class="s-title">なぜ観光・宿泊・飲食業に<br>LP が向いているのか</h2>
+    <span class="s-label">相性が良い理由</span>
+    <h2 class="s-title">観光・宿泊・飲食業と<br>LP の相性が良い理由</h2>
 
-    <p class="why-text">観光・宿泊・飲食業は、<strong style="color:var(--sky);">「体験を売る仕事」</strong>です。</p>
-    <p class="why-text">実際に体験するまで価値が分かりにくいため、写真・ストーリー・口コミ・魅力を順番に伝える必要があります。</p>
+    <p class="body-text">観光・宿泊・飲食業は、モノではなく<strong style="color:var(--sky);">体験を販売</strong>しています。</p>
+    <p class="body-text">だからこそ、写真・ストーリー・魅力・口コミ・安心感を<strong style="color:var(--sky);">順番に伝える</strong>必要があります。</p>
 
-    <div class="why-callout">
+    <div class="dark-card">
       LPはその<strong>流れを作るのが得意</strong>です。<br>
-      「このプランを知りたい」「この宿に泊まってみたい」という<strong>気持ちの変化を設計</strong>し、<br>
-      最後の予約・問い合わせへと自然に誘導します。
-      <div class="why-keywords">
-        <span class="why-kw">写真</span>
-        <span class="why-kw">ストーリー</span>
-        <span class="why-kw">口コミ</span>
-        <span class="why-kw">魅力</span>
-        <span class="why-kw">導線設計</span>
+      「このプランを知りたい」「この宿に泊まってみたい」という<strong>気持ちの変化を設計</strong>し、自然に予約・問い合わせへと導きます。
+      <div class="kw-list">
+        <span class="kw-tag">写真</span>
+        <span class="kw-tag">ストーリー</span>
+        <span class="kw-tag">魅力</span>
+        <span class="kw-tag">口コミ</span>
+        <span class="kw-tag">安心感</span>
       </div>
     </div>
   </div>
@@ -356,11 +384,11 @@
     <h2 class="s-title">LP が解決できる課題</h2>
     <div class="solve-grid">
       <div class="solve-item">宿泊プランの予約促進</div>
-      <div class="solve-item">季節イベントの集客</div>
-      <div class="solve-item">新商品・新メニューの認知拡大</div>
-      <div class="solve-item">体験プログラムの申込み獲得</div>
-      <div class="solve-item">お問い合わせ数の増加</div>
-      <div class="solve-item">SNS・広告からの導線強化</div>
+      <div class="solve-item">体験プログラムの申込み増加</div>
+      <div class="solve-item">問い合わせ獲得</div>
+      <div class="solve-item">イベント集客</div>
+      <div class="solve-item">SNS・広告からの導線改善</div>
+      <div class="solve-item">新商品・新サービスの訴求</div>
     </div>
   </div>
 </section>
@@ -369,16 +397,15 @@
 <section id="honest">
   <div class="inner">
     <span class="s-label">正直なところ</span>
-    <p class="honest-q">LPだけで成果は出るの？</p>
+    <p class="honest-q">LP は魔法のツールではありません</p>
 
-    <div class="honest-a">
-      <p class="answer">必ずではありません。</p>
-      <p>LPは魔法のツールではありません。商品やサービスの魅力、広告やSNSからの集客、ターゲット設定なども重要です。</p>
-      <br>
-      <p>しかし、<strong>魅力があるにも関わらず伝わっていない</strong>場合は、LPによって改善できるケースが多くあります。</p>
+    <div class="honest-block">
+      <p class="answer">LPを作れば必ず成果が出る、というものではありません。</p>
+      <p>商品やサービスの魅力、ターゲット設定、広告やSNS運用も重要です。</p>
     </div>
 
-    <p style="font-size:14px;color:var(--muted);line-height:2.2;">まずは現状をヒアリングした上で、LPが本当に有効かどうかを一緒に考えます。「制作ありき」ではなく、課題解決を起点にご提案します。</p>
+    <p class="body-text">しかし、<strong style="color:var(--sky);">魅力があるにも関わらず伝わっていない</strong>という課題には、LPが大きな力を発揮します。</p>
+    <p style="font-size:14px;color:var(--muted);line-height:2.2;">まずは現状をヒアリングした上で、LPが本当に有効かどうかを一緒に考えます。制作ありきではなく、課題解決を起点にご提案します。</p>
   </div>
 </section>
 
@@ -387,16 +414,16 @@
   <div class="inner">
     <span class="s-label">大切にしていること</span>
     <h2 class="s-title">私が LP 制作で<br>大切にしていること</h2>
-    <p class="philosophy-body">
-      LPを<em>「デザインを作る仕事」</em>ではなく、<em>「魅力を伝える仕組みを作る仕事」</em>だと考えています。<br><br>
-      ホテル業界で10年以上働いてきた中で、本当は良いサービスなのに伝わっていない施設やお店を数多く見てきました。<br><br>
-      だからこそ、<em>「誰に」「何を」「どの順番で」</em>伝えるべきかを整理することを、何より大切にしています。
+    <p class="phil-body">
+      LPを<em>「デザイン制作」</em>ではなく、<em>「問題解決の設計」</em>だと考えています。<br><br>
+      ホテル業界で10年以上働いてきた中で、本当は良いサービスなのに知られていない施設やお店を数多く見てきました。<br><br>
+      だからこそ、<em>「誰に」「何を」「どの順番で」</em>伝えるべきかを整理し、選ばれる理由を見つけることを大切にしています。
     </p>
-    <div class="phil-keywords">
+    <div class="phil-kws">
       <span class="phil-kw">ターゲット設定</span>
       <span class="phil-kw">情報整理</span>
       <span class="phil-kw">導線設計</span>
-      <span class="phil-kw">行動につながるデザイン</span>
+      <span class="phil-kw">選ばれる理由を見つける</span>
     </div>
   </div>
 </section>
@@ -424,7 +451,7 @@
         </div>
       </div>
     </div>
-    <div class="cta-wrap">
+    <div style="text-align:center;">
       <a class="btn-outline" href="works.html">制作実績をすべて見る</a>
     </div>
   </div>
@@ -450,10 +477,9 @@
       </ul>
     </div>
 
-    <p style="font-size:13px;color:var(--muted);line-height:2;text-align:center;">表示価格は目安です。制作内容・ページ数・ボリュームに応じてお見積りいたします。</p>
-
-    <div class="cta-wrap">
-      <a class="btn-outline" href="index.html#pricing">料金について詳しく見る</a>
+    <p style="font-size:13px;color:var(--muted);line-height:2;text-align:center;margin-bottom:32px;">表示価格は目安です。制作内容・ページ数・ボリュームに応じてお見積りいたします。</p>
+    <div style="text-align:center;">
+      <a class="btn-outline" href="index.html#pricing">料金を見る</a>
     </div>
   </div>
 </section>
@@ -464,10 +490,11 @@
     <h2>
       いい場所なのに、知られていない。<br>
       いいサービスなのに、選ばれていない。<br><br>
-      <em>その課題は、LP によって改善できるかもしれません。</em>
+      <em>その課題は、LP で改善できるかもしれません。</em>
     </h2>
-    <p>まずは現在のお悩みをお聞かせください。<br>ヒアリングから始めますので、お気軽にどうぞ。</p>
-    <a class="btn-cta" href="index.html#contact" style="background:#fff;color:var(--sky);box-shadow:0 4px 20px rgba(0,0,0,.2);"
+    <p>まずは現在のお悩みをお聞かせください。</p>
+    <a class="btn-cta" href="index.html#contact"
+      style="background:#fff;color:var(--sky);box-shadow:0 4px 20px rgba(0,0,0,.2);"
       onmouseover="this.style.background='var(--pale)';this.style.transform='translateY(-3px)'"
       onmouseout="this.style.background='#fff';this.style.transform='translateY(0)'">無料相談する</a>
   </div>
