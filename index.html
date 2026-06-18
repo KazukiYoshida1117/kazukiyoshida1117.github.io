@@ -110,14 +110,22 @@ nav a:hover { color: var(--sky); }
   max-width: 520px; margin: 0 0 52px; font-weight: 400; line-height: 1.9;
   text-shadow: 0 1px 6px rgba(0,0,0,.5);
 }
+.fv-btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 .btn-fv {
   background: var(--sky); color: var(--white);
-  border: none; padding: 18px 48px; border-radius: 40px;
+  border: 2px solid var(--sky); padding: 18px 48px; border-radius: 40px;
   font-size: 15px; font-weight: 500; cursor: pointer;
   letter-spacing: .1em; transition: .25s; font-family: inherit;
-  box-shadow: 0 4px 16px rgba(74,154,184,.35);
+  box-shadow: 0 4px 16px rgba(74,154,184,.35); text-decoration: none; display: inline-block;
 }
-.btn-fv:hover { background: var(--sky2); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74,154,184,.4); }
+.btn-fv:hover { background: var(--sky2); border-color: var(--sky2); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74,154,184,.4); }
+.btn-fv-outline {
+  background: transparent; color: var(--white);
+  border: 2px solid rgba(255,255,255,.7); padding: 18px 48px; border-radius: 40px;
+  font-size: 15px; font-weight: 500; cursor: pointer;
+  letter-spacing: .1em; transition: .25s; font-family: inherit; text-decoration: none; display: inline-block;
+}
+.btn-fv-outline:hover { background: rgba(255,255,255,.15); border-color: #fff; transform: translateY(-3px); }
 .fv-scroll { margin-top: 56px; color: var(--muted); font-size: 11px; letter-spacing: .2em; }
 
 /* ── PHOTO FULL ── */
@@ -581,7 +589,7 @@ footer strong { color: var(--sky2); }
   <nav>
     <a href="#reasons"  data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
     <a href="#services" data-ja="サービス"     data-en="Services">サービス</a>
-    <a href="#works"    data-ja="制作実績"     data-en="Work">制作実績</a>
+    <a href="works.html" data-ja="制作実績"     data-en="Work">制作実績</a>
     <a href="#about"    data-ja="プロフィール" data-en="About">プロフィール</a>
     <a href="#faq"      data-ja="FAQ"         data-en="FAQ">FAQ</a>
   </nav>
@@ -603,7 +611,7 @@ footer strong { color: var(--sky2); }
 <div class="sp-menu" id="sp-menu">
   <a href="#reasons" onclick="closeMenu()" data-ja="選ばれる理由" data-en="Why Me">選ばれる理由</a>
   <a href="#services" onclick="closeMenu()" data-ja="サービス" data-en="Services">サービス</a>
-  <a href="#works" onclick="closeMenu()" data-ja="制作実績" data-en="Work">制作実績</a>
+  <a href="works.html" onclick="closeMenu()" data-ja="制作実績" data-en="Work">制作実績</a>
   <a href="#about" onclick="closeMenu()" data-ja="プロフィール" data-en="About">プロフィール</a>
   <a href="#faq" onclick="closeMenu()" data-ja="FAQ" data-en="FAQ">FAQ</a>
   <div class="sp-lang">
@@ -624,8 +632,12 @@ footer strong { color: var(--sky2); }
     <p class="fv-sub"
       data-ja="ホテル・観光業界10年以上 × カナダ留学5年。<br>「予約・来店につながるWeb」をつくります。"
       data-en="10+ years in hotel &amp; tourism × 5 years in Canada.<br>I build websites that turn visitors into bookings and walk-ins.">ホテル・観光業界10年以上 × カナダ留学5年。<br>「予約・来店につながるWeb」をつくります。</p>
-    <button class="btn-fv" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-      data-ja="お気軽にご相談を" data-en="Let's Talk">お気軽にご相談を</button>
+    <div class="fv-btns">
+      <button class="btn-fv" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+        data-ja="お気軽にご相談を" data-en="Let's Talk">お気軽にご相談を</button>
+      <a class="btn-fv-outline" href="works.html"
+        data-ja="制作実績を見る" data-en="View Portfolio">制作実績を見る</a>
+    </div>
   </div>
   <p class="fv-scroll" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);">scroll ↓</p>
 </section>
@@ -726,126 +738,7 @@ footer strong { color: var(--sky2); }
 </section>
 
 
-<!-- WORKS -->
-<section id="works" style="background:var(--sandl)">
-  <div class="inner">
-    <span class="s-label" data-ja="制作実績" data-en="Works">制作実績</span>
-    <h2 class="s-title" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</h2>
-
-    <!-- Web / LP -->
-    <p class="works-cat-label">Web / LP</p>
-    <div class="web-grid">
-      <!-- 新しい作品は上に追加 -->
-      <div class="web-card">
-        <div class="web-thumb"><img src="works/lp/astra_dune_tottori_pc.png" alt="ASTRA DUNE TOTTORI LP" loading="lazy"></div>
-        <div class="web-body">
-          <h3>ASTRA DUNE TOTTORI（ランディングページ）</h3>
-          <p>星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。</p>
-          <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
-          <div class="web-actions">
-            <button class="btn-doc" onclick="openSlideModal(['works/lp/astra_dune_doc/astra_dune_doc_01.png','works/lp/astra_dune_doc/astra_dune_doc_02.png','works/lp/astra_dune_doc/astra_dune_doc_03.png','works/lp/astra_dune_doc/astra_dune_doc_04.png','works/lp/astra_dune_doc/astra_dune_doc_05.png','works/lp/astra_dune_doc/astra_dune_doc_06.png','works/lp/astra_dune_doc/astra_dune_doc_07.png','works/lp/astra_dune_doc/astra_dune_doc_08.png','works/lp/astra_dune_doc/astra_dune_doc_09.png','works/lp/astra_dune_doc/astra_dune_doc_10.png','works/lp/astra_dune_doc/astra_dune_doc_11.png','works/lp/astra_dune_doc/astra_dune_doc_12.png','works/lp/astra_dune_doc/astra_dune_doc_13.png','works/lp/astra_dune_doc/astra_dune_doc_14.png'])">資料を見る</button>
-            <a class="btn-link" href="works/lp/astra_dune/index.html" target="_blank" rel="noopener">別タブで開く →</a>
-          </div>
-        </div>
-      </div>
-      <div class="web-card">
-        <div class="web-thumb"><img src="works/lp/PC版.png" alt="海灯りの宿 凪ノ音 LP" loading="lazy"></div>
-        <div class="web-body">
-          <h3>海灯りの宿　凪ノ音（ランディングページ）</h3>
-          <p>京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。</p>
-          <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
-          <div class="web-actions">
-            <button class="btn-doc" onclick="openSlideModal(['works/lp/nagi_doc/naginone_doc_01.png','works/lp/nagi_doc/naginone_doc_02.png','works/lp/nagi_doc/naginone_doc_03.png','works/lp/nagi_doc/naginone_doc_04.png','works/lp/nagi_doc/naginone_doc_05.png','works/lp/nagi_doc/naginone_doc_06.png','works/lp/nagi_doc/naginone_doc_07.png','works/lp/nagi_doc/naginone_doc_08.png','works/lp/nagi_doc/naginone_doc_09.png','works/lp/nagi_doc/naginone_doc_10.png','works/lp/nagi_doc/naginone_doc_11.png','works/lp/nagi_doc/naginone_doc_12.png'])">資料を見る</button>
-            <a class="btn-link" href="works/lp/kaze/index.html" target="_blank" rel="noopener">別タブで開く →</a>
-          </div>
-        </div>
-      </div>
-      <div class="web-card">
-        <div class="web-thumb"><img src="works/lp/lmc_lp.jpg" alt="LINEマーケティングLP" loading="lazy"></div>
-        <div class="web-body">
-          <h3>LINEマーケティングコンサルタント養成講座（ランディングページ）</h3>
-          <p>マーケティング講座の受講意欲を高めるランディングページ。情報量が多い中でも読みやすいレイアウトを追求。</p>
-          <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
-          <div class="web-actions">
-            <button class="btn-doc" onclick="openSlideModal(['works/lp/lmc_doc/lmc_doc_01.png','works/lp/lmc_doc/lmc_doc_02.png'])">資料を見る</button>
-            <a class="btn-link" href="works/lp/lmc/index.html" target="_blank" rel="noopener">別タブで開く →</a>
-          </div>
-        </div>
-      </div>
-      <div class="web-card">
-        <div class="web-thumb"><img src="works/dogrun/images/main.jpg" alt="ドッグランカフェ" loading="lazy"></div>
-        <div class="web-body">
-          <h3>ドッグラン＆カフェ Zero Wan（ホームページ）</h3>
-          <p>ドッグランとカフェを組み合わせた複合施設のコーポレートサイト。ナビゲーション設計とビジュアルの統一感を意識して制作。</p>
-          <div class="web-tags"><span>Photoshop</span><span>Illustrator</span><span>HTML5</span><span>CSS</span></div>
-          <div class="web-actions">
-            <button class="btn-doc" onclick="openSlideModal(['works/dogrun/dogrun_doc.png'])">資料を見る</button>
-            <a class="btn-link" href="works/dogrun/index.html" target="_blank" rel="noopener">別タブで開く →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Banner: 10作品 -->
-    <p class="works-cat-label" style="margin-top:40px;">Banner · 10作品</p>
-    <div class="banner-grid-top">
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_10_mie.png','works/banners/docs/banner_10_mie_doc.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_10_mie_top_img.jpg" alt="三重県東紀州 移住促進バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">三重県東紀州 移住促進バナー</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_9_aomori.png','works/banners/docs/banner_9_aomori_doc.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_9_aomori_top_img.jpg" alt="あおもり移住バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">あおもり移住バナー</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_8_hokkaido.png','works/banners/docs/banner_8_hokkaido_doc.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_8_hokkaido_top_img.jpg" alt="北海道空知 観光バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">北海道空知 観光バナー</div>
-      </div>
-    </div>
-    <div class="banner-grid-top" style="margin-top:12px;">
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_3_newyear_sale.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_3_newyear_sale_top_img.jpg" alt="新春初売りセール開催" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">新春初売りセール開催</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_2_okinawa.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_2_okinawa_top_img.jpg" alt="夏の沖縄リゾート旅行" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">夏の沖縄リゾート旅行</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_1_programing.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_1_programing_top_img.jpg" alt="子ども向けプログラミング教室" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">子ども向けプログラミング教室</div>
-      </div>
-    </div>
-    <div class="banner-grid-bot">
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_6_cafe.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_6_cafe_top_img.jpg" alt="カフェオープン記念バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">カフェオープン記念バナー</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_5_restaurant.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_5_restaurant_top_img.jpg" alt="シェフ特製の新メニュー登場" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">シェフ特製の新メニュー登場</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_4_englishschool.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_4_englishschool_top_img.jpg" alt="幼児・小学生向け英会話教室" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">幼児・小学生向け英会話教室</div>
-      </div>
-      <div class="banner-card" onclick="openSlideModal(['works/banners/banner_7_spring.png'])">
-        <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_7_spring_top_img.jpg" alt="お花見スポット・イベント情報" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
-        <div class="banner-label">お花見スポット・イベント情報</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Works Modal (banner full image) -->
-<div id="works-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)closeWorksModal()">
-  <div class="works-modal-inner">
-    <button class="modal-close" onclick="closeWorksModal()">✕</button>
-    <img id="works-modal-img" src="" alt="">
-  </div>
-</div>
-
-<!-- Slide Modal (docs) -->
+<!-- Slide Modal (docs / about) -->
 <div id="slide-modal" class="modal-backdrop" style="display:none;background:rgba(0,0,0,.78);" onclick="if(event.target===this)closeSlideModal()">
   <div class="slide-modal-inner">
     <button class="modal-close" onclick="closeSlideModal()">✕</button>
@@ -1163,17 +1056,6 @@ window.addEventListener('scroll', function(){
   else btn.classList.remove('visible');
 }, { passive: true });
 
-/* ── Works Modal ── */
-function openWorksModal(src) {
-  document.getElementById('works-modal-img').src = src;
-  document.getElementById('works-modal').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeWorksModal() {
-  document.getElementById('works-modal').style.display = 'none';
-  document.body.style.overflow = '';
-}
-
 /* ── Slide Modal ── */
 let _slides = [], _slideIdx = 0;
 function openSlideModal(slides) {
@@ -1202,9 +1084,6 @@ function renderSlide() {
 }
 function slideGo(i) { _slideIdx = i; renderSlide(); }
 document.addEventListener('keydown', (e) => {
-  if (document.getElementById('works-modal').style.display !== 'none') {
-    if (e.key === 'Escape') closeWorksModal();
-  }
   if (document.getElementById('slide-modal').style.display !== 'none') {
     if (e.key === 'Escape') closeSlideModal();
     if (e.key === 'ArrowRight') slideMove(1);

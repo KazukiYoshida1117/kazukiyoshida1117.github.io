@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制作実績 | Kazuki Yoshida — Webデザイナー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky:  #4a9ab8;
+    --sky2: #357a95;
+    --sandl:#f7f4ef;
+    --sandm:#e8e0d5;
+    --pale: #d4e8f0;
+    --text: #334155;
+    --muted:#7a8fa6;
+    --white:#ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); line-height: 1.8; font-size: 15px; font-weight: 300; }
+
+  /* ── HEADER ── */
+  .page-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.95); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--sandm);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 60px;
+  }
+  .page-header h1 { font-size: 14px; font-weight: 500; color: var(--text); letter-spacing: .05em; }
+  .page-header a {
+    font-size: 12px; color: var(--sky); text-decoration: none;
+    border: 1px solid var(--sky); padding: 5px 16px; border-radius: 20px; transition: .2s;
+  }
+  .page-header a:hover { background: var(--sky); color: #fff; }
+
+  /* ── INNER ── */
+  .inner { max-width: 960px; margin: 0 auto; padding: 80px 48px; }
+
+  /* ── TITLE ── */
+  .s-label { display: block; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--sky); margin-bottom: 12px; font-weight: 500; }
+  .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3vw,36px); font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 48px; }
+
+  /* ── WORKS CSS ── */
+  .works-cat-label { font-size: 11px; font-weight: 700; color: var(--sky); letter-spacing: .18em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .works-cat-label::after { content:''; flex: 1; height: 1px; background: #e2e8f0; }
+  .web-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+  .web-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,.08); overflow: hidden; transition: box-shadow .2s; }
+  .web-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,.14); }
+  .web-thumb { height: 200px; overflow: hidden; background: #f1f5f9; }
+  .web-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .web-body { padding: 18px; }
+  .web-body h3 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .web-body p { font-size: 12px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
+  .web-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .web-tags span { font-size: 11px; background: #f1f5f9; border: 1px solid #e2e8f0; color: #64748b; padding: 2px 10px; border-radius: 20px; }
+  .web-actions { display: flex; gap: 8px; }
+  .btn-doc { font-size: 11px; font-weight: 700; color: var(--text); border: 1px solid var(--text); padding: 5px 14px; border-radius: 20px; background: none; cursor: pointer; font-family: inherit; transition: .2s; }
+  .btn-doc:hover { background: var(--text); color: #fff; }
+  .btn-link { font-size: 11px; font-weight: 700; color: var(--sky); border: 1px solid var(--sky); padding: 5px 14px; border-radius: 20px; text-decoration: none; transition: .2s; }
+  .btn-link:hover { background: var(--sky); color: #fff; }
+  .banner-grid-top { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 12px; }
+  .banner-grid-bot { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+  .banner-card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); cursor: pointer; background: #fff; transition: box-shadow .2s; }
+  .banner-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.15); }
+  .banner-thumb { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+  .banner-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+  .banner-card:hover .banner-thumb img { transform: scale(1.05); }
+  .banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; transition: background .3s; }
+  .banner-card:hover .banner-overlay { background: rgba(0,0,0,.5); }
+  .banner-overlay span { color: #fff; font-size: 12px; font-weight: 700; opacity: 0; transition: opacity .3s; }
+  .banner-card:hover .banner-overlay span { opacity: 1; }
+  .banner-label { padding: 8px 10px; font-size: 11px; font-weight: 700; color: var(--text); line-height: 1.4; }
+
+  /* ── MODALS ── */
+  .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 200; display: flex; align-items: center; justify-content: center; padding: 32px 16px; overflow-y: auto; }
+  .modal-close { position: absolute; top: -36px; right: 0; color: #fff; font-size: 22px; background: none; border: none; cursor: pointer; line-height: 1; }
+  .modal-close:hover { opacity: .7; }
+  .works-modal-inner { position: relative; max-width: 90vw; max-height: 90vh; }
+  .works-modal-inner img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+  .slide-modal-inner { position: relative; display: flex; flex-direction: column; align-items: center; max-width: 880px; width: 100%; }
+  .slide-img-wrap { width: 100%; }
+  .slide-img-wrap img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; }
+  .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); color: #fff; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: .2s; }
+  .slide-btn:hover { background: rgba(255,255,255,.3); }
+  .slide-btn-prev { left: -56px; }
+  .slide-btn-next { right: -56px; }
+  .slide-dots { display: flex; gap: 6px; margin-top: 16px; justify-content: center; }
+  .slide-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.4); border: none; cursor: pointer; padding: 0; transition: .2s; }
+  .slide-dot.active { background: #fff; }
+  .slide-counter { color: rgba(255,255,255,.6); font-size: 12px; margin-top: 8px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .inner { padding: 60px 24px; }
+    .page-header { padding: 0 20px; }
+    .web-grid { grid-template-columns: 1fr; }
+    .banner-grid-top { grid-template-columns: 1fr 1fr; }
+    .banner-grid-bot { grid-template-columns: 1fr 1fr; }
+    .slide-btn-prev { left: -8px; }
+    .slide-btn-next { right: -8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>制作実績 / Portfolio</h1>
+  <a href="index.html">← トップへ戻る</a>
+</header>
+
+<div class="inner">
+  <span class="s-label">制作実績</span>
+  <h2 class="s-title">ポートフォリオ</h2>
+
+  <!-- Web / LP -->
+  <p class="works-cat-label">Web / LP</p>
+  <div class="web-grid">
+    <div class="web-card">
+      <div class="web-thumb"><img src="works/lp/astra_dune_tottori_pc.png" alt="ASTRA DUNE TOTTORI LP" loading="lazy"></div>
+      <div class="web-body">
+        <h3>ASTRA DUNE TOTTORI（ランディングページ）</h3>
+        <p>星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。</p>
+        <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
+        <div class="web-actions">
+          <button class="btn-doc" onclick="openSlideModal(['works/lp/astra_dune_doc/astra_dune_doc_01.png','works/lp/astra_dune_doc/astra_dune_doc_02.png','works/lp/astra_dune_doc/astra_dune_doc_03.png','works/lp/astra_dune_doc/astra_dune_doc_04.png','works/lp/astra_dune_doc/astra_dune_doc_05.png','works/lp/astra_dune_doc/astra_dune_doc_06.png','works/lp/astra_dune_doc/astra_dune_doc_07.png','works/lp/astra_dune_doc/astra_dune_doc_08.png','works/lp/astra_dune_doc/astra_dune_doc_09.png','works/lp/astra_dune_doc/astra_dune_doc_10.png','works/lp/astra_dune_doc/astra_dune_doc_11.png','works/lp/astra_dune_doc/astra_dune_doc_12.png','works/lp/astra_dune_doc/astra_dune_doc_13.png','works/lp/astra_dune_doc/astra_dune_doc_14.png'])">資料を見る</button>
+          <a class="btn-link" href="works/lp/astra_dune/index.html" target="_blank" rel="noopener">別タブで開く →</a>
+        </div>
+      </div>
+    </div>
+    <div class="web-card">
+      <div class="web-thumb"><img src="works/lp/PC版.png" alt="海灯りの宿 凪ノ音 LP" loading="lazy"></div>
+      <div class="web-body">
+        <h3>海灯りの宿　凪ノ音（ランディングページ）</h3>
+        <p>京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。</p>
+        <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
+        <div class="web-actions">
+          <button class="btn-doc" onclick="openSlideModal(['works/lp/nagi_doc/naginone_doc_01.png','works/lp/nagi_doc/naginone_doc_02.png','works/lp/nagi_doc/naginone_doc_03.png','works/lp/nagi_doc/naginone_doc_04.png','works/lp/nagi_doc/naginone_doc_05.png','works/lp/nagi_doc/naginone_doc_06.png','works/lp/nagi_doc/naginone_doc_07.png','works/lp/nagi_doc/naginone_doc_08.png','works/lp/nagi_doc/naginone_doc_09.png','works/lp/nagi_doc/naginone_doc_10.png','works/lp/nagi_doc/naginone_doc_11.png','works/lp/nagi_doc/naginone_doc_12.png'])">資料を見る</button>
+          <a class="btn-link" href="works/lp/kaze/index.html" target="_blank" rel="noopener">別タブで開く →</a>
+        </div>
+      </div>
+    </div>
+    <div class="web-card">
+      <div class="web-thumb"><img src="works/lp/lmc_lp.jpg" alt="LINEマーケティングLP" loading="lazy"></div>
+      <div class="web-body">
+        <h3>LINEマーケティングコンサルタント養成講座（ランディングページ）</h3>
+        <p>マーケティング講座の受講意欲を高めるランディングページ。情報量が多い中でも読みやすいレイアウトを追求。</p>
+        <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
+        <div class="web-actions">
+          <button class="btn-doc" onclick="openSlideModal(['works/lp/lmc_doc/lmc_doc_01.png','works/lp/lmc_doc/lmc_doc_02.png'])">資料を見る</button>
+          <a class="btn-link" href="works/lp/lmc/index.html" target="_blank" rel="noopener">別タブで開く →</a>
+        </div>
+      </div>
+    </div>
+    <div class="web-card">
+      <div class="web-thumb"><img src="works/dogrun/images/main.jpg" alt="ドッグランカフェ" loading="lazy"></div>
+      <div class="web-body">
+        <h3>ドッグラン＆カフェ Zero Wan（ホームページ）</h3>
+        <p>ドッグランとカフェを組み合わせた複合施設のコーポレートサイト。ナビゲーション設計とビジュアルの統一感を意識して制作。</p>
+        <div class="web-tags"><span>Photoshop</span><span>Illustrator</span><span>HTML5</span><span>CSS</span></div>
+        <div class="web-actions">
+          <button class="btn-doc" onclick="openSlideModal(['works/dogrun/dogrun_doc.png'])">資料を見る</button>
+          <a class="btn-link" href="works/dogrun/index.html" target="_blank" rel="noopener">別タブで開く →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <p class="works-cat-label" style="margin-top:40px;">Banner · 10作品</p>
+  <div class="banner-grid-top">
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_10_mie.png','works/banners/docs/banner_10_mie_doc.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_10_mie_top_img.jpg" alt="三重県東紀州 移住促進バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">三重県東紀州 移住促進バナー</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_9_aomori.png','works/banners/docs/banner_9_aomori_doc.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_9_aomori_top_img.jpg" alt="あおもり移住バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">あおもり移住バナー</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_8_hokkaido.png','works/banners/docs/banner_8_hokkaido_doc.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_8_hokkaido_top_img.jpg" alt="北海道空知 観光バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">北海道空知 観光バナー</div>
+    </div>
+  </div>
+  <div class="banner-grid-top" style="margin-top:12px;">
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_3_newyear_sale.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_3_newyear_sale_top_img.jpg" alt="新春初売りセール開催" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">新春初売りセール開催</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_2_okinawa.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_2_okinawa_top_img.jpg" alt="夏の沖縄リゾート旅行" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">夏の沖縄リゾート旅行</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_1_programing.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_1_programing_top_img.jpg" alt="子ども向けプログラミング教室" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">子ども向けプログラミング教室</div>
+    </div>
+  </div>
+  <div class="banner-grid-bot" style="margin-top:12px;">
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_6_cafe.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_6_cafe_top_img.jpg" alt="カフェオープン記念バナー" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">カフェオープン記念バナー</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_5_restaurant.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_5_restaurant_top_img.jpg" alt="シェフ特製の新メニュー登場" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">シェフ特製の新メニュー登場</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_4_englishschool.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_4_englishschool_top_img.jpg" alt="幼児・小学生向け英会話教室" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">幼児・小学生向け英会話教室</div>
+    </div>
+    <div class="banner-card" onclick="openSlideModal(['works/banners/banner_7_spring.png'])">
+      <div class="banner-thumb"><img src="works/banners/banner_top_img/banner_7_spring_top_img.jpg" alt="お花見スポット・イベント情報" loading="lazy"><div class="banner-overlay"><span>詳細を見る</span></div></div>
+      <div class="banner-label">お花見スポット・イベント情報</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide Modal -->
+<div id="slide-modal" class="modal-backdrop" style="display:none;background:rgba(0,0,0,.78);" onclick="if(event.target===this)closeSlideModal()">
+  <div class="slide-modal-inner">
+    <button class="modal-close" onclick="closeSlideModal()">✕</button>
+    <div class="slide-img-wrap"><img id="slide-modal-img" src="" alt=""></div>
+    <button class="slide-btn slide-btn-prev" id="slide-prev" onclick="slideMove(-1)">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="slide-btn slide-btn-next" id="slide-next" onclick="slideMove(1)">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="slide-dots" id="slide-dots"></div>
+    <p class="slide-counter" id="slide-counter"></p>
+  </div>
+</div>
+
+<footer style="background:#334155;color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:12px;letter-spacing:.08em;">
+  © 2024 <strong style="color:#7bbfd6;">Kazuki Yoshida</strong>. All rights reserved.
+</footer>
+
+<script>
+let _slides = [], _slideIdx = 0;
+function openSlideModal(slides) {
+  _slides = slides; _slideIdx = 0;
+  document.getElementById('slide-modal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  renderSlide();
+}
+function closeSlideModal() {
+  document.getElementById('slide-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function slideMove(dir) {
+  _slideIdx = (_slideIdx + dir + _slides.length) % _slides.length;
+  renderSlide();
+}
+function renderSlide() {
+  document.getElementById('slide-modal-img').src = _slides[_slideIdx];
+  const hasMult = _slides.length > 1;
+  document.getElementById('slide-prev').style.display = hasMult ? 'flex' : 'none';
+  document.getElementById('slide-next').style.display = hasMult ? 'flex' : 'none';
+  document.getElementById('slide-dots').innerHTML = hasMult
+    ? _slides.map((_, i) => `<button class="slide-dot${i===_slideIdx?' active':''}" onclick="slideGo(${i})"></button>`).join('')
+    : '';
+  document.getElementById('slide-counter').textContent = hasMult ? `${_slideIdx+1} / ${_slides.length}` : '';
+}
+function slideGo(i) { _slideIdx = i; renderSlide(); }
+document.addEventListener('keydown', (e) => {
+  if (document.getElementById('slide-modal').style.display !== 'none') {
+    if (e.key === 'Escape') closeSlideModal();
+    if (e.key === 'ArrowLeft') slideMove(-1);
+    if (e.key === 'ArrowRight') slideMove(1);
+  }
+});
+</script>
+</body>
+</html>
