@@ -78,14 +78,15 @@ nav a:hover { color: var(--sky); }
 #fv {
   min-height: 100vh;
   background: url('img/fv_hero.png') center center / cover no-repeat;
-  display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
-  text-align: left; padding: 64px 120px 80px 0;
+  text-align: left;
   position: relative; overflow: hidden;
 }
 .fv-content {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
   max-width: 480px;
-  padding-right: 0;
-  margin-right: 40px;
 }
 #fv::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
@@ -548,17 +549,15 @@ footer strong { color: var(--sky2); }
   .sp-menu { display: flex; }
   #fv {
     background-position: -200px center;
-    align-items: center;
-    padding: 56px 24px 80px;
-    text-align: center;
+    min-height: 100vh;
   }
   #fv::before {
     content: ''; position: absolute; inset: 0;
     background: rgba(0,0,0,.35);
     pointer-events: none; z-index: 1;
   }
-  .fv-content { z-index: 2; }
-  .fv-content { max-width: 100%; padding: 0; margin-right: 0; text-align: center; margin-top: 350px; }
+  .fv-content { top: 50%; left: 50%; right: auto; transform: translate(-50%, -50%); max-width: 100%; width: calc(100% - 48px); text-align: center; z-index: 2; }
+  .fv-btns { justify-content: center; }
   .fv-sub { margin: 0 auto 40px; }
   section { padding: 72px 24px; }
   .reasons-grid, .services-grid { grid-template-columns: 1fr; }
