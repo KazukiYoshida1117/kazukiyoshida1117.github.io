@@ -1102,13 +1102,11 @@ function render(){
   document.getElementById('about-story').innerHTML =
     lang_data.about[L].map(p=>`<p>${p}</p>`).join('');
   // flow
-  const flowIcons = ['💬','📋','✏️','📦'];
   document.getElementById('flow-steps').innerHTML =
-    lang_data.flow[L].map((s,i)=>`
+    lang_data.flow[L].map((s)=>`
       <div class="flow-step">
         <div class="flow-step-inner">
-          <div class="flow-num">${s.n}</div>
-          <div class="flow-icon">${flowIcons[i]}</div>
+          <div class="flow-num">STEP ${s.n}</div>
           <h3>${s.t}</h3>
           <p>${s.d}</p>
         </div>
