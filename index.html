@@ -78,6 +78,7 @@ nav a:hover { color: var(--sky); }
 #fv {
   min-height: 100vh;
   background: url('img/fv_hero.png') center center / cover no-repeat;
+  background-attachment: fixed;
   text-align: left;
   position: relative; overflow: hidden;
 }
@@ -558,7 +559,8 @@ footer strong { color: var(--sky2); }
   .hamburger { display: flex; }
   .sp-menu { display: flex; }
   #fv {
-    background-position: -200px center;
+    background-attachment: scroll;
+    background-position: center center;
     min-height: 100vh;
   }
   #fv::before {
