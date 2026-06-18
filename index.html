@@ -87,6 +87,13 @@ nav a:hover { color: var(--sky); }
   top: 50%;
   transform: translateY(-50%);
   max-width: 480px;
+  background: linear-gradient(135deg, rgba(10,28,42,.68) 0%, rgba(10,28,42,.52) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 44px 48px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 40px rgba(0,0,0,.3);
 }
 #fv::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
@@ -559,7 +566,7 @@ footer strong { color: var(--sky2); }
     background: rgba(0,0,0,.35);
     pointer-events: none; z-index: 1;
   }
-  .fv-content { top: 50%; left: 50%; right: auto; transform: translate(-50%, -50%); max-width: 100%; width: calc(100% - 48px); text-align: center; z-index: 2; }
+  .fv-content { top: 50%; left: 50%; right: auto; transform: translate(-50%, -50%); max-width: 100%; width: calc(100% - 48px); text-align: center; z-index: 2; padding: 32px 28px; }
   .fv-btns { justify-content: center; }
   .fv-sub { margin: 0 auto 40px; }
   section { padding: 72px 24px; }
