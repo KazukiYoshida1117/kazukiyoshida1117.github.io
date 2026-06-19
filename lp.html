@@ -10,10 +10,13 @@
 <style>
   :root {
     --sky:  #4a9ab8;
-    --sky2: #357a95;
-    --sandl:#f7f4ef;
-    --sandm:#e8e0d5;
-    --pale: #d4e8f0;
+    --sky2: #7bbfd6;
+    --sandl:#faf7f2;
+    --sandm:#e8ddd0;
+    --pale: #dff0f7;
+    --navy: #1a2e4a;
+    --gold: #b8963e;
+    --gold2:#cfa94a;
     --text: #334155;
     --muted:#7a8fa6;
     --white:#ffffff;
@@ -41,28 +44,28 @@
   .s-label { display: block; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--sky); margin-bottom: 12px; font-weight: 500; }
   .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px,3vw,36px); font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 36px; }
   .inner { max-width: 800px; margin: 0 auto; padding: 0 40px; }
-  section { padding: 80px 0; }
+  section { padding: 100px 0; }
 
   /* ── BUTTONS ── */
   .btn-cta {
-    display: inline-block; background: var(--sky); color: #fff;
-    font-size: 15px; font-weight: 500; padding: 18px 56px;
+    display: inline-block; background: var(--gold); color: #fff;
+    font-size: 15px; font-weight: 700; padding: 18px 56px;
     border-radius: 40px; border: none; cursor: pointer;
     letter-spacing: .1em; font-family: inherit; text-decoration: none;
-    box-shadow: 0 4px 16px rgba(74,154,184,.35); transition: .25s;
+    box-shadow: 0 4px 20px rgba(184,150,62,.45); transition: .25s;
   }
-  .btn-cta:hover { background: var(--sky2); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74,154,184,.4); }
+  .btn-cta:hover { background: var(--gold2); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(184,150,62,.5); }
   .btn-outline {
-    display: inline-block; background: transparent; color: var(--sky);
-    font-size: 14px; font-weight: 500; padding: 12px 36px;
-    border-radius: 40px; border: 2px solid var(--sky); cursor: pointer;
+    display: inline-block; background: transparent; color: var(--navy);
+    font-size: 14px; font-weight: 700; padding: 12px 36px;
+    border-radius: 40px; border: 2px solid var(--navy); cursor: pointer;
     letter-spacing: .08em; font-family: inherit; text-decoration: none; transition: .25s;
   }
-  .btn-outline:hover { background: var(--sky); color: #fff; transform: translateY(-2px); }
+  .btn-outline:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
 
   /* ── FV ── */
   #fv {
-    background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 50%, #1e4a5e 100%);
+    background: linear-gradient(135deg, #122030 0%, #1a2e4a 50%, #1e3a5a 100%);
     padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden;
   }
   #fv::before {
@@ -139,11 +142,11 @@
   /* ── WHY MATCH ── */
   #why-match { background: var(--sandl); }
   .dark-card {
-    background: linear-gradient(135deg, #1a3a4a, #2a5a72);
+    background: linear-gradient(135deg, #122030, #1a2e4a);
     border-radius: 16px; padding: 40px; color: rgba(255,255,255,.85);
     font-size: 15px; line-height: 2.3; margin: 28px 0;
   }
-  .dark-card strong { color: #7bbfd6; }
+  .dark-card strong { color: var(--sky2); }
   .kw-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
   .kw-tag { font-size: 13px; font-weight: 700; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 6px 18px; border-radius: 20px; }
 
@@ -170,8 +173,8 @@
 
   /* ── PHILOSOPHY ── */
   #philosophy-lp {
-    background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 50%, #1e4a5e 100%);
-    padding: 80px 0;
+    background: linear-gradient(135deg, #122030 0%, #1a2e4a 50%, #1e3a5a 100%);
+    padding: 100px 0;
   }
   #philosophy-lp .s-label { color: rgba(255,255,255,.6); }
   #philosophy-lp .s-title { color: #fff; }
@@ -212,7 +215,7 @@
 
   /* ── FINAL CTA ── */
   #final-cta {
-    background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 50%, #1e4a5e 100%);
+    background: linear-gradient(135deg, #122030 0%, #1a2e4a 50%, #1e3a5a 100%);
     padding: 100px 0; text-align: center; position: relative; overflow: hidden;
   }
   #final-cta::before {
@@ -229,7 +232,7 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .inner { padding: 0 20px; }
-    section { padding: 60px 0; }
+    section { padding: 72px 0; }
     #fv { padding: 90px 0 80px; }
     .compare-grid { grid-template-columns: 1fr; }
     .solve-grid { grid-template-columns: 1fr; }
@@ -263,10 +266,7 @@
       <span class="fv-cause-tag">「導線」</span>
     </div>
     <p class="fv-lead" style="margin-top:32px;margin-bottom:48px;">その解決策の一つが、<em>LP（ランディングページ）</em>です。</p>
-    <a class="btn-cta" href="index.html#contact"
-      style="background:#fff;color:var(--sky);box-shadow:0 4px 20px rgba(0,0,0,.2);"
-      onmouseover="this.style.background='var(--pale)';this.style.transform='translateY(-3px)'"
-      onmouseout="this.style.background='#fff';this.style.transform='translateY(0)'">無料相談する</a>
+    <a class="btn-cta" href="index.html#contact">無料相談する</a>
   </div>
 </section>
 
@@ -493,10 +493,7 @@
       <em>その課題は、LP で改善できるかもしれません。</em>
     </h2>
     <p>まずは現在のお悩みをお聞かせください。</p>
-    <a class="btn-cta" href="index.html#contact"
-      style="background:#fff;color:var(--sky);box-shadow:0 4px 20px rgba(0,0,0,.2);"
-      onmouseover="this.style.background='var(--pale)';this.style.transform='translateY(-3px)'"
-      onmouseout="this.style.background='#fff';this.style.transform='translateY(0)'">無料相談する</a>
+    <a class="btn-cta" href="index.html#contact">無料相談する</a>
   </div>
 </section>
 

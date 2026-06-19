@@ -10,10 +10,13 @@
 <style>
   :root {
     --sky:  #4a9ab8;
-    --sky2: #357a95;
-    --sandl:#f7f4ef;
-    --sandm:#e8e0d5;
-    --pale: #d4e8f0;
+    --sky2: #7bbfd6;
+    --sandl:#faf7f2;
+    --sandm:#e8ddd0;
+    --pale: #dff0f7;
+    --navy: #1a2e4a;
+    --gold: #b8963e;
+    --gold2:#cfa94a;
     --text: #334155;
     --muted:#7a8fa6;
     --white:#ffffff;
@@ -39,7 +42,7 @@
 
   /* ── SHARED ── */
   .inner { max-width: 800px; margin: 0 auto; padding: 0 40px; }
-  section { padding: 80px 0; }
+  section { padding: 100px 0; }
   .s-label { display: block; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--sky); margin-bottom: 12px; font-weight: 500; }
   .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 32px); font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 36px; }
   .section-divider { width: 40px; height: 2px; background: var(--sky); border-radius: 2px; margin-bottom: 36px; }
@@ -48,17 +51,17 @@
 
   /* ── BUTTON ── */
   .btn-cta {
-    display: inline-block; background: var(--sky); color: #fff;
-    font-size: 15px; font-weight: 500; padding: 18px 56px;
+    display: inline-block; background: var(--gold); color: #fff;
+    font-size: 15px; font-weight: 700; padding: 18px 56px;
     border-radius: 40px; border: none; cursor: pointer;
     letter-spacing: .1em; font-family: inherit; text-decoration: none;
-    box-shadow: 0 4px 16px rgba(74,154,184,.35); transition: .25s;
+    box-shadow: 0 4px 20px rgba(184,150,62,.45); transition: .25s;
   }
-  .btn-cta:hover { background: var(--sky2); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74,154,184,.4); }
+  .btn-cta:hover { background: var(--gold2); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(184,150,62,.5); }
 
   /* ── FV ── */
   #fv {
-    background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 50%, #1e4a5e 100%);
+    background: linear-gradient(135deg, #122030 0%, #1a2e4a 50%, #1e3a5a 100%);
     padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden;
   }
   #fv::before {
@@ -107,7 +110,7 @@
   .flow-list { list-style: none; margin: 28px 0; }
   .flow-list li { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--sandm); font-size: 14px; line-height: 1.8; color: var(--text); }
   .flow-list li:last-child { border-bottom: none; }
-  .flow-list .num { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--sky); flex-shrink: 0; line-height: 1.3; }
+  .flow-list .num { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--gold); flex-shrink: 0; line-height: 1.3; }
 
   /* ── HISTORY ── */
   #history { background: var(--white); }
@@ -122,7 +125,7 @@
   #strengths { background: var(--sandl); }
   .strength-cards { display: flex; flex-direction: column; gap: 24px; }
   .strength-card { background: var(--white); border-radius: 16px; padding: 36px 40px; border: 1px solid var(--sandm); }
-  .strength-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; font-weight: 600; color: var(--pale); line-height: 1; margin-bottom: 8px; }
+  .strength-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; font-weight: 600; color: rgba(184,150,62,.2); line-height: 1; margin-bottom: 8px; }
   .strength-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.5; }
   .strength-card p { font-size: 14px; line-height: 2.1; color: var(--muted); }
 
@@ -141,7 +144,7 @@
 
   /* ── CLOSING ── */
   #closing { background: var(--white); text-align: center; }
-  .closing-box { background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 100%); border-radius: 20px; padding: 60px 48px; }
+  .closing-box { background: linear-gradient(135deg, #122030 0%, #1a2e4a 100%); border-radius: 20px; padding: 60px 48px; }
   .closing-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #fff; margin-bottom: 32px; line-height: 1.5; }
   .closing-quotes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
   .closing-quote { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.9; }
@@ -154,7 +157,7 @@
   @media (max-width: 768px) {
     .page-header { padding: 0 20px; }
     .inner { padding: 0 24px; }
-    section { padding: 60px 0; }
+    section { padding: 72px 0; }
     .strength-card { padding: 28px 24px; }
     .closing-box { padding: 40px 28px; }
     #fv { padding: 80px 0 72px; }
