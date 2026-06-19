@@ -586,15 +586,14 @@ footer strong { color: var(--sky2); }
   .target-vis { height: 200px; }
   .target-vis-business { background-position: center top !important; }
   #target { padding: 72px 24px; }
-  .flow-steps { flex-direction: column; gap: 16px; }
-  .flow-step:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 20px; }
+  .flow-steps { grid-template-columns: 1fr; gap: 0; }
+  .flow-step { position: static; }
+  .flow-step:not(:nth-child(3n))::after { display: none; }
+  .flow-step:not(:last-child)::after { content: '↓'; position: static; display: block; text-align: center; font-size: 20px; color: rgba(255,255,255,.4); padding: 8px 0; transform: none; }
+  .flow-step-inner { width: 100%; }
   #philosophy .inner { padding-left: 0 !important; }
   #philosophy { background-image: url('img/fv_hero2_sp.png') !important; background-position: 24% center !important; }
   .philosophy-overlay { background: rgba(255,255,255,0.88) !important; }
-  .flow-steps { grid-template-columns: 1fr; }
-  .flow-step:not(:nth-child(3n))::after { display: none; }
-  .flow-step:not(:last-child)::after { content: '↓'; display: block; text-align: center; font-size: 20px; color: rgba(255,255,255,.4); padding: 4px 0; }
-  .flow-step-inner { width: 100%; }
   .form-row2 { grid-template-columns: 1fr; }
   .contact-vis { margin: 0 -24px 48px; }
   .photo-ocean-sp { background-position: left center !important; }
