@@ -480,23 +480,6 @@ footer strong { color: var(--sky2); }
 .slide-dot.active { background: #fff; }
 .slide-counter { text-align: center; color: rgba(255,255,255,.6); font-size: 12px; margin-top: 6px; }
 
-/* ── WORKS PREVIEW CARDS ── */
-.works-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; }
-.wpc { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(26,46,74,.08); transition: box-shadow .3s, transform .3s; }
-.wpc:hover { box-shadow: 0 12px 48px rgba(26,46,74,.16); transform: translateY(-6px); }
-.wpc-thumb { height: 220px; position: relative; overflow: hidden; }
-.wpc-thumb-1 { background: linear-gradient(135deg, #8fd0e8 0%, #4a9ab8 55%, #2e6e8a 100%); }
-.wpc-thumb-2 { background: linear-gradient(135deg, #f5ede0 0%, #d4b896 45%, #a8c8d8 100%); }
-.wpc-thumb-3 { background: linear-gradient(135deg, #d4e8d0 0%, #8abfa8 50%, #4a9ab8 100%); }
-.wpc-body { padding: 28px 26px 32px; }
-.wpc-category { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .15em; color: var(--sky); background: var(--pale); padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
-.wpc-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 22px; line-height: 1.5; }
-.wpc-meta { display: flex; flex-direction: column; gap: 14px; }
-.wpc-meta-row { display: grid; grid-template-columns: 72px 1fr; gap: 10px; align-items: flex-start; border-top: 1px solid var(--sandm); padding-top: 14px; }
-.wpc-meta-row:first-child { border-top: none; padding-top: 0; }
-.wpc-meta-label { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: .06em; line-height: 1.8; }
-.wpc-meta-value { font-size: 12px; color: var(--text); line-height: 1.75; }
-
 /* ── MISC ── */
 .top-btn {
   position: fixed; bottom: 24px; right: 24px; z-index: 999;
@@ -621,7 +604,6 @@ footer strong { color: var(--sky2); }
   .photo-ocean-sp { background-position: left center !important; }
   .price-cards, .price-sub-cards { grid-template-columns: 1fr; }
   .price-option-card { flex-direction: column; gap: 16px; }
-  .works-preview-grid { grid-template-columns: 1fr; }
   section { padding: 88px 24px; }
 }
 </style>
@@ -858,87 +840,21 @@ footer strong { color: var(--sky2); }
 </section>
 
 <!-- PORTFOLIO TEASER -->
-<section id="portfolio-teaser" style="background:var(--sandl);">
-  <div class="inner">
-    <span class="s-label" data-ja="制作実績" data-en="Portfolio">制作実績</span>
-    <h2 class="s-title" data-ja="どんな想いで、どう設計したか。<small>Complete designs tell only half the story</small>" data-en="More than just the final design.<small>See the thinking behind every decision</small>">どんな想いで、どう設計したか。<small>Complete designs tell only half the story</small></h2>
-
-    <div class="works-preview-grid">
-      <!-- Card 1 -->
-      <div class="wpc">
-        <div class="wpc-thumb wpc-thumb-1"></div>
-        <div class="wpc-body">
-          <span class="wpc-category">ランディングページ</span>
-          <h3 class="wpc-title">旅館 宿泊プラン案内LP</h3>
-          <div class="wpc-meta">
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">ターゲット</span>
-              <span class="wpc-meta-value">国内旅行を検討中の30〜50代カップル・家族層</span>
-            </div>
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">目的</span>
-              <span class="wpc-meta-value">宿泊予約の増加・直予約率の向上</span>
-            </div>
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">制作ポイント</span>
-              <span class="wpc-meta-value">非日常感を演出するビジュアルと、料金・予約ボタンへの最短導線を設計</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="wpc">
-        <div class="wpc-thumb wpc-thumb-2"></div>
-        <div class="wpc-body">
-          <span class="wpc-category">ホームページ</span>
-          <h3 class="wpc-title">観光施設 公式サイト</h3>
-          <div class="wpc-meta">
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">ターゲット</span>
-              <span class="wpc-meta-value">インバウンド・訪日外国人を含む観光客全般</span>
-            </div>
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">目的</span>
-              <span class="wpc-meta-value">施設の魅力を国内外に伝え、来訪・問い合わせへつなげる</span>
-            </div>
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">制作ポイント</span>
-              <span class="wpc-meta-value">日英バイリンガル対応・写真中心の構成で視覚的に魅力を伝える</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="wpc">
-        <div class="wpc-thumb wpc-thumb-3"></div>
-        <div class="wpc-body">
-          <span class="wpc-category">SNSバナー</span>
-          <h3 class="wpc-title">飲食店 Instagram広告バナー</h3>
-          <div class="wpc-meta">
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">ターゲット</span>
-              <span class="wpc-meta-value">地域在住の20〜40代・グルメ・おでかけ好き</span>
-            </div>
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">目的</span>
-              <span class="wpc-meta-value">認知拡大・新規来店の促進</span>
-            </div>
-            <div class="wpc-meta-row">
-              <span class="wpc-meta-label">制作ポイント</span>
-              <span class="wpc-meta-value">フィード停止を狙うビジュアルと、一目でジャンルが伝わるコピー設計</span>
-            </div>
-          </div>
-        </div>
-      </div>
+<section id="portfolio-teaser" style="background:var(--white);text-align:center;">
+  <div class="inner" style="max-width:760px;">
+    <h2 class="s-title" data-ja="制作実績" data-en="Portfolio">制作実績</h2>
+    <p style="font-size:15px;font-weight:500;color:var(--text);line-height:2;margin-bottom:28px;">制作実績では、<br>ただ完成デザインを掲載するだけでなく、</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:36px;text-align:left;background:var(--sandl);border-radius:12px;padding:28px 32px;">
+      <p style="font-size:14px;font-weight:500;color:var(--text);line-height:1.9;display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--sky);font-weight:700;flex-shrink:0;">―</span>どんな課題を想定したのか。</p>
+      <p style="font-size:14px;font-weight:500;color:var(--text);line-height:1.9;display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--sky);font-weight:700;flex-shrink:0;">―</span>誰に向けて作ったのか。</p>
+      <p style="font-size:14px;font-weight:500;color:var(--text);line-height:1.9;display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--sky);font-weight:700;flex-shrink:0;">―</span>どんな行動につなげる設計にしたのか。</p>
     </div>
-
-    <div style="text-align:center;margin-top:56px;">
-      <a href="works.html"
-        style="display:inline-block;background:var(--gold);color:#fff;font-size:15px;font-weight:700;padding:18px 56px;border-radius:40px;text-decoration:none;letter-spacing:.1em;box-shadow:0 4px 20px rgba(184,150,62,.45);transition:.25s;"
-        onmouseover="this.style.background='var(--gold2)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(184,150,62,.5)'"
-        onmouseout="this.style.background='var(--gold)';this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(184,150,62,.45)'"
-        data-ja="制作実績をすべて見る" data-en="View Full Portfolio">制作実績をすべて見る</a>
-    </div>
+    <p style="font-size:14px;font-weight:400;color:var(--text);line-height:2;margin-bottom:40px;">という視点もあわせて紹介しています。<br><br>見た目の美しさだけでなく、<br><strong style="color:var(--sky);">伝える順番・導線・ターゲット心理を考えたデザイン</strong>をご覧ください。</p>
+    <a href="works.html"
+      style="display:inline-block;background:var(--gold);color:#fff;font-size:15px;font-weight:700;padding:18px 56px;border-radius:40px;text-decoration:none;letter-spacing:.1em;box-shadow:0 4px 20px rgba(184,150,62,.45);transition:.25s;"
+      onmouseover="this.style.background='var(--gold2)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(184,150,62,.5)'"
+      onmouseout="this.style.background='var(--gold)';this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(184,150,62,.45)'"
+      data-ja="制作実績を見る" data-en="View Portfolio">制作実績を見る</a>
   </div>
 </section>
 
