@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロフィール | 吉田 一毅 — 観光・サービス専門 LP / Webデザイナー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky:  #4a9ab8;
+    --sky2: #357a95;
+    --sandl:#f7f4ef;
+    --sandm:#e8e0d5;
+    --pale: #d4e8f0;
+    --text: #334155;
+    --muted:#7a8fa6;
+    --white:#ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); background: var(--white); line-height: 1.8; font-size: 15px; font-weight: 300; }
+  img { max-width: 100%; display: block; }
+
+  /* ── HEADER ── */
+  .page-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.95); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--sandm);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 60px;
+  }
+  .page-header .logo { font-size: 13px; font-weight: 500; color: var(--text); letter-spacing: .05em; }
+  .page-header a.back {
+    font-size: 12px; color: var(--sky); text-decoration: none;
+    border: 1px solid var(--sky); padding: 5px 16px; border-radius: 20px; transition: .2s;
+  }
+  .page-header a.back:hover { background: var(--sky); color: #fff; }
+
+  /* ── SHARED ── */
+  .inner { max-width: 800px; margin: 0 auto; padding: 0 40px; }
+  section { padding: 80px 0; }
+  .s-label { display: block; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--sky); margin-bottom: 12px; font-weight: 500; }
+  .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 32px); font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 36px; }
+  .section-divider { width: 40px; height: 2px; background: var(--sky); border-radius: 2px; margin-bottom: 36px; }
+  .body-text { font-size: 15px; line-height: 2.3; color: var(--text); margin-bottom: 24px; }
+  .body-text:last-child { margin-bottom: 0; }
+
+  /* ── BUTTON ── */
+  .btn-cta {
+    display: inline-block; background: var(--sky); color: #fff;
+    font-size: 15px; font-weight: 500; padding: 18px 56px;
+    border-radius: 40px; border: none; cursor: pointer;
+    letter-spacing: .1em; font-family: inherit; text-decoration: none;
+    box-shadow: 0 4px 16px rgba(74,154,184,.35); transition: .25s;
+  }
+  .btn-cta:hover { background: var(--sky2); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(74,154,184,.4); }
+
+  /* ── FV ── */
+  #fv {
+    background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 50%, #1e4a5e 100%);
+    padding: 120px 0 100px; text-align: center; position: relative; overflow: hidden;
+  }
+  #fv::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(74,154,184,.18) 0%, transparent 65%);
+  }
+  #fv .inner { position: relative; z-index: 1; }
+  #fv .fv-catch {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.5vw, 38px); font-weight: 600;
+    color: #fff; line-height: 1.6; margin-bottom: 40px; letter-spacing: .03em;
+  }
+  #fv .fv-catch em { color: #7bbfd6; font-style: normal; }
+  .fv-divider { width: 40px; height: 1px; background: rgba(255,255,255,.3); margin: 0 auto 32px; }
+  .fv-name {
+    font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
+    color: rgba(255,255,255,.6); margin-bottom: 12px;
+  }
+  .fv-name-ja {
+    font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600;
+    color: #fff; margin-bottom: 32px; letter-spacing: .05em;
+  }
+  .fv-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 40px; }
+  .fv-tag {
+    font-size: 12px; font-weight: 500; color: rgba(255,255,255,.85);
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25);
+    padding: 6px 18px; border-radius: 20px; letter-spacing: .04em;
+  }
+  .fv-lead { font-size: 14px; color: rgba(255,255,255,.75); line-height: 2.1; }
+
+  /* ── STORY ── */
+  #story { background: var(--white); }
+  .quote-block {
+    border-left: 3px solid var(--sky); padding: 20px 24px;
+    background: var(--sandl); border-radius: 0 12px 12px 0;
+    margin: 28px 0;
+  }
+  .quote-block p { font-size: 15px; font-weight: 500; color: var(--text); line-height: 2; }
+  .quote-block strong { color: var(--sky); }
+  .check-items { margin: 24px 0; }
+  .check-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; font-size: 14px; line-height: 1.8; color: var(--text); }
+  .check-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sky); flex-shrink: 0; margin-top: 9px; }
+
+  /* ── PHILOSOPHY ── */
+  #philosophy { background: var(--sandl); }
+  .flow-list { list-style: none; margin: 28px 0; }
+  .flow-list li { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--sandm); font-size: 14px; line-height: 1.8; color: var(--text); }
+  .flow-list li:last-child { border-bottom: none; }
+  .flow-list .num { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--sky); flex-shrink: 0; line-height: 1.3; }
+
+  /* ── HISTORY ── */
+  #history { background: var(--white); }
+  .timeline { margin: 28px 0; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: var(--sandm); }
+  .tl-item { padding: 0 0 32px 28px; position: relative; }
+  .tl-item::before { content: ''; position: absolute; left: -4px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--sky); }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item p { font-size: 14px; line-height: 2; color: var(--text); }
+
+  /* ── STRENGTHS ── */
+  #strengths { background: var(--sandl); }
+  .strength-cards { display: flex; flex-direction: column; gap: 24px; }
+  .strength-card { background: var(--white); border-radius: 16px; padding: 36px 40px; border: 1px solid var(--sandm); }
+  .strength-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; font-weight: 600; color: var(--pale); line-height: 1; margin-bottom: 8px; }
+  .strength-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.5; }
+  .strength-card p { font-size: 14px; line-height: 2.1; color: var(--muted); }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+  .service-list { display: flex; flex-direction: column; gap: 0; }
+  .service-item { padding: 28px 0; border-bottom: 1px solid var(--sandm); }
+  .service-item:last-child { border-bottom: none; }
+  .service-item h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .service-item p { font-size: 14px; line-height: 2; color: var(--muted); }
+
+  /* ── FOR WHO ── */
+  #forwho { background: var(--sandl); }
+  .worry-list { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+  .worry-item { background: var(--white); border-radius: 12px; padding: 22px 28px; border-left: 4px solid var(--sky); font-size: 14px; line-height: 2; color: var(--text); }
+
+  /* ── CLOSING ── */
+  #closing { background: var(--white); text-align: center; }
+  .closing-box { background: linear-gradient(135deg, #1a3a4a 0%, #2a5a72 100%); border-radius: 20px; padding: 60px 48px; }
+  .closing-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #fff; margin-bottom: 32px; line-height: 1.5; }
+  .closing-quotes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+  .closing-quote { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.9; }
+  .closing-box .body-lead { font-size: 15px; color: rgba(255,255,255,.85); line-height: 2.2; margin-bottom: 40px; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--text); color: rgba(255,255,255,.5); text-align: center; padding: 28px; font-size: 12px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .page-header { padding: 0 20px; }
+    .inner { padding: 0 24px; }
+    section { padding: 60px 0; }
+    .strength-card { padding: 28px 24px; }
+    .closing-box { padding: 40px 28px; }
+    #fv { padding: 80px 0 72px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <span class="logo">Kazuki Yoshida</span>
+  <a href="index.html" class="back">← トップへ戻る</a>
+</header>
+
+<!-- FV -->
+<section id="fv">
+  <div class="inner">
+    <p class="fv-catch">良いサービスが、<br>必要としている人に届くように。</p>
+    <div class="fv-divider"></div>
+    <p class="fv-name">観光・サービス専門 LP / Webデザイナー</p>
+    <p class="fv-name-ja">吉田 一毅</p>
+    <div class="fv-tags">
+      <span class="fv-tag">ホテル業界10年以上</span>
+      <span class="fv-tag">カナダ留学5年</span>
+      <span class="fv-tag">LP / Webデザイン</span>
+    </div>
+    <p class="fv-lead">観光・宿泊・飲食・地域事業者さま向けに、<br>LP・Webサイト・販促デザインを制作しています。</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="inner">
+    <span class="s-label">Background</span>
+    <h2 class="s-title">ホテル業界で見えてきたこと</h2>
+    <div class="section-divider"></div>
+    <p class="body-text">ホテル業界で多くのお客様と向き合う中で、魅力的な施設やサービスが、必ずしも選ばれているわけではないことを感じてきました。</p>
+    <div class="check-items">
+      <div class="check-item">丁寧な接客をしている。</div>
+      <div class="check-item">地域ならではの魅力がある。</div>
+      <div class="check-item">お客様に喜ばれている。</div>
+    </div>
+    <p class="body-text">それでも、その価値がWeb上で十分に伝わらず、選ばれる機会を逃してしまうことがあります。</p>
+    <p class="body-text">私はその現場を見てきたからこそ、</p>
+    <div class="quote-block">
+      <p>「魅力がない」のではなく、<br><strong>「魅力の伝え方が整理されていない」</strong></p>
+    </div>
+    <p class="body-text">という課題に向き合いたいと考えています。</p>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="inner">
+    <span class="s-label">Philosophy</span>
+    <h2 class="s-title">デザインで大切にしていること</h2>
+    <div class="section-divider"></div>
+    <p class="body-text">私が大切にしているのは、ただ見た目を整えることではありません。</p>
+    <ul class="flow-list">
+      <li><span class="num">01</span>誰に伝えるのか。</li>
+      <li><span class="num">02</span>何を伝えるのか。</li>
+      <li><span class="num">03</span>どの順番で見せるのか。</li>
+      <li><span class="num">04</span>最後にどんな行動につなげるのか。</li>
+    </ul>
+    <p class="body-text">この流れを整理することで、見る人が迷わず理解し、予約・来店・問い合わせへ進みやすくなります。</p>
+    <p class="body-text">LPやWebサイトは、魅力を必要としている人に届けるための大切な接点だと考えています。</p>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+  <div class="inner">
+    <span class="s-label">Career</span>
+    <h2 class="s-title">これまでの歩み</h2>
+    <div class="section-divider"></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <p>京都府出身。学生時代から海外に関心があり、約5年間カナダへ留学。</p>
+      </div>
+      <div class="tl-item">
+        <p>異なる文化や価値観に触れる中で、伝え方ひとつで印象や理解が大きく変わることを学ぶ。</p>
+      </div>
+      <div class="tl-item">
+        <p>帰国後はホテル業界へ進み、フロント・コンシェルジュ・チーフマネージャーとして、国内外のお客様対応に10年以上携わる。</p>
+      </div>
+      <div class="tl-item">
+        <p>現在はその経験を活かし、観光・宿泊・飲食・地域事業者さま向けに、LP・Webデザインを通して魅力を伝えるお手伝いをしている。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strengths">
+  <div class="inner">
+    <span class="s-label">Strengths</span>
+    <h2 class="s-title">私の強み</h2>
+    <div class="section-divider"></div>
+    <div class="strength-cards">
+      <div class="strength-card">
+        <div class="strength-num">01</div>
+        <h3>ホテル業界10年以上の現場経験</h3>
+        <p>予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">02</div>
+        <h3>魅力を整理する情報設計力</h3>
+        <p>「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。魅力を整理し、伝わる順番を設計します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-num">03</div>
+        <h3>インバウンド視点にも対応</h3>
+        <p>カナダ留学5年と訪日外国人対応経験を活かし、国内外のお客様に伝わる見せ方を考えます。観光・宿泊・地域事業者さまの魅力を、分かりやすく届けるお手伝いをします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="inner">
+    <span class="s-label">Services</span>
+    <h2 class="s-title">対応できること</h2>
+    <div class="section-divider"></div>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>LPデザイン</h3>
+        <p>予約・問い合わせ・来店につなげるための構成設計を重視したLPデザインを制作します。</p>
+      </div>
+      <div class="service-item">
+        <h3>ホームページデザイン</h3>
+        <p>事業やサービス全体の魅力を伝え、信頼感につながるWebサイトを制作します。</p>
+      </div>
+      <div class="service-item">
+        <h3>広告・SNSバナー制作</h3>
+        <p>Instagram広告、Meta広告、キャンペーン告知など、認知・集客につながる画像を制作します。</p>
+      </div>
+      <div class="service-item">
+        <h3>チラシ・フライヤー制作</h3>
+        <p>宿泊プラン、イベント、地域サービスなど、紙媒体でも魅力が伝わるデザインを制作します。</p>
+      </div>
+      <div class="service-item">
+        <h3>名刺・ショップカード制作</h3>
+        <p>初対面の印象づくりや、Web・SNSへの導線を意識したデザインを制作します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section id="forwho">
+  <div class="inner">
+    <span class="s-label">For You</span>
+    <h2 class="s-title">こんな方のお役に立てます</h2>
+    <div class="section-divider"></div>
+    <div class="worry-list">
+      <div class="worry-item">ホームページはあるけれど、予約や問い合わせにつながっていない。</div>
+      <div class="worry-item">SNSや広告を頑張っているけれど、来店・申込みまで結びついていない。</div>
+      <div class="worry-item">写真や素材はあるけれど、何をどう見せれば魅力が伝わるか分からない。</div>
+      <div class="worry-item">外国人のお客様にも伝わる見せ方を考えたい。</div>
+    </div>
+    <p class="body-text" style="margin-top:28px;">そんなお悩みがあれば、現在の状況を整理するところからお手伝いします。</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="inner">
+    <div class="closing-box">
+      <h2>まだ依頼するか<br>決まっていない段階でも大丈夫です。</h2>
+      <div class="closing-quotes">
+        <p class="closing-quote">「LPが必要なのか分からない」</p>
+        <p class="closing-quote">「ホームページを見直した方がいいのか相談したい」</p>
+        <p class="closing-quote">「まずは何から整えるべきか知りたい」</p>
+      </div>
+      <p class="body-lead">そんな状態からでも、お気軽にご相談ください。<br>魅力を整理し、必要としている人に届く形を一緒に考えます。</p>
+      <a href="index.html#contact" class="btn-cta">無料相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Kazuki Design. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
