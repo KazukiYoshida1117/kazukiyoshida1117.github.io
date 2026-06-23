@@ -95,6 +95,12 @@
   .slide-dot.active { background: #fff; }
   .slide-counter { color: rgba(255,255,255,.6); font-size: 12px; margin-top: 8px; }
 
+  /* ── LANG TOGGLE ── */
+  .lang-toggle { display: flex; gap: 6px; align-items: center; }
+  .lang-toggle button { background: none; border: none; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: .1em; cursor: pointer; transition: color .2s; font-family: inherit; padding: 0; }
+  .lang-toggle button.active { color: var(--sky); }
+  .lang-toggle .sep { color: #ccc; font-size: 11px; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .inner { padding: 72px 24px; }
@@ -110,13 +116,20 @@
 <body>
 
 <header class="page-header">
-  <h1>制作実績 / Portfolio</h1>
-  <a href="index.html">← トップへ戻る</a>
+  <h1 data-ja="制作実績 / Portfolio" data-en="Portfolio">制作実績 / Portfolio</h1>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <div class="lang-toggle">
+      <button id="btn-ja" class="active" onclick="setLang('ja')">JP</button>
+      <span class="sep">/</span>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html" data-ja="← トップへ" data-en="← Back">← トップへ</a>
+  </div>
 </header>
 
 <div class="inner">
-  <span class="s-label">制作実績</span>
-  <h2 class="s-title">ポートフォリオ</h2>
+  <span class="s-label" data-ja="制作実績" data-en="Portfolio">制作実績</span>
+  <h2 class="s-title" data-ja="ポートフォリオ" data-en="Portfolio">ポートフォリオ</h2>
 
   <!-- Web / LP -->
   <p class="works-cat-label">Web / LP</p>
@@ -124,8 +137,8 @@
     <div class="web-card">
       <div class="web-thumb"><img src="works/lp/astra_dune_tottori_pc.png" alt="ASTRA DUNE TOTTORI LP" loading="lazy"></div>
       <div class="web-body">
-        <h3>ASTRA DUNE TOTTORI（ランディングページ）</h3>
-        <p>星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。</p>
+        <h3 data-ja="ASTRA DUNE TOTTORI（ランディングページ）" data-en="ASTRA DUNE TOTTORI (Landing Page)">ASTRA DUNE TOTTORI（ランディングページ）</h3>
+        <p data-ja="星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。" data-en="A night under the stars in the dunes. Landing page for a Tottori sand dune resort hotel — designed around the imagery of starry skies and dunes, with a clear flow toward booking.">星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。</p>
         <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
         <div class="web-actions">
           <button class="btn-doc" onclick="openSlideModal(['works/lp/astra_dune_doc/astra_dune_doc_01.png','works/lp/astra_dune_doc/astra_dune_doc_02.png','works/lp/astra_dune_doc/astra_dune_doc_03.png','works/lp/astra_dune_doc/astra_dune_doc_04.png','works/lp/astra_dune_doc/astra_dune_doc_05.png','works/lp/astra_dune_doc/astra_dune_doc_06.png','works/lp/astra_dune_doc/astra_dune_doc_07.png','works/lp/astra_dune_doc/astra_dune_doc_08.png','works/lp/astra_dune_doc/astra_dune_doc_09.png','works/lp/astra_dune_doc/astra_dune_doc_10.png','works/lp/astra_dune_doc/astra_dune_doc_11.png','works/lp/astra_dune_doc/astra_dune_doc_12.png','works/lp/astra_dune_doc/astra_dune_doc_13.png','works/lp/astra_dune_doc/astra_dune_doc_14.png'])">資料を見る</button>
@@ -136,8 +149,8 @@
     <div class="web-card">
       <div class="web-thumb"><img src="works/lp/PC版.png" alt="海灯りの宿 凪ノ音 LP" loading="lazy"></div>
       <div class="web-body">
-        <h3>海灯りの宿　凪ノ音（ランディングページ）</h3>
-        <p>京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。</p>
+        <h3 data-ja="海灯りの宿　凪ノ音（ランディングページ）" data-en="Uminakari no Yado Nagi no Ne (Landing Page)">海灯りの宿　凪ノ音（ランディングページ）</h3>
+        <p data-ja="京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。" data-en="Landing page for a ryokan in the Kyotango area. A Japanese aesthetic expressed through generous white space and scenic photography, with a clear path to plan booking.">京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。</p>
         <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
         <div class="web-actions">
           <button class="btn-doc" onclick="openSlideModal(['works/lp/nagi_doc/naginone_doc_01.png','works/lp/nagi_doc/naginone_doc_02.png','works/lp/nagi_doc/naginone_doc_03.png','works/lp/nagi_doc/naginone_doc_04.png','works/lp/nagi_doc/naginone_doc_05.png','works/lp/nagi_doc/naginone_doc_06.png','works/lp/nagi_doc/naginone_doc_07.png','works/lp/nagi_doc/naginone_doc_08.png','works/lp/nagi_doc/naginone_doc_09.png','works/lp/nagi_doc/naginone_doc_10.png','works/lp/nagi_doc/naginone_doc_11.png','works/lp/nagi_doc/naginone_doc_12.png'])">資料を見る</button>
@@ -148,8 +161,8 @@
     <div class="web-card">
       <div class="web-thumb"><img src="works/lp/lmc_lp.jpg" alt="LINEマーケティングLP" loading="lazy"></div>
       <div class="web-body">
-        <h3>LINEマーケティングコンサルタント養成講座（ランディングページ）</h3>
-        <p>マーケティング講座の受講意欲を高めるランディングページ。情報量が多い中でも読みやすいレイアウトを追求。</p>
+        <h3 data-ja="LINEマーケティングコンサルタント養成講座（ランディングページ）" data-en="LINE Marketing Consultant Training Course (Landing Page)">LINEマーケティングコンサルタント養成講座（ランディングページ）</h3>
+        <p data-ja="マーケティング講座の受講意欲を高めるランディングページ。情報量が多い中でも読みやすいレイアウトを追求。" data-en="Landing page designed to motivate sign-ups for a marketing training course. Prioritized readability while managing a high volume of information.">マーケティング講座の受講意欲を高めるランディングページ。情報量が多い中でも読みやすいレイアウトを追求。</p>
         <div class="web-tags"><span>Photoshop</span><span>Illustrator</span></div>
         <div class="web-actions">
           <button class="btn-doc" onclick="openSlideModal(['works/lp/lmc_doc/lmc_doc_01.png','works/lp/lmc_doc/lmc_doc_02.png'])">資料を見る</button>
@@ -160,8 +173,8 @@
     <div class="web-card">
       <div class="web-thumb"><img src="works/dogrun/images/main.jpg" alt="ドッグランカフェ" loading="lazy"></div>
       <div class="web-body">
-        <h3>ドッグラン＆カフェ Zero Wan（ホームページ）</h3>
-        <p>ドッグランとカフェを組み合わせた複合施設のコーポレートサイト。ナビゲーション設計とビジュアルの統一感を意識して制作。</p>
+        <h3 data-ja="ドッグラン＆カフェ Zero Wan（ホームページ）" data-en="Dog Run & Cafe Zero Wan (Website)">ドッグラン＆カフェ Zero Wan（ホームページ）</h3>
+        <p data-ja="ドッグランとカフェを組み合わせた複合施設のコーポレートサイト。ナビゲーション設計とビジュアルの統一感を意識して制作。" data-en="Corporate site for a combined dog run and café facility. Focused on clear navigation design and visual consistency throughout.">ドッグランとカフェを組み合わせた複合施設のコーポレートサイト。ナビゲーション設計とビジュアルの統一感を意識して制作。</p>
         <div class="web-tags"><span>Photoshop</span><span>Illustrator</span><span>HTML5</span><span>CSS</span></div>
         <div class="web-actions">
           <button class="btn-doc" onclick="openSlideModal(['works/dogrun/dogrun_doc.png'])">資料を見る</button>
@@ -240,6 +253,20 @@
 <footer style="background:#334155;color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:12px;letter-spacing:.08em;">
   © 2026 Kazuki Design. All rights reserved.
 </footer>
+
+<script>
+let cur = localStorage.getItem('lang') || 'ja';
+function setLang(l){
+  cur = l;
+  localStorage.setItem('lang', l);
+  document.querySelectorAll('[data-ja][data-en]').forEach(el=>{
+    el.innerHTML = el.getAttribute('data-'+l);
+  });
+  document.getElementById('btn-ja').classList.toggle('active', l==='ja');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+}
+setLang(cur);
+</script>
 
 <script>
 let _slides = [], _slideIdx = 0;

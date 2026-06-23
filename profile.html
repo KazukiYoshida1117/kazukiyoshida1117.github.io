@@ -153,6 +153,12 @@
   /* ── FOOTER ── */
   footer { background: var(--text); color: rgba(255,255,255,.5); text-align: center; padding: 28px; font-size: 12px; }
 
+  /* ── LANG TOGGLE ── */
+  .lang-toggle { display: flex; gap: 6px; align-items: center; }
+  .lang-toggle button { background: none; border: none; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: .1em; cursor: pointer; transition: color .2s; font-family: inherit; padding: 0; }
+  .lang-toggle button.active { color: var(--sky); }
+  .lang-toggle .sep { color: #ccc; font-size: 11px; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .page-header { padding: 0 20px; }
@@ -168,22 +174,29 @@
 
 <header class="page-header">
   <span class="logo">Kazuki Yoshida</span>
-  <a href="index.html" class="back">← トップへ戻る</a>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <div class="lang-toggle">
+      <button id="btn-ja" class="active" onclick="setLang('ja')">JP</button>
+      <span class="sep">/</span>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html" class="back" data-ja="← トップへ" data-en="← Back">← トップへ</a>
+  </div>
 </header>
 
 <!-- FV -->
 <section id="fv">
   <div class="inner">
-    <p class="fv-catch">良いサービスが、<br>必要としている人に届くように。</p>
+    <p class="fv-catch" data-ja="良いサービスが、<br>必要としている人に届くように。" data-en="So that great services reach<br>the people who need them.">良いサービスが、<br>必要としている人に届くように。</p>
     <div class="fv-divider"></div>
-    <p class="fv-name">観光・サービス専門 LP / Webデザイナー</p>
+    <p class="fv-name" data-ja="観光・サービス専門 LP / Webデザイナー" data-en="Tourism & Hospitality LP / Web Designer">観光・サービス専門 LP / Webデザイナー</p>
     <p class="fv-name-ja">吉田 一毅</p>
     <div class="fv-tags">
-      <span class="fv-tag">ホテル業界10年以上</span>
-      <span class="fv-tag">カナダ留学5年</span>
-      <span class="fv-tag">LP / Webデザイン</span>
+      <span class="fv-tag" data-ja="ホテル業界10年以上" data-en="10+ Years in Hotels">ホテル業界10年以上</span>
+      <span class="fv-tag" data-ja="カナダ留学5年" data-en="5 Years in Canada">カナダ留学5年</span>
+      <span class="fv-tag" data-ja="LP / Webデザイン" data-en="LP / Web Design">LP / Webデザイン</span>
     </div>
-    <p class="fv-lead">観光・宿泊・飲食・地域事業者さま向けに、<br>LP・Webサイト・販促デザインを制作しています。</p>
+    <p class="fv-lead" data-ja="観光・宿泊・飲食・地域事業者さま向けに、<br>LP・Webサイト・販促デザインを制作しています。" data-en="I create landing pages, websites, and promotional design<br>for tourism, hospitality, restaurant, and local businesses.">観光・宿泊・飲食・地域事業者さま向けに、<br>LP・Webサイト・販促デザインを制作しています。</p>
   </div>
 </section>
 
@@ -191,20 +204,20 @@
 <section id="story">
   <div class="inner">
     <span class="s-label">Background</span>
-    <h2 class="s-title">ホテル業界で見えてきたこと</h2>
+    <h2 class="s-title" data-ja="ホテル業界で見えてきたこと" data-en="What the Hotel Industry Taught Me">ホテル業界で見えてきたこと</h2>
     <div class="section-divider"></div>
-    <p class="body-text">ホテル業界で多くのお客様と向き合う中で、魅力的な施設やサービスが、必ずしも選ばれているわけではないことを感じてきました。</p>
+    <p class="body-text" data-ja="ホテル業界で多くのお客様と向き合う中で、魅力的な施設やサービスが、必ずしも選ばれているわけではないことを感じてきました。" data-en="Through years of working with guests in the hotel industry, I kept noticing something: genuinely wonderful facilities and services weren't always the ones being chosen.">ホテル業界で多くのお客様と向き合う中で、魅力的な施設やサービスが、必ずしも選ばれているわけではないことを感じてきました。</p>
     <div class="check-items">
-      <div class="check-item">丁寧な接客をしている。</div>
-      <div class="check-item">地域ならではの魅力がある。</div>
-      <div class="check-item">お客様に喜ばれている。</div>
+      <div class="check-item" data-ja="丁寧な接客をしている。" data-en="Delivering attentive, caring service.">丁寧な接客をしている。</div>
+      <div class="check-item" data-ja="地域ならではの魅力がある。" data-en="Offering something uniquely local.">地域ならではの魅力がある。</div>
+      <div class="check-item" data-ja="お客様に喜ばれている。" data-en="Creating real moments guests love.">お客様に喜ばれている。</div>
     </div>
-    <p class="body-text">それでも、その価値がWeb上で十分に伝わらず、選ばれる機会を逃してしまうことがあります。</p>
-    <p class="body-text">私はその現場を見てきたからこそ、</p>
+    <p class="body-text" data-ja="それでも、その価値がWeb上で十分に伝わらず、選ばれる機会を逃してしまうことがあります。" data-en="And yet, that value wasn't coming through online — and opportunities were being missed.">それでも、その価値がWeb上で十分に伝わらず、選ばれる機会を逃してしまうことがあります。</p>
+    <p class="body-text" data-ja="私はその現場を見てきたからこそ、" data-en="I saw it happen firsthand. So I know:">私はその現場を見てきたからこそ、</p>
     <div class="quote-block">
-      <p>「魅力がない」のではなく、<br><strong>「魅力の伝え方が整理されていない」</strong></p>
+      <p data-ja="「魅力がない」のではなく、<br><strong>「魅力の伝え方が整理されていない」</strong>" data-en="It&rsquo;s not a lack of appeal.<br><strong>It&rsquo;s a lack of clarity in how that appeal is communicated.</strong>">「魅力がない」のではなく、<br><strong>「魅力の伝え方が整理されていない」</strong></p>
     </div>
-    <p class="body-text">という課題に向き合いたいと考えています。</p>
+    <p class="body-text" data-ja="という課題に向き合いたいと考えています。" data-en="That's the challenge I want to help solve.">という課題に向き合いたいと考えています。</p>
   </div>
 </section>
 
@@ -212,17 +225,17 @@
 <section id="philosophy">
   <div class="inner">
     <span class="s-label">Philosophy</span>
-    <h2 class="s-title">デザインで大切にしていること</h2>
+    <h2 class="s-title" data-ja="デザインで大切にしていること" data-en="What I Believe Good Design Does">デザインで大切にしていること</h2>
     <div class="section-divider"></div>
-    <p class="body-text">私が大切にしているのは、ただ見た目を整えることではありません。</p>
+    <p class="body-text" data-ja="私が大切にしているのは、ただ見た目を整えることではありません。" data-en="For me, design isn't about making things look beautiful. It's about clarity.">私が大切にしているのは、ただ見た目を整えることではありません。</p>
     <ul class="flow-list">
-      <li><span class="num">01</span>誰に伝えるのか。</li>
-      <li><span class="num">02</span>何を伝えるのか。</li>
-      <li><span class="num">03</span>どの順番で見せるのか。</li>
-      <li><span class="num">04</span>最後にどんな行動につなげるのか。</li>
+      <li><span class="num">01</span><span data-ja="誰に伝えるのか。" data-en="Who is this for?">誰に伝えるのか。</span></li>
+      <li><span class="num">02</span><span data-ja="何を伝えるのか。" data-en="What do they need to know?">何を伝えるのか。</span></li>
+      <li><span class="num">03</span><span data-ja="どの順番で見せるのか。" data-en="In what order should they learn it?">どの順番で見せるのか。</span></li>
+      <li><span class="num">04</span><span data-ja="最後にどんな行動につなげるのか。" data-en="What action should they take at the end?">最後にどんな行動につなげるのか。</span></li>
     </ul>
-    <p class="body-text">この流れを整理することで、見る人が迷わず理解し、予約・来店・問い合わせへ進みやすくなります。</p>
-    <p class="body-text">LPやWebサイトは、魅力を必要としている人に届けるための大切な接点だと考えています。</p>
+    <p class="body-text" data-ja="この流れを整理することで、見る人が迷わず理解し、予約・来店・問い合わせへ進みやすくなります。" data-en="Getting these right helps visitors understand quickly and move naturally toward booking, visiting, or reaching out.">この流れを整理することで、見る人が迷わず理解し、予約・来店・問い合わせへ進みやすくなります。</p>
+    <p class="body-text" data-ja="LPやWebサイトは、魅力を必要としている人に届けるための大切な接点だと考えています。" data-en="A website or LP is one of the most important touchpoints between your business and the people who need what you offer.">LPやWebサイトは、魅力を必要としている人に届けるための大切な接点だと考えています。</p>
   </div>
 </section>
 
@@ -230,20 +243,20 @@
 <section id="history">
   <div class="inner">
     <span class="s-label">Career</span>
-    <h2 class="s-title">これまでの歩み</h2>
+    <h2 class="s-title" data-ja="これまでの歩み" data-en="My Journey">これまでの歩み</h2>
     <div class="section-divider"></div>
     <div class="timeline">
       <div class="tl-item">
-        <p>京都府出身。学生時代から海外に関心があり、約5年間カナダへ留学。</p>
+        <p data-ja="京都府出身。学生時代から海外に関心があり、約5年間カナダへ留学。" data-en="Born in Kyoto. Developed a deep interest in the world beyond Japan from an early age, and spent around 5 years studying in Canada.">京都府出身。学生時代から海外に関心があり、約5年間カナダへ留学。</p>
       </div>
       <div class="tl-item">
-        <p>異なる文化や価値観に触れる中で、伝え方ひとつで印象や理解が大きく変わることを学ぶ。</p>
+        <p data-ja="異なる文化や価値観に触れる中で、伝え方ひとつで印象や理解が大きく変わることを学ぶ。" data-en="Living among different cultures and perspectives taught me how much a single word — or a single visual choice — can change how something is understood.">異なる文化や価値観に触れる中で、伝え方ひとつで印象や理解が大きく変わることを学ぶ。</p>
       </div>
       <div class="tl-item">
-        <p>帰国後はホテル業界へ進み、フロント・コンシェルジュ・チーフマネージャーとして、国内外のお客様対応に10年以上携わる。</p>
+        <p data-ja="帰国後はホテル業界へ進み、フロント・コンシェルジュ・チーフマネージャーとして、国内外のお客様対応に10年以上携わる。" data-en="After returning to Japan, I joined the hotel industry. As a front desk agent, concierge, and chief manager, I spent 10+ years working with guests from both Japan and around the world.">帰国後はホテル業界へ進み、フロント・コンシェルジュ・チーフマネージャーとして、国内外のお客様対応に10年以上携わる。</p>
       </div>
       <div class="tl-item">
-        <p>現在はその経験を活かし、観光・宿泊・飲食・地域事業者さま向けに、LP・Webデザインを通して魅力を伝えるお手伝いをしている。</p>
+        <p data-ja="現在はその経験を活かし、観光・宿泊・飲食・地域事業者さま向けに、LP・Webデザインを通して魅力を伝えるお手伝いをしている。" data-en="I now put those years to work for tourism, hospitality, restaurant, and local businesses — helping them communicate their appeal through LP and web design.">現在はその経験を活かし、観光・宿泊・飲食・地域事業者さま向けに、LP・Webデザインを通して魅力を伝えるお手伝いをしている。</p>
       </div>
     </div>
   </div>
@@ -253,23 +266,23 @@
 <section id="strengths">
   <div class="inner">
     <span class="s-label">Strengths</span>
-    <h2 class="s-title">私の強み</h2>
+    <h2 class="s-title" data-ja="私の強み" data-en="What I Bring to the Table">私の強み</h2>
     <div class="section-divider"></div>
     <div class="strength-cards">
       <div class="strength-card">
         <div class="strength-num">01</div>
-        <h3>ホテル業界10年以上の現場経験</h3>
-        <p>予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。</p>
+        <h3 data-ja="ホテル業界10年以上の現場経験" data-en="10+ Years of Front-Line Hotel Experience">ホテル業界10年以上の現場経験</h3>
+        <p data-ja="予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。" data-en="I know what makes guests hesitate before they book, and what information gives them the confidence to act. I apply that field-tested insight to build flows that lead to bookings, visits, and inquiries.">予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。</p>
       </div>
       <div class="strength-card">
         <div class="strength-num">02</div>
-        <h3>魅力を整理する情報設計力</h3>
-        <p>「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。魅力を整理し、伝わる順番を設計します。</p>
+        <h3 data-ja="魅力を整理する情報設計力" data-en="The Ability to Clarify and Structure Your Message">魅力を整理する情報設計力</h3>
+        <p data-ja="「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。魅力を整理し、伝わる順番を設計します。" data-en="&ldquo;I don't know what to say&rdquo; or &ldquo;I have so much information I can't sort it&rdquo; — that's fine. I sort through it, find what matters, and design the order in which it's revealed.">「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。魅力を整理し、伝わる順番を設計します。</p>
       </div>
       <div class="strength-card">
         <div class="strength-num">03</div>
-        <h3>インバウンド視点にも対応</h3>
-        <p>カナダ留学5年と訪日外国人対応経験を活かし、国内外のお客様に伝わる見せ方を考えます。観光・宿泊・地域事業者さまの魅力を、分かりやすく届けるお手伝いをします。</p>
+        <h3 data-ja="インバウンド視点にも対応" data-en="An Inbound-Ready Perspective">インバウンド視点にも対応</h3>
+        <p data-ja="カナダ留学5年と訪日外国人対応経験を活かし、国内外のお客様に伝わる見せ方を考えます。観光・宿泊・地域事業者さまの魅力を、分かりやすく届けるお手伝いをします。" data-en="With 5 years in Canada and extensive experience serving international guests, I know how to present your business to audiences beyond Japan. I help tourism, hospitality, and local businesses reach both domestic and overseas visitors.">カナダ留学5年と訪日外国人対応経験を活かし、国内外のお客様に伝わる見せ方を考えます。観光・宿泊・地域事業者さまの魅力を、分かりやすく届けるお手伝いをします。</p>
       </div>
     </div>
   </div>
@@ -279,28 +292,28 @@
 <section id="services">
   <div class="inner">
     <span class="s-label">Services</span>
-    <h2 class="s-title">対応できること</h2>
+    <h2 class="s-title" data-ja="対応できること" data-en="What I Can Do for You">対応できること</h2>
     <div class="section-divider"></div>
     <div class="service-list">
       <div class="service-item">
-        <h3>LPデザイン</h3>
-        <p>予約・問い合わせ・来店につなげるための構成設計を重視したLPデザインを制作します。</p>
+        <h3 data-ja="LPデザイン" data-en="Landing Page Design">LPデザイン</h3>
+        <p data-ja="予約・問い合わせ・来店につなげるための構成設計を重視したLPデザインを制作します。" data-en="For products and services that need to drive bookings, visits, or inquiries — I handle everything from content structure to PC and mobile design.">予約・問い合わせ・来店につなげるための構成設計を重視したLPデザインを制作します。</p>
       </div>
       <div class="service-item">
-        <h3>ホームページデザイン</h3>
-        <p>事業やサービス全体の魅力を伝え、信頼感につながるWebサイトを制作します。</p>
+        <h3 data-ja="ホームページデザイン" data-en="Website Design">ホームページデザイン</h3>
+        <p data-ja="事業やサービス全体の魅力を伝え、信頼感につながるWebサイトを制作します。" data-en="Websites that clearly communicate the full appeal and credibility of your business.">事業やサービス全体の魅力を伝え、信頼感につながるWebサイトを制作します。</p>
       </div>
       <div class="service-item">
-        <h3>広告・SNSバナー制作</h3>
-        <p>Instagram広告、Meta広告、キャンペーン告知など、認知・集客につながる画像を制作します。</p>
+        <h3 data-ja="広告・SNSバナー制作" data-en="Ad & SNS Banner Design">広告・SNSバナー制作</h3>
+        <p data-ja="Instagram広告、Meta広告、キャンペーン告知など、認知・集客につながる画像を制作します。" data-en="From Instagram and Meta ads to event announcements — images that expand awareness and drive traffic.">Instagram広告、Meta広告、キャンペーン告知など、認知・集客につながる画像を制作します。</p>
       </div>
       <div class="service-item">
-        <h3>チラシ・フライヤー制作</h3>
-        <p>宿泊プラン、イベント、地域サービスなど、紙媒体でも魅力が伝わるデザインを制作します。</p>
+        <h3 data-ja="チラシ・フライヤー制作" data-en="Flyer & Leaflet Design">チラシ・フライヤー制作</h3>
+        <p data-ja="宿泊プラン、イベント、地域サービスなど、紙媒体でも魅力が伝わるデザインを制作します。" data-en="For accommodation plans, local events, and store promotions — print materials that communicate your appeal.">宿泊プラン、イベント、地域サービスなど、紙媒体でも魅力が伝わるデザインを制作します。</p>
       </div>
       <div class="service-item">
-        <h3>名刺・ショップカード制作</h3>
-        <p>初対面の印象づくりや、Web・SNSへの導線を意識したデザインを制作します。</p>
+        <h3 data-ja="名刺・ショップカード制作" data-en="Business Card & Shop Card Design">名刺・ショップカード制作</h3>
+        <p data-ja="初対面の印象づくりや、Web・SNSへの導線を意識したデザインを制作します。" data-en="Cards that make a strong first impression and guide people toward your website and social media.">初対面の印象づくりや、Web・SNSへの導線を意識したデザインを制作します。</p>
       </div>
     </div>
   </div>
@@ -310,15 +323,15 @@
 <section id="forwho">
   <div class="inner">
     <span class="s-label">For You</span>
-    <h2 class="s-title">こんな方のお役に立てます</h2>
+    <h2 class="s-title" data-ja="こんな方のお役に立てます" data-en="Who I Can Help">こんな方のお役に立てます</h2>
     <div class="section-divider"></div>
     <div class="worry-list">
-      <div class="worry-item">ホームページはあるけれど、予約や問い合わせにつながっていない。</div>
-      <div class="worry-item">SNSや広告を頑張っているけれど、来店・申込みまで結びついていない。</div>
-      <div class="worry-item">写真や素材はあるけれど、何をどう見せれば魅力が伝わるか分からない。</div>
-      <div class="worry-item">外国人のお客様にも伝わる見せ方を考えたい。</div>
+      <div class="worry-item" data-ja="ホームページはあるけれど、予約や問い合わせにつながっていない。" data-en="You have a website, but it's not generating bookings or inquiries.">ホームページはあるけれど、予約や問い合わせにつながっていない。</div>
+      <div class="worry-item" data-ja="SNSや広告を頑張っているけれど、来店・申込みまで結びついていない。" data-en="You're working hard on social media and ads, but it's not converting to visits or sign-ups.">SNSや広告を頑張っているけれど、来店・申込みまで結びついていない。</div>
+      <div class="worry-item" data-ja="写真や素材はあるけれど、何をどう見せれば魅力が伝わるか分からない。" data-en="You have photos and materials, but you're not sure how to present them in a way that communicates your appeal.">写真や素材はあるけれど、何をどう見せれば魅力が伝わるか分からない。</div>
+      <div class="worry-item" data-ja="外国人のお客様にも伝わる見せ方を考えたい。" data-en="You want to reach international guests but aren't sure how to present yourself to them.">外国人のお客様にも伝わる見せ方を考えたい。</div>
     </div>
-    <p class="body-text" style="margin-top:28px;">そんなお悩みがあれば、現在の状況を整理するところからお手伝いします。</p>
+    <p class="body-text" style="margin-top:28px;" data-ja="そんなお悩みがあれば、現在の状況を整理するところからお手伝いします。" data-en="If any of these sound familiar, I can help you sort through the situation and figure out where to start.">そんなお悩みがあれば、現在の状況を整理するところからお手伝いします。</p>
   </div>
 </section>
 
@@ -326,14 +339,14 @@
 <section id="closing">
   <div class="inner">
     <div class="closing-box">
-      <h2>まだ依頼するか<br>決まっていない段階でも大丈夫です。</h2>
+      <h2 data-ja="まだ依頼するか<br>決まっていない段階でも大丈夫です。" data-en="You don't need to have made up your mind yet.">まだ依頼するか<br>決まっていない段階でも大丈夫です。</h2>
       <div class="closing-quotes">
-        <p class="closing-quote">「LPが必要なのか分からない」</p>
-        <p class="closing-quote">「ホームページを見直した方がいいのか相談したい」</p>
-        <p class="closing-quote">「まずは何から整えるべきか知りたい」</p>
+        <p class="closing-quote" data-ja="「LPが必要なのか分からない」" data-en="&ldquo;I'm not sure if I need an LP...&rdquo;">&ldquo;LPが必要なのか分からない&rdquo;</p>
+        <p class="closing-quote" data-ja="「ホームページを見直した方がいいのか相談したい」" data-en="&ldquo;I'd like to talk about whether my site needs an update...&rdquo;">&ldquo;ホームページを見直した方がいいのか相談したい&rdquo;</p>
+        <p class="closing-quote" data-ja="「まずは何から整えるべきか知りたい」" data-en="&ldquo;I want to know where to start...&rdquo;">&ldquo;まずは何から整えるべきか知りたい&rdquo;</p>
       </div>
-      <p class="body-lead">そんな状態からでも、お気軽にご相談ください。<br>魅力を整理し、必要としている人に届く形を一緒に考えます。</p>
-      <a href="index.html#contact" class="btn-cta">無料相談する</a>
+      <p class="body-lead" data-ja="そんな状態からでも、お気軽にご相談ください。<br>魅力を整理し、必要としている人に届く形を一緒に考えます。" data-en="Whatever stage you're at, feel free to reach out.<br>Let's clarify your appeal together and find the best way to reach the people who need you.">そんな状態からでも、お気軽にご相談ください。<br>魅力を整理し、必要としている人に届く形を一緒に考えます。</p>
+      <a href="index.html#contact" class="btn-cta" data-ja="無料相談する" data-en="Book a Free Consultation">無料相談する</a>
     </div>
   </div>
 </section>
@@ -342,5 +355,18 @@
   <p>© 2026 Kazuki Design. All rights reserved.</p>
 </footer>
 
+<script>
+let cur = localStorage.getItem('lang') || 'ja';
+function setLang(l){
+  cur = l;
+  localStorage.setItem('lang', l);
+  document.querySelectorAll('[data-ja][data-en]').forEach(el=>{
+    el.innerHTML = el.getAttribute('data-'+l);
+  });
+  document.getElementById('btn-ja').classList.toggle('active', l==='ja');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+}
+setLang(cur);
+</script>
 </body>
 </html>

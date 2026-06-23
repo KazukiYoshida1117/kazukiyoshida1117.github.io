@@ -229,6 +229,12 @@
 
   footer { background: #334155; color: rgba(255,255,255,.5); text-align: center; padding: 32px 24px; font-size: 12px; letter-spacing: .08em; }
 
+  /* ── LANG TOGGLE ── */
+  .lang-toggle { display: flex; gap: 6px; align-items: center; }
+  .lang-toggle button { background: none; border: none; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: .1em; cursor: pointer; transition: color .2s; font-family: inherit; padding: 0; }
+  .lang-toggle button.active { color: var(--sky); }
+  .lang-toggle .sep { color: #ccc; font-size: 11px; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .inner { padding: 0 20px; }
@@ -249,49 +255,56 @@
 
 <!-- HEADER -->
 <header class="page-header">
-  <span class="logo">Kazuki Yoshida — Webデザイナー</span>
-  <a class="back" href="index.html">← トップへ戻る</a>
+  <span class="logo" data-ja="Kazuki Yoshida — Webデザイナー" data-en="Kazuki Yoshida — Web Designer">Kazuki Yoshida — Webデザイナー</span>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <div class="lang-toggle">
+      <button id="btn-ja" class="active" onclick="setLang('ja')">JP</button>
+      <span class="sep">/</span>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="back" href="index.html" data-ja="← トップへ" data-en="← Back">← トップへ</a>
+  </div>
 </header>
 
 <!-- FV -->
 <section id="fv">
   <div class="inner">
     <span class="fv-label">Landing Page Guide</span>
-    <h1>集客のためにホームページを作ったのに、<br>問い合わせや予約に<em>つながらない。</em></h1>
+    <h1 data-ja="集客のためにホームページを作ったのに、<br>問い合わせや予約に<em>つながらない。</em>" data-en="You built a website to attract customers,<br>but it's not leading to inquiries or <em>bookings.</em>">集客のためにホームページを作ったのに、<br>問い合わせや予約に<em>つながらない。</em></h1>
     <div class="fv-divider"></div>
-    <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:2;margin-bottom:24px;">その原因は、サービスの魅力がないからではないかもしれません。<br>実は多くの場合、課題はここにあります。</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.75);line-height:2;margin-bottom:24px;" data-ja="その原因は、サービスの魅力がないからではないかもしれません。<br>実は多くの場合、課題はここにあります。" data-en="The problem may not be a lack of appeal in your service.<br>In most cases, the real issue lies in one of these three things:">その原因は、サービスの魅力がないからではないかもしれません。<br>実は多くの場合、課題はここにあります。</p>
     <div class="fv-causes">
-      <span class="fv-cause-tag">「伝える順番」</span>
-      <span class="fv-cause-tag">「見せ方」</span>
-      <span class="fv-cause-tag">「導線」</span>
+      <span class="fv-cause-tag" data-ja="「伝える順番」" data-en="Message sequence">「伝える順番」</span>
+      <span class="fv-cause-tag" data-ja="「見せ方」" data-en="Visual presentation">「見せ方」</span>
+      <span class="fv-cause-tag" data-ja="「導線」" data-en="User flow design">「導線」</span>
     </div>
-    <p class="fv-lead" style="margin-top:32px;margin-bottom:48px;">その解決策の一つが、<em>LP（ランディングページ）</em>です。</p>
-    <a class="btn-cta" href="index.html#contact">無料相談する</a>
+    <p class="fv-lead" style="margin-top:32px;margin-bottom:48px;" data-ja="その解決策の一つが、<em>LP（ランディングページ）</em>です。" data-en="One powerful solution to these problems is<br>a well-designed <em>Landing Page (LP).</em>">その解決策の一つが、<em>LP（ランディングページ）</em>です。</p>
+    <a class="btn-cta" href="index.html#contact" data-ja="無料相談する" data-en="Book a Free Consultation">無料相談する</a>
   </div>
 </section>
 
 <!-- WHY NOT HP -->
 <section id="why-not">
   <div class="inner">
-    <span class="s-label">なぜホームページだけでは？</span>
-    <h2 class="s-title">なぜホームページだけでは<br>成果につながらないのか</h2>
+    <span class="s-label" data-ja="なぜホームページだけでは？" data-en="Why a homepage alone isn't enough">なぜホームページだけでは？</span>
+    <h2 class="s-title" data-ja="なぜホームページだけでは<br>成果につながらないのか" data-en="Why a Homepage Alone<br>Doesn't Always Drive Results">なぜホームページだけでは<br>成果につながらないのか</h2>
 
-    <p class="body-text">ホームページは、会社やお店を紹介するためのものです。そのため、メニュー・アクセス・お知らせ・会社概要など、多くの情報が掲載されます。</p>
+    <p class="body-text" data-ja="ホームページは、会社やお店を紹介するためのものです。そのため、メニュー・アクセス・お知らせ・会社概要など、多くの情報が掲載されます。" data-en="A homepage is designed to introduce your business as a whole. That means it typically contains a lot of information: menus, access, news, company profile, and more.">ホームページは、会社やお店を紹介するためのものです。そのため、メニュー・アクセス・お知らせ・会社概要など、多くの情報が掲載されます。</p>
 
     <div class="callout-box">
-      <p><strong>情報が多いほど、ユーザーは迷いやすくなります。</strong></p>
+      <p data-ja="<strong>情報が多いほど、ユーザーは迷いやすくなります。</strong>" data-en="<strong>The more information there is, the easier it is for visitors to get lost.</strong>"><strong>情報が多いほど、ユーザーは迷いやすくなります。</strong></p>
     </div>
 
     <div class="example-box">
-      <p class="ex-label">例えば</p>
-      <p>宿泊プランを予約してほしいのに、ページ内に</p>
+      <p class="ex-label" data-ja="例えば" data-en="For example">例えば</p>
+      <p data-ja="宿泊プランを予約してほしいのに、ページ内に" data-en="If you want visitors to book a stay, but the page also shows">宿泊プランを予約してほしいのに、ページ内に</p>
       <div class="example-tags">
-        <span class="example-tag">お知らせ</span>
-        <span class="example-tag">採用情報</span>
-        <span class="example-tag">アクセス</span>
-        <span class="example-tag">会社概要</span>
+        <span class="example-tag" data-ja="お知らせ" data-en="News">お知らせ</span>
+        <span class="example-tag" data-ja="採用情報" data-en="Recruitment">採用情報</span>
+        <span class="example-tag" data-ja="アクセス" data-en="Access">アクセス</span>
+        <span class="example-tag" data-ja="会社概要" data-en="About us">会社概要</span>
       </div>
-      <p class="example-note">などが並んでいると、ユーザーが予約前に別のページへ移動してしまい、離脱につながることがあります。</p>
+      <p class="example-note" data-ja="などが並んでいると、ユーザーが予約前に別のページへ移動してしまい、離脱につながることがあります。" data-en="...visitors may click away to a different page before completing the booking, increasing the chance of losing them.">などが並んでいると、ユーザーが予約前に別のページへ移動してしまい、離脱につながることがあります。</p>
     </div>
   </div>
 </section>
@@ -299,53 +312,53 @@
 <!-- WHAT IS LP -->
 <section id="what">
   <div class="inner">
-    <span class="s-label">LP とは？</span>
-    <h2 class="s-title">LP（ランディングページ）<br>とは何か</h2>
+    <span class="s-label" data-ja="LP とは？" data-en="What is an LP?">LP とは？</span>
+    <h2 class="s-title" data-ja="LP（ランディングページ）<br>とは何か" data-en="What Is a<br>Landing Page (LP)?">LP（ランディングページ）<br>とは何か</h2>
 
     <div class="lp-def">
-      <p>LP（ランディングページ）とは、<strong>ひとつの商品やサービスに特化し、予約・来店・問い合わせなどの行動につなげるためのページ</strong>です。</p>
+      <p data-ja="LP（ランディングページ）とは、<strong>ひとつの商品やサービスに特化し、予約・来店・問い合わせなどの行動につなげるためのページ</strong>です。" data-en="A Landing Page (LP) is a page <strong>dedicated to a single product or service, designed to drive a specific action</strong> — such as a booking, a visit, or an inquiry.">LP（ランディングページ）とは、<strong>ひとつの商品やサービスに特化し、予約・来店・問い合わせなどの行動につなげるためのページ</strong>です。</p>
       <br>
-      <p>ユーザーを迷わせず、<strong>ひとつのゴールへ導く</strong>ことを目的としています。</p>
+      <p data-ja="ユーザーを迷わせず、<strong>ひとつのゴールへ導く</strong>ことを目的としています。" data-en="Its purpose is to eliminate confusion and guide visitors smoothly toward <strong>one clear goal.</strong>">ユーザーを迷わせず、<strong>ひとつのゴールへ導く</strong>ことを目的としています。</p>
     </div>
 
-    <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;letter-spacing:.04em;">ホームページと LP の違い</h3>
+    <h3 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;letter-spacing:.04em;" data-ja="ホームページと LP の違い" data-en="Homepage vs. Landing Page">ホームページと LP の違い</h3>
     <div class="compare-grid">
       <div class="compare-card">
         <p class="c-label">Homepage</p>
-        <h3>ホームページ</h3>
+        <h3 data-ja="ホームページ" data-en="Homepage">ホームページ</h3>
         <div class="compare-item">
-          <dt>目的</dt>
-          <dd>会社や店舗全体を知ってもらう</dd>
+          <dt data-ja="目的" data-en="Purpose">目的</dt>
+          <dd data-ja="会社や店舗全体を知ってもらう" data-en="Introduce the business as a whole">会社や店舗全体を知ってもらう</dd>
         </div>
         <div class="compare-item">
-          <dt>特徴</dt>
-          <dd>情報量が多い</dd>
+          <dt data-ja="特徴" data-en="Characteristics">特徴</dt>
+          <dd data-ja="情報量が多い" data-en="Information-rich">情報量が多い</dd>
         </div>
         <div class="compare-item">
-          <dt>向いているもの</dt>
+          <dt data-ja="向いているもの" data-en="Best for">向いているもの</dt>
           <dd>
             <div class="compare-tags">
-              <span class="ctag">会社案内</span><span class="ctag">店舗紹介</span><span class="ctag">採用</span>
+              <span class="ctag" data-ja="会社案内" data-en="Company info">会社案内</span><span class="ctag" data-ja="店舗紹介" data-en="Store intro">店舗紹介</span><span class="ctag" data-ja="採用" data-en="Hiring">採用</span>
             </div>
           </dd>
         </div>
       </div>
       <div class="compare-card featured">
         <p class="c-label">Landing Page</p>
-        <h3>LP</h3>
+        <h3 data-ja="LP" data-en="LP">LP</h3>
         <div class="compare-item">
-          <dt>目的</dt>
-          <dd>行動してもらう</dd>
+          <dt data-ja="目的" data-en="Purpose">目的</dt>
+          <dd data-ja="行動してもらう" data-en="Drive a specific action">行動してもらう</dd>
         </div>
         <div class="compare-item">
-          <dt>特徴</dt>
-          <dd>情報を絞り込む</dd>
+          <dt data-ja="特徴" data-en="Characteristics">特徴</dt>
+          <dd data-ja="情報を絞り込む" data-en="Focused, minimal information">情報を絞り込む</dd>
         </div>
         <div class="compare-item">
-          <dt>向いているもの</dt>
+          <dt data-ja="向いているもの" data-en="Best for">向いているもの</dt>
           <dd>
             <div class="compare-tags">
-              <span class="ctag hi">宿泊プラン</span><span class="ctag hi">期間限定キャンペーン</span><span class="ctag hi">イベント</span><span class="ctag hi">体験ツアー</span><span class="ctag hi">問い合わせ獲得</span>
+              <span class="ctag hi" data-ja="宿泊プラン" data-en="Stay plans">宿泊プラン</span><span class="ctag hi" data-ja="期間限定キャンペーン" data-en="Limited campaigns">期間限定キャンペーン</span><span class="ctag hi" data-ja="イベント" data-en="Events">イベント</span><span class="ctag hi" data-ja="体験ツアー" data-en="Experience tours">体験ツアー</span><span class="ctag hi" data-ja="問い合わせ獲得" data-en="Lead generation">問い合わせ獲得</span>
             </div>
           </dd>
         </div>
@@ -357,13 +370,13 @@
 <!-- WHY MATCH -->
 <section id="why-match">
   <div class="inner">
-    <span class="s-label">相性が良い理由</span>
-    <h2 class="s-title">観光・宿泊・飲食業と<br>LP の相性が良い理由</h2>
+    <span class="s-label" data-ja="相性が良い理由" data-en="Why it works">相性が良い理由</span>
+    <h2 class="s-title" data-ja="観光・宿泊・飲食業と<br>LP の相性が良い理由" data-en="Why LPs Work So Well<br>for Tourism &amp; Hospitality">観光・宿泊・飲食業と<br>LP の相性が良い理由</h2>
 
-    <p class="body-text">観光・宿泊・飲食業は、モノではなく<strong style="color:var(--sky);">体験を販売</strong>しています。</p>
-    <p class="body-text">だからこそ、写真・ストーリー・魅力・口コミ・安心感を<strong style="color:var(--sky);">順番に伝える</strong>必要があります。</p>
+    <p class="body-text" data-ja="観光・宿泊・飲食業は、モノではなく<strong style=&quot;color:var(--sky);&quot;>体験を販売</strong>しています。" data-en="Tourism, hospitality, and food businesses sell <strong style=&quot;color:var(--sky);&quot;>experiences</strong>, not just products.">観光・宿泊・飲食業は、モノではなく<strong style="color:var(--sky);">体験を販売</strong>しています。</p>
+    <p class="body-text" data-ja="だからこそ、写真・ストーリー・魅力・口コミ・安心感を<strong style=&quot;color:var(--sky);&quot;>順番に伝える</strong>必要があります。" data-en="That's why it's essential to <strong style=&quot;color:var(--sky);&quot;>communicate in sequence</strong>: photos, stories, appeal, reviews, and a sense of trust.">だからこそ、写真・ストーリー・魅力・口コミ・安心感を<strong style="color:var(--sky);">順番に伝える</strong>必要があります。</p>
 
-    <div class="dark-card">
+    <div class="dark-card" data-ja="LPはその<strong>流れを作るのが得意</strong>です。<br>「このプランを知りたい」「この宿に泊まってみたい」という<strong>気持ちの変化を設計</strong>し、自然に予約・問い合わせへと導きます。<div class=&quot;kw-list&quot;><span class=&quot;kw-tag&quot;>写真</span><span class=&quot;kw-tag&quot;>ストーリー</span><span class=&quot;kw-tag&quot;>魅力</span><span class=&quot;kw-tag&quot;>口コミ</span><span class=&quot;kw-tag&quot;>安心感</span></div>" data-en="An LP is <strong>designed to create exactly this kind of flow.</strong><br>It guides visitors through an emotional journey — &quot;I want to learn about this plan,&quot; &quot;I want to stay here&quot; — leading naturally toward a booking or inquiry.<div class=&quot;kw-list&quot;><span class=&quot;kw-tag&quot;>Photography</span><span class=&quot;kw-tag&quot;>Story</span><span class=&quot;kw-tag&quot;>Appeal</span><span class=&quot;kw-tag&quot;>Reviews</span><span class=&quot;kw-tag&quot;>Trust</span></div>">
       LPはその<strong>流れを作るのが得意</strong>です。<br>
       「このプランを知りたい」「この宿に泊まってみたい」という<strong>気持ちの変化を設計</strong>し、自然に予約・問い合わせへと導きます。
       <div class="kw-list">
@@ -380,15 +393,15 @@
 <!-- SOLVE -->
 <section id="solve">
   <div class="inner">
-    <span class="s-label">LP で解決できること</span>
-    <h2 class="s-title">LP が解決できる課題</h2>
+    <span class="s-label" data-ja="LP で解決できること" data-en="What an LP can solve">LP で解決できること</span>
+    <h2 class="s-title" data-ja="LP が解決できる課題" data-en="Challenges an LP Can Address">LP が解決できる課題</h2>
     <div class="solve-grid">
-      <div class="solve-item">宿泊プランの予約促進</div>
-      <div class="solve-item">体験プログラムの申込み増加</div>
-      <div class="solve-item">問い合わせ獲得</div>
-      <div class="solve-item">イベント集客</div>
-      <div class="solve-item">SNS・広告からの導線改善</div>
-      <div class="solve-item">新商品・新サービスの訴求</div>
+      <div class="solve-item" data-ja="宿泊プランの予約促進" data-en="Boosting accommodation bookings">宿泊プランの予約促進</div>
+      <div class="solve-item" data-ja="体験プログラムの申込み増加" data-en="Increasing experience program sign-ups">体験プログラムの申込み増加</div>
+      <div class="solve-item" data-ja="問い合わせ獲得" data-en="Generating inquiries">問い合わせ獲得</div>
+      <div class="solve-item" data-ja="イベント集客" data-en="Driving event attendance">イベント集客</div>
+      <div class="solve-item" data-ja="SNS・広告からの導線改善" data-en="Improving conversion from social &amp; ads">SNS・広告からの導線改善</div>
+      <div class="solve-item" data-ja="新商品・新サービスの訴求" data-en="Promoting new products or services">新商品・新サービスの訴求</div>
     </div>
   </div>
 </section>
@@ -396,34 +409,34 @@
 <!-- HONEST -->
 <section id="honest">
   <div class="inner">
-    <span class="s-label">正直なところ</span>
-    <p class="honest-q">LP は魔法のツールではありません</p>
+    <span class="s-label" data-ja="正直なところ" data-en="Honestly speaking">正直なところ</span>
+    <p class="honest-q" data-ja="LP は魔法のツールではありません" data-en="An LP Is Not a Magic Solution">LP は魔法のツールではありません</p>
 
     <div class="honest-block">
-      <p class="answer">LPを作れば必ず成果が出る、というものではありません。</p>
-      <p>商品やサービスの魅力、ターゲット設定、広告やSNS運用も重要です。</p>
+      <p class="answer" data-ja="LPを作れば必ず成果が出る、というものではありません。" data-en="Creating an LP does not guarantee results.">LPを作れば必ず成果が出る、というものではありません。</p>
+      <p data-ja="商品やサービスの魅力、ターゲット設定、広告やSNS運用も重要です。" data-en="The appeal of your product, audience targeting, and your advertising or social media strategy are all equally important.">商品やサービスの魅力、ターゲット設定、広告やSNS運用も重要です。</p>
     </div>
 
-    <p class="body-text">しかし、<strong style="color:var(--sky);">魅力があるにも関わらず伝わっていない</strong>という課題には、LPが大きな力を発揮します。</p>
-    <p style="font-size:14px;color:var(--muted);line-height:2.2;">まずは現状をヒアリングした上で、LPが本当に有効かどうかを一緒に考えます。制作ありきではなく、課題解決を起点にご提案します。</p>
+    <p class="body-text" data-ja="しかし、<strong style=&quot;color:var(--sky);&quot;>魅力があるにも関わらず伝わっていない</strong>という課題には、LPが大きな力を発揮します。" data-en="That said, when the real problem is that <strong style=&quot;color:var(--sky);&quot;>your appeal isn't getting through</strong>, an LP can make a significant difference.">しかし、<strong style="color:var(--sky);">魅力があるにも関わらず伝わっていない</strong>という課題には、LPが大きな力を発揮します。</p>
+    <p style="font-size:14px;color:var(--muted);line-height:2.2;" data-ja="まずは現状をヒアリングした上で、LPが本当に有効かどうかを一緒に考えます。制作ありきではなく、課題解決を起点にご提案します。" data-en="I start by listening to your current situation, and together we figure out whether an LP is truly the right fit. My proposals begin with solving your problem — not with selling you a design.">まずは現状をヒアリングした上で、LPが本当に有効かどうかを一緒に考えます。制作ありきではなく、課題解決を起点にご提案します。</p>
   </div>
 </section>
 
 <!-- PHILOSOPHY -->
 <section id="philosophy-lp">
   <div class="inner">
-    <span class="s-label">大切にしていること</span>
-    <h2 class="s-title">私が LP 制作で<br>大切にしていること</h2>
-    <p class="phil-body">
+    <span class="s-label" data-ja="大切にしていること" data-en="My philosophy">大切にしていること</span>
+    <h2 class="s-title" data-ja="私が LP 制作で<br>大切にしていること" data-en="What I Value Most<br>in LP Design">私が LP 制作で<br>大切にしていること</h2>
+    <p class="phil-body" data-ja="LPを<em>「デザイン制作」</em>ではなく、<em>「問題解決の設計」</em>だと考えています。<br><br>ホテル業界で10年以上働いてきた中で、本当は良いサービスなのに知られていない施設やお店を数多く見てきました。<br><br>だからこそ、<em>「誰に」「何を」「どの順番で」</em>伝えるべきかを整理し、選ばれる理由を見つけることを大切にしています。" data-en="I think of LP design not as <em>&quot;creating visuals,&quot;</em> but as <em>&quot;engineering a solution.&quot;</em><br><br>After more than a decade in the hotel industry, I've seen countless businesses with genuinely great services that simply weren't reaching the right people.<br><br>That's why I focus on clarifying <em>who to reach, what to say, and in what order</em> — and finding the reason why someone should choose you.">
       LPを<em>「デザイン制作」</em>ではなく、<em>「問題解決の設計」</em>だと考えています。<br><br>
       ホテル業界で10年以上働いてきた中で、本当は良いサービスなのに知られていない施設やお店を数多く見てきました。<br><br>
       だからこそ、<em>「誰に」「何を」「どの順番で」</em>伝えるべきかを整理し、選ばれる理由を見つけることを大切にしています。
     </p>
     <div class="phil-kws">
-      <span class="phil-kw">ターゲット設定</span>
-      <span class="phil-kw">情報整理</span>
-      <span class="phil-kw">導線設計</span>
-      <span class="phil-kw">選ばれる理由を見つける</span>
+      <span class="phil-kw" data-ja="ターゲット設定" data-en="Audience targeting">ターゲット設定</span>
+      <span class="phil-kw" data-ja="情報整理" data-en="Information clarity">情報整理</span>
+      <span class="phil-kw" data-ja="導線設計" data-en="User flow design">導線設計</span>
+      <span class="phil-kw" data-ja="選ばれる理由を見つける" data-en="Finding your competitive edge">選ばれる理由を見つける</span>
     </div>
   </div>
 </section>
@@ -431,28 +444,28 @@
 <!-- CASES -->
 <section id="cases">
   <div class="inner">
-    <span class="s-label">制作事例</span>
-    <h2 class="s-title">LP の制作実績</h2>
+    <span class="s-label" data-ja="制作事例" data-en="Portfolio">制作事例</span>
+    <h2 class="s-title" data-ja="LP の制作実績" data-en="Landing Page Work">LP の制作実績</h2>
     <div class="case-grid">
       <div class="case-card">
         <div class="case-thumb"><img src="works/lp/PC版.png" alt="海灯りの宿 凪ノ音 LP" loading="lazy"></div>
         <div class="case-body">
-          <h3>海灯りの宿　凪ノ音（ランディングページ）</h3>
-          <p>京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。</p>
-          <a class="case-link" href="works/lp/kaze/index.html" target="_blank" rel="noopener">デザインを見る →</a>
+          <h3 data-ja="海灯りの宿　凪ノ音（ランディングページ）" data-en="Nagi no Ne Seaside Inn (Landing Page)">海灯りの宿　凪ノ音（ランディングページ）</h3>
+          <p data-ja="京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。" data-en="Landing page for a traditional inn in Kyotango. Expresses a Japanese aesthetic through white space and atmospheric photography, with a clear booking flow for accommodation plans.">京丹後エリアの旅館向けランディングページ。余白と情景写真を活かした和の世界観を表現し、宿泊プランへの予約導線を設計。</p>
+          <a class="case-link" href="works/lp/kaze/index.html" target="_blank" rel="noopener" data-ja="デザインを見る →" data-en="View design →">デザインを見る →</a>
         </div>
       </div>
       <div class="case-card">
         <div class="case-thumb"><img src="works/lp/astra_dune_tottori_pc.png" alt="ASTRA DUNE TOTTORI LP" loading="lazy"></div>
         <div class="case-body">
-          <h3>ASTRA DUNE TOTTORI（ランディングページ）</h3>
-          <p>星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。</p>
-          <a class="case-link" href="works/lp/astra_dune/index.html" target="_blank" rel="noopener">デザインを見る →</a>
+          <h3 data-ja="ASTRA DUNE TOTTORI（ランディングページ）" data-en="ASTRA DUNE TOTTORI (Landing Page)">ASTRA DUNE TOTTORI（ランディングページ）</h3>
+          <p data-ja="星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。" data-en="A night under the stars, on the dunes. Landing page for a dune resort hotel in Tottori. Built around the imagery of starry skies and sand dunes, with a streamlined path to booking.">星降る砂丘で、記憶に残る一夜を。鳥取の砂丘リゾートホテル向けランディングページ。星空と砂丘の情景を軸に、宿泊予約への導線を設計。</p>
+          <a class="case-link" href="works/lp/astra_dune/index.html" target="_blank" rel="noopener" data-ja="デザインを見る →" data-en="View design →">デザインを見る →</a>
         </div>
       </div>
     </div>
     <div style="text-align:center;">
-      <a class="btn-outline" href="works.html">制作実績をすべて見る</a>
+      <a class="btn-outline" href="works.html" data-ja="制作実績をすべて見る" data-en="View all work">制作実績をすべて見る</a>
     </div>
   </div>
 </section>
@@ -460,26 +473,26 @@
 <!-- PRICING -->
 <section id="pricing-lp">
   <div class="inner">
-    <span class="s-label">料金</span>
-    <h2 class="s-title">LP 制作料金</h2>
+    <span class="s-label" data-ja="料金" data-en="Pricing">料金</span>
+    <h2 class="s-title" data-ja="LP 制作料金" data-en="LP Design Pricing">LP 制作料金</h2>
 
     <div class="lp-price-card">
-      <h3>観光・サービス業向け LP デザイン</h3>
-      <p class="price">¥150,000<span>〜（税別）</span></p>
-      <p class="includes-label">含まれる内容</p>
+      <h3 data-ja="観光・サービス業向け LP デザイン" data-en="LP Design for Tourism &amp; Hospitality">観光・サービス業向け LP デザイン</h3>
+      <p class="price">¥150,000<span data-ja="〜（税別）" data-en=" and up (excl. tax)">〜（税別）</span></p>
+      <p class="includes-label" data-ja="含まれる内容" data-en="Included">含まれる内容</p>
       <ul class="includes-list">
-        <li>ヒアリング</li>
-        <li>構成設計</li>
-        <li>ワイヤーフレーム</li>
-        <li>PC デザイン</li>
-        <li>スマホデザイン</li>
-        <li>レスポンシブ設計</li>
+        <li data-ja="ヒアリング" data-en="Discovery call">ヒアリング</li>
+        <li data-ja="構成設計" data-en="Content structure">構成設計</li>
+        <li data-ja="ワイヤーフレーム" data-en="Wireframe">ワイヤーフレーム</li>
+        <li data-ja="PC デザイン" data-en="Desktop design">PC デザイン</li>
+        <li data-ja="スマホデザイン" data-en="Mobile design">スマホデザイン</li>
+        <li data-ja="レスポンシブ設計" data-en="Responsive layout">レスポンシブ設計</li>
       </ul>
     </div>
 
-    <p style="font-size:13px;color:var(--muted);line-height:2;text-align:center;margin-bottom:32px;">表示価格は目安です。制作内容・ページ数・ボリュームに応じてお見積りいたします。</p>
+    <p style="font-size:13px;color:var(--muted);line-height:2;text-align:center;margin-bottom:32px;" data-ja="表示価格は目安です。制作内容・ページ数・ボリュームに応じてお見積りいたします。" data-en="Prices shown are estimates. A custom quote will be provided based on scope, page count, and volume.">表示価格は目安です。制作内容・ページ数・ボリュームに応じてお見積りいたします。</p>
     <div style="text-align:center;">
-      <a class="btn-outline" href="index.html#pricing">料金を見る</a>
+      <a class="btn-outline" href="index.html#pricing" data-ja="料金を見る" data-en="View pricing">料金を見る</a>
     </div>
   </div>
 </section>
@@ -487,13 +500,13 @@
 <!-- FINAL CTA -->
 <section id="final-cta">
   <div class="inner">
-    <h2>
+    <h2 data-ja="いい場所なのに、知られていない。<br>いいサービスなのに、選ばれていない。<br><br><em>その課題は、LP で改善できるかもしれません。</em>" data-en="A great place that nobody knows about.<br>A great service that nobody's choosing.<br><br><em>An LP might be exactly what changes that.</em>">
       いい場所なのに、知られていない。<br>
       いいサービスなのに、選ばれていない。<br><br>
       <em>その課題は、LP で改善できるかもしれません。</em>
     </h2>
-    <p>まずは現在のお悩みをお聞かせください。</p>
-    <a class="btn-cta" href="index.html#contact">無料相談する</a>
+    <p data-ja="まずは現在のお悩みをお聞かせください。" data-en="Start by sharing your current challenges.">まずは現在のお悩みをお聞かせください。</p>
+    <a class="btn-cta" href="index.html#contact" data-ja="無料相談する" data-en="Book a Free Consultation">無料相談する</a>
   </div>
 </section>
 
@@ -501,5 +514,18 @@
   © 2026 Kazuki Design. All rights reserved.
 </footer>
 
+<script>
+let cur = localStorage.getItem('lang') || 'ja';
+function setLang(l) {
+  cur = l;
+  localStorage.setItem('lang', l);
+  document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + l);
+  });
+  document.getElementById('btn-ja').classList.toggle('active', l === 'ja');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+}
+setLang(cur);
+</script>
 </body>
 </html>
