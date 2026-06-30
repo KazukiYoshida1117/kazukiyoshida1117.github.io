@@ -141,6 +141,23 @@ nav a:hover { color: var(--sky); }
 .btn-fv-outline:hover { background: rgba(255,255,255,.15); border-color: #fff; transform: translateY(-3px); }
 .fv-scroll { margin-top: 56px; color: var(--muted); font-size: 11px; letter-spacing: .2em; }
 
+/* ── FV ENTRANCE ANIMATIONS ── */
+@keyframes fvFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fvSlideUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#fv { animation: fvFadeIn 1.3s ease forwards; }
+.fv-h1   { animation: fvSlideUp .85s cubic-bezier(.22,.61,.36,1) .45s both; }
+.fv-sub  { animation: fvSlideUp .85s cubic-bezier(.22,.61,.36,1) .65s both; }
+.fv-btns { animation: fvSlideUp .85s cubic-bezier(.22,.61,.36,1) .85s both; }
+@media (prefers-reduced-motion: reduce) {
+  #fv, .fv-h1, .fv-sub, .fv-btns { animation: none; }
+}
+
 /* ── PHOTO FULL ── */
 .photo-full {
   width: 100%; height: 60vh; min-height: 320px;
