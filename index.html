@@ -168,16 +168,16 @@ nav a:hover { color: var(--sky); }
 .check-list .fade-up:nth-child(2) { transition-delay: .12s; }
 .check-list .fade-up:nth-child(3) { transition-delay: .24s; }
 .check-list .fade-up:nth-child(4) { transition-delay: .36s; }
-.fade-left {
+.fade-depth {
   opacity: 0;
-  transform: translateX(-44px);
-  transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+  transform: translateX(72px) scale(0.86);
+  transition: opacity .85s cubic-bezier(.22,.61,.36,1), transform .85s cubic-bezier(.22,.61,.36,1);
 }
-.fade-left.is-visible { opacity: 1; transform: translateX(0); }
-.reasons-grid .fade-left:nth-child(2) { transition-delay: .18s; }
-.reasons-grid .fade-left:nth-child(3) { transition-delay: .36s; }
+.fade-depth.is-visible { opacity: 1; transform: translateX(0) scale(1); }
+.reasons-grid .fade-depth:nth-child(2) { transition-delay: .22s; }
+.reasons-grid .fade-depth:nth-child(3) { transition-delay: .44s; }
 @media (prefers-reduced-motion: reduce) {
-  .fade-up, .fade-left { opacity: 1; transform: none; transition: none; }
+  .fade-up, .fade-depth { opacity: 1; transform: none; transition: none; }
 }
 
 /* ── PHOTO FULL ── */
@@ -736,7 +736,7 @@ footer strong { color: var(--sky2); }
   <div class="inner" style="font-family:'Noto Sans JP',sans-serif;">
     <h2 class="s-title" data-ja="選ばれる3つの理由" data-en="3 Reasons Clients Choose Me">選ばれる3つの理由</h2>
     <div class="reasons-grid" id="reasons-grid">
-      <div class="reason-card fade-left">
+      <div class="reason-card fade-depth">
         <div class="reason-vis reason-vis-1" style="background:url('img/reason1_hotel.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
           <p class="reason-num">01</p>
@@ -745,7 +745,7 @@ footer strong { color: var(--sky2); }
           <p data-ja="ホテル業界で10年以上、多くのお客様と向き合ってきました。予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。" data-en="I spent 10+ years working face-to-face with guests in the hotel industry. I know what makes travelers hesitate before booking — and what information gives them the confidence to act. I apply that front-line insight to design flows that lead to bookings, visits, and inquiries.">ホテル業界で10年以上、多くのお客様と向き合ってきました。予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。</p>
         </div>
       </div>
-      <div class="reason-card fade-left">
+      <div class="reason-card fade-depth">
         <div class="reason-vis reason-vis-2" style="background:url('img/reason2_design.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
           <p class="reason-num">02</p>
@@ -754,7 +754,7 @@ footer strong { color: var(--sky2); }
           <p data-ja="「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。誰に、何を、どの順番で伝えるべきかを整理し、魅力が伝わり行動につながる導線を設計します。" data-en="&ldquo;I don't know what to say&rdquo; or &ldquo;I have too much to sort through&rdquo; — that's okay. I identify who to speak to, what to say, and in what order, then design a flow that communicates your appeal and moves people toward action.">「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。誰に、何を、どの順番で伝えるべきかを整理し、魅力が伝わり行動につながる導線を設計します。</p>
         </div>
       </div>
-      <div class="reason-card fade-left">
+      <div class="reason-card fade-depth">
         <div class="reason-vis reason-vis-3" style="background:url('img/reason3_inbound.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
           <p class="reason-num">03</p>
@@ -1171,7 +1171,7 @@ const _fadeObs = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.15 });
-document.querySelectorAll('.fade-up, .fade-left').forEach(el => _fadeObs.observe(el));
+document.querySelectorAll('.fade-up, .fade-depth').forEach(el => _fadeObs.observe(el));
 </script>
 </body>
 </html>
