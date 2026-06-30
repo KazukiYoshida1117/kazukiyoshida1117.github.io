@@ -158,6 +158,28 @@ nav a:hover { color: var(--sky); }
   #fv, .fv-h1, .fv-sub, .fv-btns { animation: none; }
 }
 
+/* ── SCROLL FADE-UP ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+}
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+.check-list .fade-up:nth-child(2) { transition-delay: .12s; }
+.check-list .fade-up:nth-child(3) { transition-delay: .24s; }
+.check-list .fade-up:nth-child(4) { transition-delay: .36s; }
+.fade-left {
+  opacity: 0;
+  transform: translateX(-44px);
+  transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+}
+.fade-left.is-visible { opacity: 1; transform: translateX(0); }
+.reasons-grid .fade-left:nth-child(2) { transition-delay: .18s; }
+.reasons-grid .fade-left:nth-child(3) { transition-delay: .36s; }
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-left { opacity: 1; transform: none; transition: none; }
+}
+
 /* ── PHOTO FULL ── */
 .photo-full {
   width: 100%; height: 60vh; min-height: 320px;
@@ -691,21 +713,21 @@ footer strong { color: var(--sky2); }
 <!-- EMPATHY + BRIDGE -->
 <section id="empathy" style="background:var(--white); text-align:center;">
   <div class="inner" style="max-width:960px;">
-    <h2 class="s-title" data-ja="こんなお悩みありませんか？" data-en="Does any of this sound familiar?">こんなお悩みありませんか？</h2>
+    <h2 class="s-title fade-up" data-ja="こんなお悩みありませんか？" data-en="Does any of this sound familiar?">こんなお悩みありませんか？</h2>
     <ul class="check-list" id="check-list">
-      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="ホームページはあるのに、<br>問い合わせや予約につながっていない。" data-en="You have a website,<br>but it's not leading to inquiries or bookings.">ホームページはあるのに、<br>問い合わせや予約につながっていない。</span></li>
-      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="SNSを頑張っているのに、<br>なかなか成果が見えない。" data-en="You're putting effort into social media,<br>but aren't seeing results.">SNSを頑張っているのに、<br>なかなか成果が見えない。</span></li>
-      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="魅力には自信があるのに、<br>うまく伝わっていない気がする。" data-en="You're confident in what you offer,<br>but it doesn't seem to be getting through.">魅力には自信があるのに、<br>うまく伝わっていない気がする。</span></li>
-      <li><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="外国人のお客様にも届けたいが、<br>どのように見せればよいか分からない。" data-en="You want to reach international guests,<br>but aren't sure how to present yourself to them.">外国人のお客様にも届けたいが、<br>どのように見せればよいか分からない。</span></li>
+      <li class="fade-up"><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="ホームページはあるのに、<br>問い合わせや予約につながっていない。" data-en="You have a website,<br>but it's not leading to inquiries or bookings.">ホームページはあるのに、<br>問い合わせや予約につながっていない。</span></li>
+      <li class="fade-up"><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="SNSを頑張っているのに、<br>なかなか成果が見えない。" data-en="You're putting effort into social media,<br>but aren't seeing results.">SNSを頑張っているのに、<br>なかなか成果が見えない。</span></li>
+      <li class="fade-up"><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="魅力には自信があるのに、<br>うまく伝わっていない気がする。" data-en="You're confident in what you offer,<br>but it doesn't seem to be getting through.">魅力には自信があるのに、<br>うまく伝わっていない気がする。</span></li>
+      <li class="fade-up"><span style="color:var(--sky);margin-right:10px;font-size:15px;">✓</span><span data-ja="外国人のお客様にも届けたいが、<br>どのように見せればよいか分からない。" data-en="You want to reach international guests,<br>but aren't sure how to present yourself to them.">外国人のお客様にも届けたいが、<br>どのように見せればよいか分からない。</span></li>
     </ul>
-    <div style="margin:40px 0;">
+    <div class="fade-up" style="margin:40px 0;">
       <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 2L18 18L34 2" stroke="#4a9ab8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <p style="font-size:16px;font-weight:700;color:var(--text);line-height:2;margin-bottom:16px;" data-ja="その課題、" data-en="That challenge —">その課題、</p>
-    <p style="font-size:15px;font-weight:500;color:var(--text);line-height:2;margin-bottom:36px;" data-ja="「伝え方」と「導線設計」を見直すことで<br>改善できるかもしれません。" data-en="can often be solved by rethinking<br>how you communicate and how you guide visitors to act.">「伝え方」と「導線設計」を見直すことで<br>改善できるかもしれません。</p>
-    <a href="lp.html" style="display:inline-block;background:var(--gold);color:#fff;font-size:14px;font-weight:700;padding:16px 40px;border-radius:30px;text-decoration:none;letter-spacing:.05em;transition:.25s;box-shadow:0 4px 20px rgba(184,150,62,.4);" onmouseover="this.style.background='var(--gold2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--gold)';this.style.transform='translateY(0)'" data-ja="LPについて詳しく見る" data-en="What Is an LP? →">LPについて詳しく見る</a>
+    <p class="fade-up" style="font-size:16px;font-weight:700;color:var(--text);line-height:2;margin-bottom:16px;" data-ja="その課題、" data-en="That challenge —">その課題、</p>
+    <p class="fade-up" style="font-size:15px;font-weight:500;color:var(--text);line-height:2;margin-bottom:36px;" data-ja="「伝え方」と「導線設計」を見直すことで<br>改善できるかもしれません。" data-en="can often be solved by rethinking<br>how you communicate and how you guide visitors to act.">「伝え方」と「導線設計」を見直すことで<br>改善できるかもしれません。</p>
+    <a class="fade-up" href="lp.html" style="display:inline-block;background:var(--gold);color:#fff;font-size:14px;font-weight:700;padding:16px 40px;border-radius:30px;text-decoration:none;letter-spacing:.05em;transition:.25s;box-shadow:0 4px 20px rgba(184,150,62,.4);" onmouseover="this.style.background='var(--gold2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--gold)';this.style.transform='translateY(0)'" data-ja="LPについて詳しく見る" data-en="What Is an LP? →">LPについて詳しく見る</a>
   </div>
 </section>
 
@@ -714,7 +736,7 @@ footer strong { color: var(--sky2); }
   <div class="inner" style="font-family:'Noto Sans JP',sans-serif;">
     <h2 class="s-title" data-ja="選ばれる3つの理由" data-en="3 Reasons Clients Choose Me">選ばれる3つの理由</h2>
     <div class="reasons-grid" id="reasons-grid">
-      <div class="reason-card">
+      <div class="reason-card fade-left">
         <div class="reason-vis reason-vis-1" style="background:url('img/reason1_hotel.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
           <p class="reason-num">01</p>
@@ -723,7 +745,7 @@ footer strong { color: var(--sky2); }
           <p data-ja="ホテル業界で10年以上、多くのお客様と向き合ってきました。予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。" data-en="I spent 10+ years working face-to-face with guests in the hotel industry. I know what makes travelers hesitate before booking — and what information gives them the confidence to act. I apply that front-line insight to design flows that lead to bookings, visits, and inquiries.">ホテル業界で10年以上、多くのお客様と向き合ってきました。予約前のお客様が何に不安を感じ、どんな情報があれば安心して行動できるのか。現場で培った視点を活かし、予約・来店・問い合わせにつながる導線を考えます。</p>
         </div>
       </div>
-      <div class="reason-card">
+      <div class="reason-card fade-left">
         <div class="reason-vis reason-vis-2" style="background:url('img/reason2_design.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
           <p class="reason-num">02</p>
@@ -732,7 +754,7 @@ footer strong { color: var(--sky2); }
           <p data-ja="「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。誰に、何を、どの順番で伝えるべきかを整理し、魅力が伝わり行動につながる導線を設計します。" data-en="&ldquo;I don't know what to say&rdquo; or &ldquo;I have too much to sort through&rdquo; — that's okay. I identify who to speak to, what to say, and in what order, then design a flow that communicates your appeal and moves people toward action.">「何を伝えればいいか分からない」「情報が多くて整理できない」そんな状態からでも大丈夫です。誰に、何を、どの順番で伝えるべきかを整理し、魅力が伝わり行動につながる導線を設計します。</p>
         </div>
       </div>
-      <div class="reason-card">
+      <div class="reason-card fade-left">
         <div class="reason-vis reason-vis-3" style="background:url('img/reason3_inbound.png') center center/cover no-repeat;"></div>
         <div class="reason-body">
           <p class="reason-num">03</p>
@@ -1139,6 +1161,17 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') slideMove(-1);
   }
 });
+
+// Scroll fade-up
+const _fadeObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-visible');
+      _fadeObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up, .fade-left').forEach(el => _fadeObs.observe(el));
 </script>
 </body>
 </html>
