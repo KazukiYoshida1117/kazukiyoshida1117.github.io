@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lastmod は更新のたびに手動でメンテナンスしてください -->
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/works.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/profile.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/lp.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/works/lp/astra_dune/index.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/works/lp/kaze/index.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/works/lp/lmc/index.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kazukiyoshida1117.github.io/works/dogrun/index.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>

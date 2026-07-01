@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>観光・サービス専門LP / Webデザイナー</title>
+<title>Kazuki Yoshida | 観光・サービス専門LP・Webデザイナー</title>
+<meta name="description" content="観光・宿泊・飲食業向けにLP/Webサイトを制作。ホテル業界10年以上×カナダ留学5年の経験を活かし、予約・問い合わせにつながる導線を設計します。無料相談受付中。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kazuki Design">
+<meta property="og:title" content="Kazuki Yoshida | 観光・サービス専門LP・Webデザイナー">
+<meta property="og:description" content="観光・宿泊・飲食業向けにLP/Webサイトを制作。ホテル業界10年以上×カナダ留学5年の経験を活かし、予約・問い合わせにつながる導線を設計します。無料相談受付中。">
+<meta property="og:url" content="https://kazukiyoshida1117.github.io/">
+<meta property="og:image" content="https://kazukiyoshida1117.github.io/img/profile_img.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kazuki Yoshida | 観光・サービス専門LP・Webデザイナー">
+<meta name="twitter:description" content="観光・宿泊・飲食業向けにLP/Webサイトを制作。ホテル業界10年以上×カナダ留学5年の経験を活かし、予約・問い合わせにつながる導線を設計します。無料相談受付中。">
+<meta name="twitter:image" content="https://kazukiyoshida1117.github.io/img/profile_img.png">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-22CGNYXTZH"></script>
 <script>
@@ -733,6 +744,21 @@ footer strong { color: var(--sky2); }
   section { padding: 88px 24px; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kazuki Yoshida",
+  "alternateName": "吉田 一毅",
+  "jobTitle": "Webデザイナー（観光・サービス専門LP制作）",
+  "url": "https://kazukiyoshida1117.github.io/",
+  "image": "https://kazukiyoshida1117.github.io/img/profile_img.png",
+  "sameAs": [
+    "https://www.instagram.com/kazuki_design_111"
+  ],
+  "description": "ホテル業界10年以上、カナダ留学5年の経験を活かし、観光・宿泊・飲食業向けにLP・Webデザインを制作。"
+}
+</script>
 </head>
 <body>
 
@@ -1019,10 +1045,10 @@ footer strong { color: var(--sky2); }
     <div class="about-grid">
       <div class="about-photo-wrap">
         <div class="about-photo" style="position:relative;overflow:hidden;">
-          <img src="img/profile_img.png" alt="吉田 かずき（Kazuki Yoshida）" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;" onerror="this.style.display='none'">
+          <img src="img/profile_img.png" alt="Kazuki Yoshida" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;" onerror="this.style.display='none'">
         </div>
         <p style="font-size:11px;font-weight:500;color:var(--sky);letter-spacing:.08em;text-align:center;margin-top:16px;margin-bottom:6px;">観光・サービス専門 LP / Webデザイナー</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text);margin-top:0;margin-bottom:4px;line-height:1.5;text-align:center;">吉田 かずき<br><span style="font-size:14px;font-weight:400;letter-spacing:.06em;">Kazuki Yoshida</span></p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text);margin-top:0;margin-bottom:4px;line-height:1.5;text-align:center;">Kazuki Yoshida</p>
       </div>
       <div class="about-text">
         <h2 class="s-title" data-ja="プロフィール" data-en="About">プロフィール</h2>
@@ -1236,6 +1262,7 @@ function slideMove(dir) {
 }
 function renderSlide() {
   document.getElementById('slide-modal-img').src = _slides[_slideIdx];
+  document.getElementById('slide-modal-img').alt = '制作資料スライド ' + (_slideIdx + 1);
   const hasMult = _slides.length > 1;
   document.getElementById('slide-prev').style.display = hasMult ? 'flex' : 'none';
   document.getElementById('slide-next').style.display = hasMult ? 'flex' : 'none';

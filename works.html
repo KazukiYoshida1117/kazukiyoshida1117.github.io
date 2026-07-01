@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>制作実績 | Kazuki Yoshida — Webデザイナー</title>
+<meta name="description" content="観光・宿泊業を中心としたLP・ホームページ・バナー制作実績を紹介。ターゲットや課題設定、導線設計の意図まで解説しています。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kazuki Design">
+<meta property="og:title" content="制作実績 | Kazuki Yoshida — Webデザイナー">
+<meta property="og:description" content="観光・宿泊業を中心としたLP・ホームページ・バナー制作実績を紹介。ターゲットや課題設定、導線設計の意図まで解説しています。">
+<meta property="og:url" content="https://kazukiyoshida1117.github.io/works.html">
+<meta property="og:image" content="https://kazukiyoshida1117.github.io/img/profile_img.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="制作実績 | Kazuki Yoshida — Webデザイナー">
+<meta name="twitter:description" content="観光・宿泊業を中心としたLP・ホームページ・バナー制作実績を紹介。ターゲットや課題設定、導線設計の意図まで解説しています。">
+<meta name="twitter:image" content="https://kazukiyoshida1117.github.io/img/profile_img.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -313,6 +324,7 @@ function slideMove(dir) {
 }
 function renderSlide() {
   document.getElementById('slide-modal-img').src = _slides[_slideIdx];
+  document.getElementById('slide-modal-img').alt = '制作資料スライド ' + (_slideIdx + 1);
   const hasMult = _slides.length > 1;
   document.getElementById('slide-prev').style.display = hasMult ? 'flex' : 'none';
   document.getElementById('slide-next').style.display = hasMult ? 'flex' : 'none';
